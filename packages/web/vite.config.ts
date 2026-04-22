@@ -2,7 +2,7 @@ import { defineConfig } from 'vite';
 import { resolve } from 'path';
 
 export default defineConfig({
-  base: '/vanilla-cards/',
+  base: '/vanilla/',
   server: {
     port: 3001,
     allowedHosts: ['.trycloudflare.com'],
@@ -34,6 +34,7 @@ export default defineConfig({
         docs: resolve(__dirname, 'docs.html'),
         demo: resolve(__dirname, 'demo.html'),
         portfolio: resolve(__dirname, 'portfolio.html'),
+        blog: resolve(__dirname, 'blog.html'),
       },
     },
   },
