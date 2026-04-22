@@ -302,7 +302,8 @@ vanilla-card[variant="header"] .card--header__mobile-toggle {
 
 /* Show on mobile only */
 @media (max-width: 768px) {
-  .card--header__mobile-toggle {
+  .card--header__mobile-toggle,
+  vanilla-card[variant="header"] .card--header__mobile-toggle {
     display: flex !important;
   }
 }
@@ -317,6 +318,7 @@ vanilla-card[variant="header"] .card--header__mobile-toggle {
   transition: all var(--transition-base);
 }
 
+.card--header__mobile-icon-dot,
 .card--header__icon-dot {
   fill: currentColor;
   transition: all var(--transition-base);
