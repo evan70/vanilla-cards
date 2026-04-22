@@ -347,5 +347,30 @@ vanilla-card[variant="header"] .card--header__mobile-toggle {
     display: none;
   }
 
+  .card--header--mobile-open .card--header__nav {
+    display: flex;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    background: var(--card-bg);
+    flex-direction: column;
+    padding: var(--space-4);
+    box-shadow: var(--shadow-md);
+    border-top: 1px solid var(--color-border);
+  }
+
+  .card--header--mobile-open .card--header__nav-list {
+    flex-direction: column;
+    width: 100%;
+    gap: var(--space-2);
+  }
+
+  .card--header--mobile-open .card--header__nav-link {
+    width: 100%;
+    justify-content: center;
+    padding-block: var(--space-3);
+  }
+
   /* Theme toggle and other actions stay visible */
 }

@@ -11,7 +11,6 @@ initTheme();
 
 // --- Theme Switching Logic ---
 const themeToggle = document.getElementById('theme-toggle');
-const mobileThemeToggle = document.getElementById('mobile-theme-toggle');
 
 const handleThemeToggle = () => {
     toggleTheme();
@@ -19,10 +18,6 @@ const handleThemeToggle = () => {
 
 if (themeToggle) {
     themeToggle.addEventListener('click', handleThemeToggle);
-}
-
-if (mobileThemeToggle) {
-    mobileThemeToggle.addEventListener('click', handleThemeToggle);
 }
 
 // --- Header Scroll Effect ---
@@ -39,26 +34,22 @@ if (header) {
 
 // --- Mobile Menu Toggle ---
 const mobileToggle = document.querySelector('.card--header__mobile-toggle');
-const mobileMenu = document.getElementById('mobile-menu');
 const mobileOverlay = document.getElementById('mobile-nav-overlay');
 
-if (mobileToggle && mobileMenu && mobileOverlay) {
-    const toggleMenu = () => {
-        const isOpen = mobileMenu.classList.toggle('card--nav-mobile--open');
+if (mobileToggle && mobileOverlay) {
+    mobileToggle.addEventListener('click', () => {
+        const header = document.querySelector('vanilla-card[variant="header"]');
+        header?.classList.toggle('card--header--mobile-open');
         mobileToggle.classList.toggle('card--header__mobile-toggle--open');
-        mobileOverlay.hidden = !isOpen;
-        document.body.classList.toggle('mobile-menu-open', isOpen);
-        
-        // Body scroll lock
-        if (isOpen) {
-            document.body.style.overflow = 'hidden';
-        } else {
-            document.body.style.overflow = '';
-        }
-    };
-
-    mobileToggle.addEventListener('click', toggleMenu);
-    mobileOverlay.addEventListener('click', toggleMenu);
+        mobileOverlay.hidden = !mobileOverlay.hidden;
+    });
+    
+    mobileOverlay.addEventListener('click', () => {
+        const header = document.querySelector('vanilla-card[variant="header"]');
+        header?.classList.remove('card--header--mobile-open');
+        mobileToggle.classList.remove('card--header__mobile-toggle--open');
+        mobileOverlay.hidden = true;
+    });
 }
 
 // Form Handlers
