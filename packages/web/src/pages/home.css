@@ -282,7 +282,10 @@ body {
 
 .hero-section__background {
   position: absolute;
-  inset: 0;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
   overflow: hidden;
 }
 
@@ -295,7 +298,10 @@ body {
 
 .hero-section__overlay {
   position: absolute;
-  inset: 0;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
 }
 
 .hero-section__overlay--dark {
@@ -346,7 +352,10 @@ body {
 
 .hero-section__token-grid {
   position: absolute;
-  inset: 0;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   gap: 2rem;
@@ -456,7 +465,10 @@ body {
 
 .hero-section__code-wrapper {
   position: absolute;
-  inset: 0;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 4rem;
@@ -852,7 +864,7 @@ body {
 
 .parallax-bg {
   position: absolute;
-  inset: 0;
+  top: 0; left: 0; right: 0; bottom: 0;
   background:
     radial-gradient(ellipse at 20% 50%, rgba(124, 106, 247, 0.15) 0%, transparent 60%),
     radial-gradient(ellipse at 80% 50%, rgba(8, 145, 178, 0.1) 0%, transparent 60%);
