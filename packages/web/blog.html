@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog — Vanilla Cards</title>
+    <link rel="icon" type="image/x-icon" href="/favicon.ico">
+    <script>
+        (function() {
+            const theme = localStorage.getItem('theme') || (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+            document.documentElement.setAttribute('data-theme', theme);
+            document.documentElement.setAttribute('data-theme-id', 'nativa');
+        })();
+    </script>
+    <script type="module" src="./src/blog-entry.ts"></script>
+</head>
+<body data-page="blog">
+    <div id="app">
+        <!-- Navigation -->
+        <vanilla-card variant="header">
+            <div class="card--header__inner">
+                <a href="./" class="card--header__logo">
+                    VC<span class="card--header__logo-dot">.</span>
+                </a>
+
+                <nav class="card--header__nav">
+                    <ul>
+                        <li><a href="./" class="card--header__nav-link">Home</a></li>
+                        <li><a href="portfolio.html" class="card--header__nav-link">Portfolio</a></li>
+                        <li><a href="demo.html" class="card--header__nav-link">Showcase</a></li>
+                        <li><a href="docs.html" class="card--header__nav-link">Docs</a></li>
+                        <li><a href="blog.html" class="card--header__nav-link card--header__nav-link--active">Blog</a></li>
+                    </ul>
+                </nav>
+
+                <div class="card--header__actions">
+                    <button class="card--header__theme-toggle" id="theme-toggle" aria-label="Toggle theme">
+                        <svg class="card--header__theme-icon card--header__theme-icon--moon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>
+                        <svg class="card--header__theme-icon card--header__theme-icon--sun" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="5"></circle><line x1="12" y1="1" x2="12" y2="3"></line><line x1="12" y1="21" x2="12" y2="23"></line><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line><line x1="1" y1="12" x2="3" y2="12"></line><line x1="21" y1="12" x2="23" y2="12"></line><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line></svg>
+                    </button>
+                    <button class="card--header__mobile-toggle" aria-label="Menu">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg>
+                    </button>
+                </div>
+            </div>
+        </vanilla-card>
+
+        <main class="blog-listing">
+            <!-- Hero -->
+            <section class="blog-listing__header">
+                <h1 class="blog-listing__title">Blog</h1>
+                <p class="blog-listing__subtitle">Insights, tutorials, and updates from the Vanilla Cards team.</p>
+            </section>
+
+            <!-- Search -->
+            <section class="blog-listing__toolbar">
+                <div class="blog-listing__search">
+                    <label for="blog-search-input" class="blog-listing__search-label">Search articles</label>
+                    <input type="text" id="blog-search-input" class="blog-listing__search-input" placeholder="Type to search...">
+                </div>
+            </section>
+
+            <!-- Articles Grid -->
+            <div id="blog-articles" class="blog-listing__grid">
+                <!-- Articles will be rendered here by blog.ts -->
+            </div>
+
+            <!-- Message Area -->
+            <div id="blog-message" class="blog-listing__message" style="display: none;"></div>
+
+            <!-- Data for Blog Logic -->
+            <div id="blog-data" data-articles='[{"title":"Getting Started with Vanilla JS","slug":"getting-started-with-vanilla-js","excerpt":"Learn how to build modern web applications without heavy frameworks.","image":"https://picsum.photos/600/400?random=10","published_label":"March 15, 2024","author_name":"John Doe","views":1200},{"title":"Mastering CSS Grid","slug":"mastering-css-grid","excerpt":"A comprehensive guide to creating complex layouts with CSS Grid.","image":"https://picsum.photos/600/400?random=11","published_label":"March 10, 2024","author_name":"Jane Smith","views":850},{"title":"Optimizing Web Performance","slug":"optimizing-web-performance","excerpt":"Tips and tricks to make your website load faster and run smoother.","image":"https://picsum.photos/600/400?random=12","published_label":"March 5, 2024","author_name":"Bob Johnson","views":2100}]' hidden></div>
+        </main>
+
+        <!-- Footer -->
+        <vanilla-card variant="footer">
+            <div class="card--footer__inner">
+                <p>&copy; 2024 VC Blog. Built with Vanilla Cards.</p>
+            </div>
+        </vanilla-card>
+
+        <div class="mobile-nav-overlay" id="mobile-nav-overlay" hidden></div>
+    </div>
+</body>
+</html>
