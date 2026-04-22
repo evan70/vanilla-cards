@@ -7,7 +7,7 @@
  */
 
 // Import main CSS bundle (all cards for demo page) using alias
-import '@vc/core/kernel/components/cards-all.css';
+import '@vc/theme-nativa/components/cards-all.css';
 
 // Import JavaScript modules using aliases
 import '@vc/core/lib/header-footer.js';

@@ -1,20 +1,49 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="sk" data-theme-id="nativa" data-theme="dark">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portfolio — Vanilla Cards</title>
+    <title>Portfolio - Nativa .</title>
+    <meta name="description" content="Prehľad projektov a realizácií vytvorených s Nativa CMS platformou.">
+    <link rel="canonical" href="http://localhost:8000/portfolio">
+
+    <!-- Preconnect to external origins -->
+    <link rel="preconnect" href="https://res.cloudinary.com" crossorigin>
+
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="http://localhost:8000/portfolio">
+    <meta property="og:title" content="Portfolio">
+    <meta property="og:description" content="Prehľad projektov a realizácií vytvorených s Nativa CMS platformou.">
+    <meta property="og:site_name" content="Nativa .">
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:url" content="http://localhost:8000/portfolio">
+    <meta name="twitter:title" content="Portfolio">
+    <meta name="twitter:description" content="Prehľad projektov a realizácií vytvorených s Nativa CMS platformou.">
+
+    <!-- CSRF Token for JavaScript -->
+    <meta name="csrf-token" content="dfe73e5e33a7ff74e5986949f00a2391cd75028be8df6c73f4f02bd88d4175e8">
+
+    <!-- Open Graph Image (if provided) -->
+    
+    <!-- Additional page-specific styles (set in page template) -->
+    <link rel="preload" href="./src/styles.css" as="style">
+    <link rel="stylesheet" href="./src/styles.css" fetchpriority="high">
+    <link rel="preload" href="./src/portfolio-styles.css" as="style">
+    <link rel="stylesheet" href="./src/portfolio-styles.css" fetchpriority="high">
+
     <link rel="icon" type="image/x-icon" href="/favicon.ico">
-    <script>
-        (function() {
-            const theme = localStorage.getItem('theme') || (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
-            document.documentElement.setAttribute('data-theme', theme);
-            document.documentElement.setAttribute('data-theme-id', 'nativa');
-        })();
-    </script>
-    <script type="module" src="./src/portfolio-entry.ts"></script>
+
+    <!-- Core JS (CardManager, ThemeToggle, HeaderScroll, MobileMenu) -->
+    <script type="module" src="./src/entry-points/vanilla-cards.js" defer></script>
+
+    <!-- Portfolio Entry Point (Kernel handles data-page="portfolio") -->
+    <script type="module" src="./src/portfolio-entry.ts" defer></script>
 </head>
-<body data-page="portfolio">
+<body class="body-card" data-page="portfolio">
     <div id="app">
         <!-- Navigation -->
         <vanilla-card variant="header">

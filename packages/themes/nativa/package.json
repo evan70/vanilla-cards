@@ -6,6 +6,7 @@
   "exports": {
     ".": "./src/index.ts",
     "./nativa.css": "./src/nativa.css",
+    "./components/*": "./src/components/*",
     "./assets/*": "./src/assets/*"
   },
   "dependencies": {
