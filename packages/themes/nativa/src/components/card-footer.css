@@ -81,12 +81,12 @@ vanilla-card[variant="footer"] {
  * Compact variant — for admin panels where footer is just a copyright line
  * Reduces vertical padding while keeping horizontal spacing
  */
-.card--footer--compact .card--footer__inner {
+.card--footer--compact__inner {
   padding-block: var(--space-4);
 }
 
 @media (min-width: 768px) {
-  .card--footer--compact .card--footer__inner {
+  .card--footer--compact__inner {
     padding-block: var(--space-6);
   }
 }

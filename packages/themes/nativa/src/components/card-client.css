@@ -162,21 +162,21 @@
   padding: var(--space-4);
 }
 
-.card--client--compact .card--client__logo-wrapper {
+.card--client--compact__logo-wrapper {
   margin-bottom: var(--space-2);
   padding: var(--space-2);
 }
 
-.card--client--compact .card--client__quote {
+.card--client--compact__quote {
   display: none;
 }
 
-.card--client--compact .card--client__author {
+.card--client--compact__author {
   flex-direction: row;
   gap: var(--space-3);
 }
 
-.card--client--compact .card--client__avatar {
+.card--client--compact__avatar {
   width: 40px;
   height: 40px;
 }

@@ -150,6 +150,8 @@ body {
 
 /* Card grid — base styles in ui-utils/card-grid.css */
 
+.demo-grid .demo-grid__card,
+.card-grid .card-grid__card,
 .demo-grid .card,
 .card-grid .card {
   min-width: 0;

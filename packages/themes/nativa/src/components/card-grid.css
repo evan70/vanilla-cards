@@ -97,7 +97,7 @@
  * Hide card content on mobile
  */
 @media (max-width: 639px) {
-  .card--hide-content-mobile .card__body {
+  .card--hide-content-mobile__body {
     display: none;
   }
 }

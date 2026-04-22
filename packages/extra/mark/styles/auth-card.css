@@ -251,7 +251,7 @@
   align-items: center;
 }
 
-.auth-card__password-wrapper .auth-card__form-input {
+.auth-card__password-wrapper__input {
   padding-right: calc(var(--space-4) + 20px + var(--space-2));
 }
 
@@ -309,7 +309,8 @@
   transition: all var(--transition-fast);
 }
 
-.auth-card__password-toggle:hover .auth-card__password-toggle-icon {
+.auth-card__password-toggle-icon,
+.auth-card__password-toggle-icon--hover {
   color: var(--brand-gold);
   transform: scale(1.1);
 }

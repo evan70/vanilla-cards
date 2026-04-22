@@ -60,8 +60,8 @@
   transform: none;
 }
 
-/* Icon in button */
-.btn .icon {
+/* Icon element inside button */
+.btn__icon {
   width: 18px;
   height: 18px;
   stroke: currentColor;
@@ -154,6 +154,7 @@
   font-size: var(--text-sm);
 }
 
+.btn--sm .btn__icon,
 .btn--sm .icon {
   width: 16px;
   height: 16px;
@@ -166,6 +167,7 @@
   font-size: var(--text-lg);
 }
 
+.btn--lg .btn__icon,
 .btn--lg .icon {
   width: 20px;
   height: 20px;
@@ -214,6 +216,7 @@
   padding: 0;
 }
 
+.btn--icon .btn__icon,
 .btn--icon .icon {
   width: 20px;
   height: 20px;

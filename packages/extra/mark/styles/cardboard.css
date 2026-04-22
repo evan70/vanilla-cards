@@ -1583,15 +1583,15 @@ cardboard-panel.cardboard--error {
   padding: var(--space-10);
 }
 
-.card--form--max .card--form__groups {
+.card--form--max__groups {
   gap: var(--space-8);
 }
 
-.card--form--max .auth-card__form-group {
+.card--form--max__form-group {
   margin-bottom: var(--space-5);
 }
 
-.card--form--max .card-grid--2-col {
+.card--form--max__grid {
   gap: var(--space-6);
 }
 
@@ -1637,7 +1637,7 @@ cardboard-panel.cardboard--error {
     flex-direction: column;
   }
   
-  .card--form__footer .btn {
+  .card--form__footer__btn {
     width: 100%;
   }
 }

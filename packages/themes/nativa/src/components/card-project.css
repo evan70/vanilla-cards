@@ -166,22 +166,22 @@ div.card--project__image img {
    Use base .card__footer for consistent alignment
    ========================================================================== */
 
-.card--project .card__footer,
+.card--project__footer,
 vanilla-card[variant="project"] .card__footer {
   align-items: center;
   justify-content: space-between;
 }
 
 /* Tech tags in footer */
-.card--project__tech--footer,
-vanilla-card[variant="project"] .card--project__tech--footer {
+.card--project__footer-tech,
+vanilla-card[variant="project"] .card--project__footer-tech {
   margin: 0;
   gap: var(--space-2);
 }
 
 /* Project card link in footer */
-.card--project__link,
-vanilla-card[variant="project"] .card--project__link {
+.card--project__footer-link,
+vanilla-card[variant="project"] .card--project__footer-link {
   display: inline-flex;
   align-items: center;
   gap: var(--space-2);
@@ -192,8 +192,8 @@ vanilla-card[variant="project"] .card--project__link {
   white-space: nowrap;
 }
 
-.card--project__link:hover,
-vanilla-card[variant="project"] .card--project__link:hover {
+.card--project__footer-link:hover,
+vanilla-card[variant="project"] .card--project__footer-link:hover {
   gap: var(--space-3);
 }
 
@@ -205,8 +205,8 @@ vanilla-card[variant="project"] .card--project__link:hover {
 }
 
 /* External links in footer */
-.card--project__links,
-vanilla-card[variant="project"] .card--project__links {
+.card--project__footer-links,
+vanilla-card[variant="project"] .card--project__footer-links {
   display: flex;
   gap: var(--space-2);
 }
@@ -244,14 +244,14 @@ vanilla-card[variant="project"] .card--project__links {
   flex-direction: row;
 }
 
-.card--project--horizontal .card--project__image-wrapper {
+.card--project--horizontal__image-wrapper {
   width: 40%;
   margin: calc(var(--card-padding) * -1) 0 calc(var(--card-padding) * -1) calc(var(--card-padding) * -1);
   border-top-right-radius: 0;
   border-bottom-left-radius: var(--card-radius);
 }
 
-.card--project--horizontal .card--project__body {
+.card--project--horizontal__body {
   width: 60%;
   padding-left: var(--card-padding);
 }
@@ -265,14 +265,14 @@ vanilla-card[variant="project"] .card--project__links {
     flex-direction: column;
   }
 
-  .card--project--horizontal .card--project__image-wrapper {
+  .card--project--horizontal__image-wrapper {
     width: 100%;
     margin: calc(var(--card-padding) * -1) calc(var(--card-padding) * -1) 0;
     border-top-right-radius: var(--card-radius);
     border-bottom-left-radius: 0;
   }
 
-  .card--project--horizontal .card--project__body {
+  .card--project--horizontal__body {
     width: 100%;
     padding-left: 0;
     padding-top: var(--space-4);
