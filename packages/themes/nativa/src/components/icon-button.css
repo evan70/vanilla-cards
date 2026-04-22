@@ -1,0 +1,319 @@
+
+/* ==========================================================================
+   Icon Button Utilities
+   Reusable icon button styles for theme toggles, action buttons, etc.
+   
+   Usage:
+   - Apply .icon-btn for standard 40px icon button
+   - Use .icon-btn--sm (32px) or .icon-btn--lg (48px) for sizes
+   - Add .icon-btn--ghost for transparent variant
+   ========================================================================== */
+
+/* ==========================================================================
+   BASE ICON BUTTON
+   40px square button for icons
+   ========================================================================== */
+.icon-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  padding: 0;
+  background: transparent;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  color: var(--color-text);
+  cursor: pointer;
+  transition: all var(--transition-fast);
+  flex-shrink: 0;
+}
+
+.icon-btn:hover {
+  background: var(--card-bg-hover);
+  border-color: var(--brand-gold);
+  color: var(--brand-gold);
+}
+
+.icon-btn:focus-visible {
+  outline: none;
+  box-shadow: 0 0 0 2px var(--brand-gold);
+}
+
+.icon-btn:active {
+  transform: scale(0.95);
+}
+
+.icon-btn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+/* Icon sizing within button */
+.icon-btn .icon {
+  width: 20px;
+  height: 20px;
+  stroke: currentColor;
+}
+
+/* ==========================================================================
+   ICON BUTTON SIZES
+   ========================================================================== */
+
+/* Small (32px) */
+.icon-btn--sm {
+  width: 32px;
+  height: 32px;
+}
+
+.icon-btn--sm .icon {
+  width: 16px;
+  height: 16px;
+}
+
+/* Large (48px) */
+.icon-btn--lg {
+  width: 48px;
+  height: 48px;
+}
+
+.icon-btn--lg .icon {
+  width: 24px;
+  height: 24px;
+}
+
+/* ==========================================================================
+   ICON BUTTON VARIANTS
+   ========================================================================== */
+
+/* Ghost variant (no border, transparent) */
+.icon-btn--ghost {
+  background: transparent;
+  border: 1px solid transparent;
+}
+
+.icon-btn--ghost:hover {
+  background: var(--card-bg-hover);
+  border-color: var(--color-border);
+}
+
+/* Filled variant (solid background) */
+.icon-btn--filled {
+  background: var(--color-bg);
+  border: 1px solid var(--color-border);
+}
+
+.icon-btn--filled:hover {
+  background: var(--brand-gold);
+  border-color: var(--brand-gold);
+  color: var(--neutral-900);
+}
+
+/* Glass variant (glassmorphic - for overlays, fullscreen, modals) */
+.icon-btn--glass {
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  color: var(--neutral-0);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+}
+
+.icon-btn--glass:hover {
+  background: rgba(255, 255, 255, 0.2);
+  border-color: rgba(255, 255, 255, 0.3);
+  transform: scale(1.05);
+}
+
+.icon-btn--glass:active {
+  transform: scale(0.95);
+}
+
+/* Glass variant - Light theme override */
+[data-theme="light"] .icon-btn--glass {
+  background: rgba(0, 0, 0, 0.1);
+  border: 1px solid rgba(0, 0, 0, 0.2);
+  color: var(--neutral-900);
+}
+
+[data-theme="light"] .icon-btn--glass:hover {
+  background: rgba(0, 0, 0, 0.2);
+  border-color: rgba(0, 0, 0, 0.3);
+}
+
+/* Glass variant - Circular shape (for close buttons) */
+.icon-btn--glass.icon-btn--circle {
+  border-radius: var(--radius-full);
+}
+
+/* Glass variant - Large size (56px for fullscreen nav) */
+.icon-btn--glass.icon-btn--lg {
+  width: 56px;
+  height: 56px;
+}
+
+.icon-btn--glass.icon-btn--lg .icon {
+  width: 24px;
+  height: 24px;
+}
+
+/* Glass variant (glassmorphic) */
+.icon-btn--glass {
+  background: var(--glass-bg);
+  backdrop-filter: var(--glass-blur);
+  -webkit-backdrop-filter: var(--glass-blur);
+  border: var(--glass-border);
+  color: var(--color-text);
+}
+
+.icon-btn--glass:hover {
+  background: var(--glass-bg-hover);
+  border-color: var(--glass-border-highlight);
+  box-shadow: var(--glass-glow);
+}
+
+/* ==========================================================================
+   ICON BUTTON COLOR VARIANTS
+   ========================================================================== */
+
+/* Gold accent */
+.icon-btn--gold:hover {
+  background: var(--brand-gold);
+  border-color: var(--brand-gold);
+  color: var(--neutral-900);
+}
+
+/* Emerald accent */
+.icon-btn--emerald:hover {
+  background: var(--brand-emerald);
+  border-color: var(--brand-emerald);
+  color: var(--neutral-900);
+}
+
+/* Ruby accent */
+.icon-btn--ruby:hover {
+  background: var(--brand-ruby);
+  border-color: var(--brand-ruby);
+  color: var(--neutral-0);
+}
+
+/* Sapphire accent */
+.icon-btn--sapphire:hover {
+  background: var(--brand-sapphire);
+  border-color: var(--brand-sapphire);
+  color: var(--neutral-0);
+}
+
+/* Amethyst accent */
+.icon-btn--amethyst:hover {
+  background: var(--brand-amethyst);
+  border-color: var(--brand-amethyst);
+  color: var(--neutral-0);
+}
+
+/* ==========================================================================
+   ICON BUTTON SHAPES
+   ========================================================================== */
+
+/* Circular (pill shape) */
+.icon-btn--circle {
+  border-radius: var(--radius-full);
+}
+
+/* Square (no rounding) */
+.icon-btn--square {
+  border-radius: var(--radius-sm);
+}
+
+/* ==========================================================================
+   SPECIFIC USE CASES
+   ========================================================================== */
+
+/* Theme toggle (header) */
+.icon-btn--theme {
+  width: 40px;
+  height: 40px;
+  border-radius: var(--radius-md);
+}
+
+.icon-btn--theme .icon {
+  width: 20px;
+  height: 20px;
+}
+
+/* Search button */
+.icon-btn--search {
+  width: 40px;
+  height: 40px;
+}
+
+/* Menu toggle (mobile) */
+.icon-btn--menu {
+  width: 40px;
+  height: 40px;
+  background: transparent;
+  border: none;
+}
+
+.icon-btn--menu:hover {
+  background: var(--card-bg-hover);
+  border-radius: var(--radius-md);
+}
+
+/* Close button */
+.icon-btn--close {
+  width: 32px;
+  height: 32px;
+  background: transparent;
+  border: none;
+  color: var(--color-text-muted);
+}
+
+.icon-btn--close:hover {
+  background: var(--card-bg-hover);
+  color: var(--color-text);
+  border-radius: var(--radius-md);
+}
+
+/* ==========================================================================
+   ICON BUTTON GROUP
+   Container for multiple icon buttons
+   ========================================================================== */
+.icon-btn-group {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+}
+
+.icon-btn-group--compact {
+  gap: var(--space-1);
+}
+
+.icon-btn-group--vertical {
+  flex-direction: column;
+}
+
+/* ==========================================================================
+   ACCESSIBILITY
+   ========================================================================== */
+
+/* High contrast mode support */
+@media (prefers-contrast: more), (forced-colors: active) {
+  .icon-btn {
+    border-width: 2px;
+  }
+
+  .icon-btn:focus-visible {
+    box-shadow: 0 0 0 3px var(--color-text);
+  }
+}
+
+/* Reduced motion support */
+@media (prefers-reduced-motion: reduce) {
+  .icon-btn {
+    transition: none;
+  }
+  
+  .icon-btn:active {
+    transform: none;
+  }
+}

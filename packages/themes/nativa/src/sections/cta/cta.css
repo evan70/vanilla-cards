@@ -1,0 +1,98 @@
+
+/* ==========================================================================
+   CTA Section Styles
+   Extracted from home.css for lazy loading.
+   ========================================================================== */
+
+/* Share Section */
+.homepage__share {
+  padding: var(--space-12) 0;
+  background: var(--color-bg-alt);
+  border-top: var(--glass-border);
+}
+
+/* Back to Top Button */
+.btn--back-to-top {
+  position: fixed;
+  bottom: 2rem;
+  right: 2rem;
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  background: var(--brand-gold);
+  color: var(--neutral-900);
+  border: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.3s ease, transform 0.3s ease;
+  z-index: 999;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+}
+
+.btn--back-to-top:hover {
+  background: var(--brand-gold-light, #f5d76e);
+  transform: translateY(0) scale(1.1);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .btn--back-to-top {
+    transition: none !important;
+  }
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .homepage__share {
+    padding: var(--space-8) 0;
+  }
+
+  .btn--back-to-top {
+    bottom: 1rem;
+    right: 1rem;
+    width: 40px;
+    height: 40px;
+  }
+}
+
+/* ==========================================================================
+   SCROLL PROGRESS BAR - Scroll-driven
+   ========================================================================== */
+
+@supports not (animation-timeline: scroll(root)) {
+  .scroll-progress {
+    transition: width 0.1s ease-out;
+    width: 0;
+  }
+}
+
+.scroll-progress {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 2px;
+  background: var(--brand-gold);
+  z-index: 9999;
+  width: 100%;
+  transform-origin: left;
+  transform: scaleX(0);
+  animation: progress-grow linear;
+  animation-timeline: scroll(root);
+}
+
+@keyframes progress-grow {
+  to {
+    transform: scaleX(1);
+  }
+}
+
+/* Reduced motion for scroll progress */
+@media (prefers-reduced-motion: reduce) {
+  .scroll-progress {
+    animation: none !important;
+    transition: none !important;
+  }
+}

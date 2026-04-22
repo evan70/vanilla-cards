@@ -1,0 +1,157 @@
+
+/**
+ * Homepage Layout Styles
+ * Layout utilities and fixes for homepage
+ */
+
+/* ==========================================================================
+   CRITICAL CSS - Theme & Base
+   ========================================================================== */
+
+html {
+  background-color: var(--neutral-950);
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  color: var(--color-text);
+  background-color: var(--color-bg);
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  font-family: var(--font-sans);
+}
+
+[data-theme="light"] {
+  background-color: var(--neutral-0);
+}
+
+[data-theme="light"] body {
+  color: var(--color-text);
+  background-color: var(--color-bg);
+}
+
+/* ==========================================================================
+   ACCESSIBILITY - Skip Link
+   ========================================================================== */
+
+.skip-link {
+  position: absolute;
+  left: -9999px;
+  top: auto;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+}
+
+.skip-link:focus {
+  position: fixed;
+  top: 10px;
+  left: 10px;
+  width: auto;
+  height: auto;
+  padding: var(--space-4);
+  background: var(--brand-gold);
+  color: var(--neutral-900);
+  z-index: 999999;
+  border-radius: var(--radius-sm);
+}
+
+/* ==========================================================================
+   LAYOUT UTILITIES
+   ========================================================================== */
+
+/* Box sizing */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* Container */
+.container {
+  width: 100%;
+  max-width: 1440px;
+  margin: 0 auto;
+  padding-block: var(--space-10);
+  padding-inline: var(--space-4);
+}
+
+@media (min-width: 640px) {
+  .container {
+    padding-inline: var(--space-6);
+  }
+}
+
+@media (min-width: 1024px) {
+  .container {
+    padding-inline: var(--space-8);
+  }
+}
+
+@media (min-width: 1280px) {
+  .container {
+    padding-inline: var(--space-12);
+  }
+}
+
+/* Section */
+.section {
+  margin-bottom: var(--space-12);
+}
+
+.section-title {
+  font-size: var(--text-2xl);
+  font-weight: var(--font-bold);
+  margin-bottom: var(--space-6);
+  padding-bottom: var(--space-2);
+  border-bottom: 1px solid var(--color-border);
+}
+
+/* Grid */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: var(--space-6);
+}
+
+/* Demo sections */
+.demo-section {
+  margin-bottom: var(--space-12);
+}
+
+.demo-title {
+  font-size: var(--text-2xl);
+  font-weight: var(--font-bold);
+  margin-bottom: var(--space-6);
+  padding-bottom: var(--space-2);
+  border-bottom: 1px solid var(--color-border);
+}
+
+.demo-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: var(--space-6);
+}
+
+.demo-intro {
+  margin-bottom: var(--space-8);
+  padding: var(--space-6);
+  background: var(--card-bg);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-xl);
+}
+
+.demo-intro h2 {
+  margin-top: 0;
+  color: var(--brand-gold);
+}
+
+/* Card grid — base styles in ui-utils/card-grid.css */
+
+.demo-grid .card,
+.card-grid .card {
+  min-width: 0;
+  width: 100%;
+}

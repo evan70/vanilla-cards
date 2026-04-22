@@ -1,0 +1,20 @@
+import {
+  FeatureController,
+  normalizeFeaturePayload,
+  type FeatureConfig,
+} from './feature';
+
+const root = document.querySelector<HTMLElement>('[data-feature-root]');
+
+if (root) {
+  const rawPayload = root.dataset.featurePayload
+    ? JSON.parse(root.dataset.featurePayload)
+    : {};
+
+  const config: FeatureConfig = {
+    featureData: normalizeFeaturePayload(rawPayload),
+  };
+
+  const controller = new FeatureController(root, config);
+  controller.init();
+}

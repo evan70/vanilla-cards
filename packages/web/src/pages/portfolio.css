@@ -1,0 +1,521 @@
+
+/* ==========================================================================
+   Portfolio Page — Layout Styles
+   Page-specific layout only. Card components imported in portfolio.ts.
+   ========================================================================== */
+
+.portfolio {
+  width: min(100%, 90rem);
+  margin: 0 auto;
+  padding: 7rem 1.5rem 4rem;
+  overflow-x: clip;
+}
+
+.portfolio .container {
+  padding-block: 0 !important;
+}
+
+/* ==========================================================================
+   Scroll Reveal Base
+   ========================================================================== */
+
+.portfolio-reveal {
+  opacity: 0;
+  transform: translateY(24px);
+  transition: opacity 0.6s cubic-bezier(0.16, 1, 0.3, 1),
+              transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.portfolio-reveal.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Staggered children */
+.portfolio-reveal-stagger > * {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.5s cubic-bezier(0.16, 1, 0.3, 1),
+              transform 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.portfolio-reveal-stagger.is-visible > * {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.portfolio-reveal-stagger.is-visible > *:nth-child(1) { transition-delay: 0ms; }
+.portfolio-reveal-stagger.is-visible > *:nth-child(2) { transition-delay: 80ms; }
+.portfolio-reveal-stagger.is-visible > *:nth-child(3) { transition-delay: 160ms; }
+.portfolio-reveal-stagger.is-visible > *:nth-child(4) { transition-delay: 240ms; }
+.portfolio-reveal-stagger.is-visible > *:nth-child(5) { transition-delay: 320ms; }
+.portfolio-reveal-stagger.is-visible > *:nth-child(6) { transition-delay: 400ms; }
+
+/* ==========================================================================
+   Section Headings
+   ========================================================================== */
+
+.portfolio__section {
+  margin-bottom: var(--space-16);
+}
+
+.portfolio__section-header {
+  text-align: center;
+  margin-bottom: var(--space-10);
+}
+
+.portfolio__section-title {
+  font-size: var(--text-3xl);
+  font-weight: var(--font-bold);
+  color: var(--color-text);
+  margin: 0 0 var(--space-3);
+}
+
+.portfolio__section-subtitle {
+  font-size: var(--text-lg);
+  color: var(--color-text-muted);
+  margin: 0;
+  max-width: 36rem;
+  margin-inline: auto;
+}
+
+/* Section divider with diamond */
+.portfolio__section-divider {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-4);
+  margin: 0 0 var(--space-10);
+}
+
+.portfolio__section-divider::before,
+.portfolio__section-divider::after {
+  content: '';
+  flex: 1;
+  max-width: 120px;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, var(--color-border), transparent);
+}
+
+.portfolio__section-divider .diamond {
+  width: 8px;
+  height: 8px;
+  background: var(--brand-gold);
+  transform: rotate(45deg);
+  flex-shrink: 0;
+}
+
+/* ==========================================================================
+   Hero Section
+   ========================================================================== */
+
+.portfolio__hero {
+  text-align: center;
+  padding: var(--space-10) 0 var(--space-12);
+}
+
+.portfolio__hero-eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2);
+  padding: var(--space-2) var(--space-4);
+  background: rgba(212, 175, 55, 0.1);
+  border: 1px solid rgba(212, 175, 55, 0.2);
+  border-radius: var(--radius-full);
+  font-size: var(--text-sm);
+  font-weight: var(--font-medium);
+  color: var(--brand-gold);
+  margin-bottom: var(--space-6);
+  animation: reveal-fade 0.8s ease-out both;
+}
+
+.portfolio__title {
+  font-size: clamp(2.5rem, 5vw, 4.5rem);
+  font-weight: var(--font-bold);
+  line-height: 1.1;
+  margin: 0 0 var(--space-4);
+  color: var(--color-text);
+  animation: reveal-up 0.8s ease-out 0.1s both;
+}
+
+.portfolio__title-accent {
+  background: linear-gradient(135deg, var(--brand-gold), var(--brand-amethyst));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.portfolio__subtitle {
+  font-size: var(--text-xl);
+  color: var(--color-text-muted);
+  max-width: 42rem;
+  margin: 0 auto var(--space-8);
+  line-height: var(--leading-relaxed);
+  animation: reveal-up 0.8s ease-out 0.2s both;
+}
+
+.portfolio__hero-stats {
+  display: flex;
+  justify-content: center;
+  gap: var(--space-10);
+  padding-top: var(--space-8);
+  border-top: 1px solid var(--color-border);
+  max-width: 40rem;
+  margin: 0 auto;
+  animation: reveal-up 0.8s ease-out 0.3s both;
+}
+
+.portfolio__hero-stat {
+  text-align: center;
+}
+
+.portfolio__hero-stat-value {
+  display: block;
+  font-size: var(--text-3xl);
+  font-weight: var(--font-bold);
+  color: var(--brand-gold);
+  line-height: 1;
+  margin-bottom: var(--space-1);
+}
+
+.portfolio__hero-stat-label {
+  font-size: var(--text-sm);
+  color: var(--color-text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+/* Hero entrance keyframes */
+@keyframes reveal-up {
+  from { opacity: 0; transform: translateY(24px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes reveal-fade {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+
+/* ==========================================================================
+   Case Study Section
+   ========================================================================== */
+
+.portfolio__case-studies {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 28rem), 1fr));
+  gap: var(--space-6);
+}
+
+/* ==========================================================================
+   Projects Grid + Filter
+   ========================================================================== */
+
+.portfolio__filter {
+  display: flex;
+  gap: var(--space-3);
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-bottom: var(--space-8);
+}
+
+.portfolio__filter-btn {
+  border: 1px solid var(--color-border);
+  background: var(--color-bg-alt);
+  color: var(--color-text);
+  border-radius: var(--radius-full);
+  padding: var(--space-2) var(--space-5);
+  font-size: var(--text-sm);
+  font-weight: var(--font-medium);
+  cursor: pointer;
+  transition: all var(--transition-fast);
+  user-select: none;
+}
+
+.portfolio__filter-btn:hover {
+  border-color: var(--brand-gold);
+  color: var(--brand-gold);
+}
+
+.portfolio__filter-btn:active {
+  transform: scale(0.95);
+}
+
+.portfolio__filter-btn--active {
+  background: var(--brand-gold);
+  color: var(--neutral-900);
+  border-color: var(--brand-gold);
+}
+
+.portfolio__grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(22rem, 1fr));
+  gap: var(--space-6);
+  align-items: stretch;
+  justify-content: start;
+}
+
+/* ==========================================================================
+   Project Card — Hover Overlay
+   ========================================================================== */
+
+.card--project {
+  position: relative;
+  content-visibility: auto;
+  contain-intrinsic-size: 0 450px;
+  transition: opacity 450ms ease, transform 450ms ease;
+  will-change: opacity, transform;
+  max-width: 28rem;
+}
+
+.card--project__overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to top,
+    rgba(0, 0, 0, 0.85) 0%,
+    rgba(0, 0, 0, 0.4) 50%,
+    transparent 100%
+  );
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  padding: var(--space-8);
+  opacity: 0;
+  transition: opacity var(--transition-base);
+  border-radius: var(--card-radius);
+  z-index: 2;
+  pointer-events: none;
+}
+
+.card--project:hover .card--project__overlay {
+  opacity: 1;
+}
+
+.card--project__overlay-cta {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2);
+  padding: var(--space-3) var(--space-6);
+  background: var(--brand-gold);
+  color: var(--neutral-900);
+  font-weight: var(--font-semibold);
+  font-size: var(--text-base);
+  border-radius: var(--radius-md);
+  text-decoration: none;
+  transform: translateY(12px);
+  transition: transform var(--transition-base);
+  pointer-events: auto;
+}
+
+.card--project:hover .card--project__overlay-cta {
+  transform: translateY(0);
+}
+
+.card--project__overlay-cta:hover {
+  background: #e5c145;
+}
+
+/* ==========================================================================
+   Testimonials Grid
+   ========================================================================== */
+
+.portfolio__testimonials {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 24rem), 1fr));
+  gap: var(--space-6);
+}
+
+.card--client {
+  transition: transform var(--transition-base),
+              box-shadow var(--transition-base);
+  content-visibility: auto;
+  contain-intrinsic-size: 0 320px;
+}
+
+.card--client:hover {
+  transform: translateY(-6px);
+  box-shadow: var(--shadow-xl);
+}
+
+.card--client__quote {
+  transition: opacity var(--transition-slow);
+}
+
+.card--client:hover .card--client__quote {
+  opacity: 0.9;
+}
+
+/* ==========================================================================
+   Skills Grid
+   ========================================================================== */
+
+.portfolio__skills {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 18rem), 1fr));
+  gap: var(--space-4);
+}
+
+.card--skill {
+  content-visibility: auto;
+  contain-intrinsic-size: 0 240px;
+}
+
+.card--skill__progress-fill {
+  width: 0;
+  transition: width 1s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.card--skill.is-visible .card--skill__progress-fill {
+  width: var(--progress-width, 0%);
+}
+
+/* ==========================================================================
+   CTA Section — Gradient Background
+   ========================================================================== */
+
+.portfolio__cta {
+  text-align: center;
+  padding: var(--space-12) var(--space-6);
+  background: linear-gradient(
+    135deg,
+    var(--color-bg-alt) 0%,
+    rgba(212, 175, 55, 0.06) 50%,
+    var(--color-bg-alt) 100%
+  );
+  border-radius: var(--card-radius);
+  border: 1px solid var(--color-border);
+  position: relative;
+  overflow: hidden;
+}
+
+.portfolio__cta::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 400px;
+  height: 400px;
+  background: radial-gradient(circle, rgba(212, 175, 55, 0.08) 0%, transparent 70%);
+  pointer-events: none;
+}
+
+.portfolio__cta-title {
+  font-size: var(--text-2xl);
+  font-weight: var(--font-bold);
+  color: var(--color-text);
+  margin: 0 0 var(--space-3);
+  position: relative;
+}
+
+.portfolio__cta-text {
+  font-size: var(--text-lg);
+  color: var(--color-text-muted);
+  margin: 0 0 var(--space-6);
+  max-width: 32rem;
+  margin-inline: auto;
+  position: relative;
+}
+
+.portfolio__cta-actions {
+  display: flex;
+  justify-content: center;
+  gap: var(--space-4);
+  flex-wrap: wrap;
+  position: relative;
+}
+
+/* ==========================================================================
+   Responsive
+   ========================================================================== */
+
+@media (max-width: 768px) {
+  .portfolio {
+    padding: 6.5rem 1rem 3rem;
+  }
+
+  .portfolio__hero {
+    padding: var(--space-6) 0 var(--space-8);
+  }
+
+  .portfolio__hero-stats {
+    gap: var(--space-6);
+  }
+
+  .portfolio__hero-stat-value {
+    font-size: var(--text-2xl);
+  }
+
+  .portfolio__section {
+    margin-bottom: var(--space-10);
+  }
+
+  .portfolio__section-title {
+    font-size: var(--text-2xl);
+  }
+
+  .portfolio__filter {
+    gap: var(--space-2);
+  }
+
+  .portfolio__filter-btn {
+    width: 100%;
+    justify-content: center;
+    text-align: center;
+  }
+
+  .portfolio__grid,
+  .portfolio__case-studies,
+  .portfolio__testimonials,
+  .portfolio__skills {
+    grid-template-columns: 1fr;
+    gap: var(--space-4);
+  }
+
+  .portfolio__cta {
+    padding: var(--space-8) var(--space-4);
+  }
+
+  .card--project__overlay {
+    display: none;
+  }
+}
+
+@media (max-width: 479px) {
+  .portfolio {
+    padding-inline: 0.875rem;
+  }
+
+  .portfolio__hero-stats {
+    flex-direction: column;
+    gap: var(--space-4);
+    align-items: center;
+  }
+}
+
+/* ==========================================================================
+   Reduced Motion
+   ========================================================================== */
+
+@media (prefers-reduced-motion: reduce) {
+  .portfolio-reveal,
+  .portfolio-reveal-stagger > *,
+  .portfolio__hero-eyebrow,
+  .portfolio__title,
+  .portfolio__subtitle,
+  .portfolio__hero-stats {
+    opacity: 1;
+    transform: none;
+    transition: none;
+    animation: none;
+  }
+
+  .card--skill__progress-fill {
+    transition: none;
+  }
+
+  .card--project__overlay,
+  .card--project__overlay-cta {
+    transition: none;
+  }
+}

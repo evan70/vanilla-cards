@@ -1,0 +1,30 @@
+
+/* ==========================================================================
+   Gallery Item - Individual Gallery Entry
+   ========================================================================== */
+
+.gallery__item {
+  position: relative;
+  aspect-ratio: 1;
+  overflow: hidden;
+  border-radius: var(--radius-lg);
+  cursor: pointer;
+  break-inside: avoid;
+  margin-bottom: 0; /* Grid gap handles spacing */
+}
+
+/* Masonry - needs margin for column layout */
+.gallery__grid--masonry .gallery__item {
+  margin-bottom: var(--space-3);
+  aspect-ratio: auto;
+  height: auto;
+}
+
+/* Hover effects */
+.gallery__item:hover .gallery__image {
+  transform: scale(1.05);
+}
+
+.gallery__item:hover .gallery__overlay {
+  opacity: 1;
+}

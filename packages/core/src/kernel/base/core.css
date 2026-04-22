@@ -1,0 +1,7 @@
+@import "../tokens/base.css";
+
+/* Core Styles - Structural only */
+
+main {
+  min-height: 100vh;
+}

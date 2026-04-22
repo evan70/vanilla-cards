@@ -1,0 +1,351 @@
+
+/* ==========================================================================
+   Header Card Component
+   Card-first architecture for frontend header with navigation
+
+   BEM: .card--header (block), .card--header__* (element)
+   ========================================================================== */
+
+/* ==========================================================================
+   HEADER CARD (extends .card)
+   ========================================================================== */
+.card--header,
+vanilla-card[variant="header"] {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 10001;
+  border-radius: 0;
+  border: none;
+  padding-block: 0; /* No top/bottom padding for compact height */
+  padding-inline: 0; /* Removed side padding for full width */
+  box-shadow: none;
+  transition: background var(--transition-base), box-shadow var(--transition-base);
+}
+
+/* Tablet - left/right padding */
+@media (min-width: 768px) {
+  .card--header,
+  vanilla-card[variant="header"] {
+    padding-inline: 0;
+  }
+}
+
+/* Desktop - left/right padding */
+@media (min-width: 1024px) {
+  .card--header,
+  vanilla-card[variant="header"] {
+    padding-inline: 0;
+  }
+}
+
+/* Theme-specific transparency is already in --card-bg variable */
+
+.card--header--scrolled,
+vanilla-card[variant="header"].card--header--scrolled {
+  background: var(--glass-bg);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  box-shadow: var(--shadow-md);
+}
+
+/* ==========================================================================
+   HEADER INNER
+   ========================================================================== */
+.card--header__inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  max-width: 1440px;
+  margin: 0 auto;
+  padding: 0;
+  min-height: 45px;
+  width: 100%;
+}
+
+/* Tablet and up */
+@media (min-width: 768px) {
+  .card--header__inner {
+    min-height: 45px;
+  }
+}
+
+/* Desktop */
+@media (min-width: 1024px) {
+  .card--header__inner {
+    min-height: 45px;
+  }
+}
+
+/* ==========================================================================
+   HEADER LOGO
+   ========================================================================== */
+.card--header__logo {
+  display: flex;
+  align-items: center;
+  gap: var(--space-1);
+  font-family: var(--font-serif);
+  font-size: var(--text-xl);
+  font-weight: 700;
+  color: var(--color-text);
+  text-decoration: none;
+  transition: opacity var(--transition-fast);
+}
+
+.card--header__logo:hover {
+  opacity: 0.8;
+}
+
+.card--header__logo-dot {
+  color: var(--brand-gold);
+}
+
+/* ==========================================================================
+   HEADER NAVIGATION
+   ========================================================================== */
+.card--header__nav {
+  display: flex;
+}
+
+.card--header__nav-list {
+  display: flex;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  gap: var(--space-1);
+}
+
+.card--header__nav-item {
+  display: flex;
+  align-items: center;
+}
+
+.card--header__nav-link {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2);
+  padding: var(--space-1) var(--space-2); /* Reduced padding for compact height */
+  font-family: var(--font-sans);
+  font-size: var(--text-base);
+  font-weight: 500;
+  color: var(--color-text);
+  text-decoration: none;
+  border-radius: var(--radius-md);
+  transition: color var(--transition-fast), background-color var(--transition-fast);
+}
+
+.card--header__nav-link:hover {
+  color: var(--color-text);
+  background-color: var(--card-bg-hover);
+}
+
+.card--header__nav-link--active {
+  color: var(--neutral-900);
+  background-color: var(--brand-gold);
+  font-weight: 700;
+}
+
+/* ==========================================================================
+   HEADER ACTIONS
+   ========================================================================== */
+.card--header__actions {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+}
+
+/* Icon button (search, languages) */
+.card--header__icon-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  border-radius: var(--radius-md);
+  background: transparent;
+  border: 1px solid transparent;
+  color: var(--color-text);
+  cursor: pointer;
+  transition: all var(--transition-fast);
+}
+
+.card--header__icon-btn:hover {
+  background: var(--card-bg-hover);
+  border-color: var(--color-border);
+}
+
+/* ==========================================================================
+   THEME TOGGLE
+   ========================================================================== */
+.card--header__theme-toggle {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  border-radius: var(--radius-md);
+  background: transparent;
+  border: 1px solid transparent;
+  color: var(--color-text);
+  cursor: pointer;
+  transition: all var(--transition-fast);
+}
+
+.card--header__theme-toggle:hover {
+  background: var(--card-bg-hover);
+  border-color: var(--color-border);
+}
+
+.card--header__theme-toggle:focus-visible {
+  outline: none;
+  box-shadow: 0 0 0 2px var(--brand-gold);
+}
+
+.card--header__theme-icon {
+  width: 20px;
+  height: 20px;
+}
+
+/* Show sun in dark mode, moon in light mode */
+/* Default (light mode): moon visible, sun hidden */
+.card--header__theme-icon--moon {
+  display: block;
+}
+
+.card--header__theme-icon--sun {
+  display: none;
+}
+
+/* Dark mode: sun visible, moon hidden */
+html[data-theme="dark"] .card--header__theme-icon--sun {
+  display: block;
+}
+
+html[data-theme="dark"] .card--header__theme-icon--moon {
+  display: none;
+}
+
+/* ==========================================================================
+   HEADER ACTIONS (4 ICONS: Search, Language, Theme, Menu)
+   ========================================================================== */
+
+.card--header__actions {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+}
+
+.card--header__action-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  padding: 0;
+  background: transparent;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  color: var(--color-text);
+  cursor: pointer;
+  transition: all var(--transition-fast);
+  flex-shrink: 0;
+}
+
+.card--header__action-btn:hover {
+  background: var(--card-bg-hover);
+  border-color: var(--brand-gold);
+  color: var(--brand-gold);
+}
+
+.card--header__action-icon {
+  width: 20px;
+  height: 20px;
+  stroke: currentColor;
+}
+
+/* Light theme - ensure icons are visible */
+[data-theme="light"] .card--header__action-btn {
+  color: #000;
+}
+
+[data-theme="light"] .card--header__action-btn:hover {
+  color: #b8941f;
+}
+
+/* ==========================================================================
+   MOBILE TOGGLE (Meatballs Menu - 3 Dots)
+   ========================================================================== */
+.card--header__mobile-toggle,
+vanilla-card[variant="header"] .card--header__mobile-toggle {
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  padding: var(--space-2);
+  width: 40px;
+  height: 40px;
+  align-items: center;
+  justify-content: center;
+  border-radius: var(--radius-md);
+  transition: background-color var(--transition-fast);
+  display: none !important; /* Hidden on desktop, overrides .icon-btn */
+}
+
+.card--header__mobile-toggle:hover {
+  background-color: var(--card-bg-hover);
+}
+
+.card--header__mobile-toggle:focus-visible {
+  outline: none;
+  box-shadow: 0 0 0 2px var(--brand-gold);
+}
+
+/* Show on mobile only */
+@media (max-width: 768px) {
+  .card--header__mobile-toggle {
+    display: flex !important;
+  }
+}
+
+/* ==========================================================================
+   MOBILE ICON (MEATBALLS - 3 DOTS)
+   ========================================================================== */
+.card--header__mobile-icon {
+  width: 24px;
+  height: 24px;
+  color: var(--color-text);
+  transition: all var(--transition-base);
+}
+
+.card--header__icon-dot {
+  fill: currentColor;
+  transition: all var(--transition-base);
+  transform-origin: center;
+}
+
+/* Animation: 3 dots → X */
+.card--header__mobile-toggle--open .card--header__icon-dot--top {
+  transform: translateY(6px) scaleX(5) rotate(45deg);
+  border-radius: 1px;
+}
+
+.card--header__mobile-toggle--open .card--header__icon-dot--middle {
+  opacity: 0;
+  transform: scale(0);
+}
+
+.card--header__mobile-toggle--open .card--header__icon-dot--bottom {
+  transform: translateY(-6px) scaleX(5) rotate(-45deg);
+  border-radius: 1px;
+}
+
+/* ==========================================================================
+   RESPONSIVE
+   ========================================================================== */
+@media (max-width: 768px) {
+  .card--header__nav {
+    display: none;
+  }
+
+  /* Theme toggle and other actions stay visible */
+}

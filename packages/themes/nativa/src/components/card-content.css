@@ -1,0 +1,304 @@
+
+/* ==========================================================================
+   Content Card Component
+   Extends: .card
+   ========================================================================== */
+
+/**
+ * Content card - optimized for articles/blog posts
+ */
+.card--content {
+  /* Inherits all .card styles */
+}
+
+/**
+ * Content card - ensure image stays within bounds
+ */
+.card--content {
+  overflow: hidden;
+  position: relative;
+}
+
+/**
+ * Content card image wrapper
+ * Extends beyond card padding to reach card edges
+ */
+.card--content__image-wrapper {
+  margin: calc(-1 * var(--space-6)) calc(-1 * var(--space-6)) 0;
+  overflow: hidden;
+  border-top-left-radius: var(--card-radius);
+  border-top-right-radius: var(--card-radius);
+}
+
+@media (min-width: 768px) {
+  .card--content__image-wrapper {
+    margin: calc(-1 * var(--space-8)) calc(-1 * var(--space-8)) 0;
+  }
+}
+
+/**
+ * Content card image with hover zoom
+ */
+.card--content__image {
+  display: block;
+  width: 100%;
+  height: var(--card--content-image-height);
+  object-fit: cover;
+  transition: transform var(--transition-slow);
+}
+
+.card--content--interactive:hover .card--content__image {
+  transform: scale(1.05);
+}
+
+/* ==========================================================================
+   Lazy Loading States
+   ========================================================================== */
+
+/**
+ * Lazy image placeholder
+ */
+.card--content__image.lazy {
+  background: linear-gradient(
+    90deg,
+    var(--neutral-800) 0%,
+    var(--neutral-700) 50%,
+    var(--neutral-800) 100%
+  );
+  background-size: 200% 100%;
+  animation: card--content-shimmer 1.5s infinite;
+}
+
+@keyframes card--content-shimmer {
+  0% {
+    background-position: 200% 0;
+  }
+  100% {
+    background-position: -200% 0;
+  }
+}
+
+/**
+ * Loaded image
+ */
+.card--content__image.loaded {
+  background: transparent;
+  animation: none;
+}
+
+/**
+ * Content card category badge
+ */
+.card--content__category {
+  position: absolute;
+  top: var(--space-4);
+  left: var(--space-4);
+  display: inline-flex;
+  align-items: center;
+  padding: var(--space-1) var(--space-3);
+  background: rgba(0, 0, 0, 0.7);
+  color: var(--neutral-0);
+  font-size: var(--text-xs);
+  font-weight: var(--font-medium);
+  border-radius: var(--radius-full);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+/**
+ * Content card meta (date, author)
+ */
+.card--content__meta {
+  display: flex;
+  align-items: center;
+  gap: var(--space-4);
+  margin-bottom: var(--space-2);
+  font-size: var(--text-sm);
+  color: var(--color-text-muted);
+}
+
+.card--content__meta-item {
+  display: flex;
+  align-items: center;
+  gap: var(--space-1);
+}
+
+/**
+ * Content card excerpt
+ */
+.card--content__excerpt {
+  margin: var(--space-3) 0 0;
+  font-size: var(--text-base);
+  color: var(--card--content-excerpt-color);
+  line-height: var(--leading-relaxed);
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+/**
+ * Content card link
+ * Note: Dark theme color override centralized in tokens/theme.css
+ */
+.card--content__link {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2);
+  color: var(--brand-gold);
+  font-weight: var(--font-medium);
+  text-decoration: none;
+  transition: gap var(--transition-fast);
+}
+
+.card--content__link:hover {
+  gap: var(--space-3);
+}
+
+/* Modifier: Horizontal layout */
+.card--content--horizontal {
+  flex-direction: row;
+}
+
+.card--content--horizontal .card--content__image-wrapper {
+  width: 40%;
+  margin: calc(var(--card-padding) * -1) 0 calc(var(--card-padding) * -1) calc(var(--card-padding) * -1);
+  border-top-right-radius: 0;
+  border-bottom-left-radius: var(--card-radius);
+}
+
+.card--content--horizontal .card--content__body {
+  width: 60%;
+  padding-left: var(--card-padding);
+}
+
+/* Modifier: No image */
+.card--content--no-image .card--content__title {
+  margin-top: 0;
+}
+
+/* ==========================================================================
+   MODIFIER: FULL IMAGE
+   Image fills entire card, text overlay
+   ========================================================================== */
+
+.card--content--full-image {
+  padding: 0;
+  overflow: hidden;
+  position: relative;
+  min-height: 400px;
+}
+
+.card--content--full-image .card--content__image-wrapper {
+  margin: 0;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  inset: 0;
+  border-radius: 0;
+}
+
+.card--content--full-image .card--content__image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.card--content--full-image .card__body {
+  position: relative;
+  z-index: 1;
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.9) 0%, rgba(0, 0, 0, 0.5) 50%, transparent 100%);
+  color: var(--neutral-0);
+  padding: var(--card-padding);
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  min-height: 100%;
+}
+
+.card--content--full-image .card__title {
+  color: var(--neutral-0);
+  margin-bottom: var(--space-2);
+}
+
+.card--content--full-image .card--content__excerpt {
+  color: var(--neutral-200);
+  -webkit-line-clamp: 2;
+}
+
+.card--content--full-image .card--content__meta {
+  color: var(--neutral-300);
+}
+
+.card--content--full-image .card--content__link {
+  color: var(--brand-gold);
+}
+
+/* Hover effect for full image cards */
+.card--content--full-image.card--content--interactive:hover .card--content__image {
+  transform: scale(1.05);
+}
+
+/* ==========================================================================
+   MODIFIER: HALF IMAGE (TOP)
+   Image fills top half of card
+   ========================================================================== */
+
+.card--content--half-image {
+  padding: 0;
+  overflow: hidden;
+}
+
+.card--content--half-image .card--content__image-wrapper {
+  margin: 0;
+  width: 100%;
+  height: 50%;
+  position: relative;
+  border-radius: 0;
+}
+
+.card--content--half-image .card--content__image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.card--content--half-image .card__body {
+  padding: var(--card-padding);
+  height: 50%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.card--content--half-image .card__title {
+  margin-top: 0;
+}
+
+/* ==========================================================================
+   CONTENT CARD FOOTER
+   Override base card footer for content cards
+   ========================================================================== */
+
+.card--content .card__footer {
+  margin-top: auto; /* Ensure pushed to bottom */
+}
+
+.card--content__footer-link {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2);
+  color: var(--brand-gold);
+  font-weight: var(--font-medium);
+  text-decoration: none;
+  transition: gap var(--transition-fast);
+}
+
+.card--content__footer-link:hover {
+  gap: var(--space-3);
+}
+
+.card--content__footer-meta {
+  color: var(--color-text-muted);
+  font-size: var(--text-sm);
+}

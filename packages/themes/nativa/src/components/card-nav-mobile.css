@@ -1,0 +1,301 @@
+
+/* ==========================================================================
+   Mobile Navigation Card Component
+   Card-first architecture for mobile menu overlay
+   
+   Theme-aware using CSS custom properties (DRY pattern)
+   
+   BEM: .card--nav-mobile (block), .card--nav-mobile__* (element)
+   NOTE: Critical styles are applied via JavaScript inline styles
+   This CSS is fallback-only for browsers that support it
+   ========================================================================== */
+
+/* ==========================================================================
+   MOBILE NAV OVERLAY
+   ========================================================================== */
+.mobile-nav-overlay {
+  position: fixed;
+  top: 45px;
+  left: 0;
+  right: 0;
+  bottom: 0;
+
+  /* Semi-transparent overlay */
+  background-color: rgba(0, 0, 0, 0.6);
+
+  z-index: 9998;
+
+  /* Use pointer-events: none when hidden so it doesn't intercept clicks */
+  pointer-events: none;
+
+  /* Smooth fade animation */
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s ease, visibility 0.3s ease;
+}
+
+/* When overlay is visible (no hidden attribute), allow pointer events */
+.mobile-nav-overlay:not([hidden]) {
+  pointer-events: auto;
+  opacity: 1;
+  visibility: visible;
+}
+
+/* ==========================================================================
+   MOBILE NAV CARD - Side-drawer (slides from right)
+   ========================================================================== */
+.card--nav-mobile,
+vanilla-card[variant="nav"] {
+  position: fixed;
+  top: 45px;
+  right: 0;
+  bottom: 0;
+  width: 280px;
+  max-width: 85vw;
+
+  z-index: 10000;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+
+  /* Hidden by default using translateX */
+  transform: translateX(100%);
+  opacity: 0;
+  visibility: hidden;
+  transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.3s ease, visibility 0.3s ease;
+}
+
+/* ==========================================================================
+   MOBILE NAV - Theme-aware
+   ========================================================================== */
+.card--nav-mobile__nav {
+  display: flex;
+  flex-direction: column;
+  padding: var(--space-4);
+  gap: var(--space-2);
+  flex: 1;
+
+  /* CSS3 Custom Properties - theme-aware */
+  background: var(--glass-bg);
+}
+
+.card--nav-mobile__item {
+  display: flex;
+  align-items: center;
+}
+
+/* Mobile Nav Link - Theme-aware */
+.card--nav-mobile__link {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  padding: var(--space-4) var(--space-5);
+  font-family: var(--font-sans);
+  font-size: var(--text-lg);
+  font-weight: 600;
+  
+  /* Fallback (dark theme) */
+  color: #ffffff;
+  background: linear-gradient(135deg, rgba(255,255,255,0.05) 0%, rgba(255,255,255,0.02) 100%);
+  border: 1px solid rgba(255,255,255,0.08);
+  
+  /* CSS3 Custom Properties - theme-aware */
+  color: var(--color-text);
+  background: var(--glass-bg);
+  border: 1px solid var(--glass-border);
+  
+  text-decoration: none;
+  border-radius: var(--radius-lg);
+  transition: all 0.2s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.card--nav-mobile__link::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: radial-gradient(ellipse at center, rgba(212, 175, 55, 0.15), transparent 70%);
+  opacity: 0;
+  transition: opacity 0.2s ease;
+  pointer-events: none;
+}
+
+.card--nav-mobile__link:hover::before {
+  opacity: 1;
+}
+
+.card--nav-mobile__link:hover {
+  color: var(--color-text);
+  background: var(--glass-bg-gradient-hover);
+  border-color: var(--glass-border-hover);
+  transform: translateX(4px);
+  box-shadow: var(--glass-shadow);
+}
+
+.card--nav-mobile__link--active {
+  color: var(--brand-gold);
+  background: linear-gradient(135deg, rgba(255, 215, 0, 0.15) 0%, rgba(255, 215, 0, 0.05) 100%);
+  border-color: rgba(255, 215, 0, 0.3);
+  font-weight: 700;
+  box-shadow: 0 2px 8px rgba(255, 215, 0, 0.1);
+}
+
+.card--nav-mobile__link--active::before {
+  background: radial-gradient(ellipse at center, rgba(255, 215, 0, 0.2), transparent 70%);
+  opacity: 1;
+}
+
+/* Arrow icon for links */
+.card--nav-mobile__link::after {
+  content: '→';
+  font-size: var(--text-xl);
+  opacity: 0;
+  transform: translateX(-10px);
+  transition: all 0.2s ease;
+  color: var(--brand-gold);
+}
+
+.card--nav-mobile__link:hover::after {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.card--nav-mobile__link--active::after {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+/* Mobile nav text span - Theme-aware */
+.card--nav-mobile__text {
+  color: var(--color-text);
+}
+
+/* ==========================================================================
+   MOBILE NAV INNER - fills full height, pushes footer to bottom
+   ========================================================================== */
+.card--nav-mobile__inner {
+  display: flex;
+  flex-direction: column;
+  min-height: 100%;
+  /* Inherits background from parent */
+}
+
+/* ==========================================================================
+   MOBILE NAV FOOTER - Theme-aware
+   ========================================================================== */
+.card--nav-mobile__footer {
+  /* Fallback (dark theme) */
+  background: rgba(255, 255, 255, 0.05);
+  border-top: 1px solid rgba(255, 255, 255, 0.06);
+  
+  /* CSS3 Custom Properties - theme-aware */
+  background: var(--glass-bg);
+  border-top: 1px solid var(--glass-border);
+  
+  padding: var(--space-4) var(--space-5);
+  margin-top: auto; /* Push to bottom */
+}
+
+.card--nav-mobile__copyright {
+  color: var(--color-text-muted);
+  font-size: var(--text-xs);
+  margin: 0;
+  text-align: center;
+}
+
+/* Mobile theme toggle (in header actions) - Theme-aware */
+.card--nav-mobile__theme {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-3);
+  padding: var(--space-3) var(--space-4);
+  border-bottom: 1px solid var(--color-border);
+}
+
+.card--nav-mobile__theme-label {
+  font-size: var(--text-sm);
+  font-weight: 600;
+  color: var(--color-text);
+}
+
+.card--nav-mobile__theme-toggle {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  border-radius: var(--radius-md);
+  background: transparent;
+  border: 1px solid var(--color-border);
+  color: var(--color-text);
+  cursor: pointer;
+  transition: all var(--transition-fast);
+  flex-shrink: 0;
+}
+
+.card--nav-mobile__theme-toggle:hover {
+  background: var(--card-bg-hover);
+  border-color: var(--brand-gold);
+}
+
+.card--nav-mobile__theme-icon {
+  width: 20px;
+  height: 20px;
+}
+
+/* Show sun in dark mode, moon in light mode */
+.card--nav-mobile__theme-icon--sun {
+  display: none;
+}
+
+[data-theme="dark"] .card--nav-mobile__theme-icon--sun {
+  display: block;
+}
+
+[data-theme="dark"] .card--nav-mobile__theme-icon--moon {
+  display: none;
+}
+
+/* ==========================================================================
+   RESPONSIVE
+   ========================================================================== */
+@media (min-width: 769px) {
+  .card--nav-mobile {
+    display: none !important;
+    transform: none !important;
+  }
+
+  .mobile-nav-overlay {
+    display: none !important;
+    pointer-events: none !important;
+  }
+}
+
+/* Prevent horizontal scroll when menu is open */
+body.mobile-menu-open {
+  overflow-x: hidden;
+}
+
+/* ==========================================================================
+   OPEN STATE MODIFIERS (for JavaScript toggle)
+   ========================================================================== */
+
+/* Mobile nav card open state - slides in from right */
+.card--nav-mobile.card--nav-mobile--open,
+vanilla-card[variant="nav"].card--nav-mobile--open {
+  display: flex;
+  transform: translateX(0);
+  visibility: visible;
+  opacity: 1;
+}
+
+/* Body class to prevent horizontal scroll */
+body.mobile-menu-open {
+  overflow-x: hidden;
+}

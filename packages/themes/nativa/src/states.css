@@ -1,0 +1,227 @@
+
+/* ==========================================================================
+   State Utilities
+   ========================================================================== */
+
+/**
+ * Global Reset - Remove default browser margins
+ * box-sizing: border-box prevents padding from breaking width: 100%
+ */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  min-height: 100vh;
+}
+
+/**
+ * Body card wrapper
+ * Full-page card-like layout for admin pages
+ * NO border-radius, NO border - full width/height
+ */
+.body-card {
+  margin: 0;
+  padding: var(--space-6);
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  background-color: var(--color-bg-secondary);
+  color: var(--color-text);
+}
+
+@media (min-width: 768px) {
+  .body-card {
+    padding: var(--space-8);
+  }
+}
+
+@media (min-width: 1024px) {
+  .body-card {
+    padding: var(--space-10);
+  }
+}
+
+[data-theme="light"] .body-card {
+  background-color: var(--color-bg);
+  color: var(--color-text);
+}
+
+/**
+ * Visibility states
+ */
+.card--hidden {
+  display: none !important;
+}
+
+.card--invisible {
+  visibility: hidden;
+  opacity: 0;
+}
+
+/**
+ * Disabled state
+ * NOTE: Primary definition lives in card-variants.css
+ * (opacity, pointer-events, cursor, filter: grayscale)
+ */
+
+/**
+ * Highlighted state
+ */
+.card--highlighted {
+  animation: card-pulse 2s ease-in-out infinite;
+}
+
+@keyframes card-pulse {
+  0%,
+  100% {
+    box-shadow: var(--card-shadow);
+  }
+  50% {
+    box-shadow:
+      var(--card-shadow),
+      0 0 0 2px rgba(212, 175, 55, 0.3);
+  }
+}
+
+/**
+ * Fade in animation
+ */
+.card--fade-in {
+  animation: card-fade-in 0.3s ease-out;
+}
+
+@keyframes card-fade-in {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/**
+ * Slide in from left
+ */
+.card--slide-in-left {
+  animation: card-slide-in-left 0.3s ease-out;
+}
+
+@keyframes card-slide-in-left {
+  from {
+    opacity: 0;
+    transform: translateX(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+/**
+ * Slide in from right
+ */
+.card--slide-in-right {
+  animation: card-slide-in-right 0.3s ease-out;
+}
+
+@keyframes card-slide-in-right {
+  from {
+    opacity: 0;
+    transform: translateX(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+/**
+ * Scale in animation
+ */
+.card--scale-in {
+  animation: card-scale-in 0.2s ease-out;
+}
+
+@keyframes card-scale-in {
+  from {
+    opacity: 0;
+    transform: scale(0.9);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+/**
+ * Utility: Full height card
+ */
+.card--full-height {
+  height: 100%;
+}
+
+/**
+ * Utility: Equal height cards (flexbox parent)
+ */
+.card-group--equal-height {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-6);
+}
+
+.card-group--equal-height .card {
+  flex: 1 1 0;
+  min-width: 0;
+}
+
+/**
+ * Utility: Card with badge
+ */
+.card__badge {
+  position: absolute;
+  top: var(--space-3);
+  right: var(--space-3);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 24px;
+  height: 24px;
+  padding: 0 var(--space-2);
+  background: var(--brand-gold);
+  color: var(--neutral-900);
+  font-size: var(--text-xs);
+  font-weight: var(--font-bold);
+  border-radius: var(--radius-full);
+}
+
+.card__badge--error {
+  background: var(--color-error);
+  color: var(--neutral-0);
+}
+
+.card__badge--success {
+  background: var(--color-success);
+  color: var(--neutral-0);
+}
+
+/**
+ * Fade in up animation (for homepage)
+ */
+.fade-in-up {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.4s ease, transform 0.4s ease;
+}
+
+.fade-in-up-visible {
+  opacity: 1;
+  transform: translateY(0);
+}

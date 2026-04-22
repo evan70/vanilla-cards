@@ -1,0 +1,247 @@
+
+/* ==========================================================================
+   Features Section — Viewport peek, mystery, stagger animations.
+   Extracted from home-hero.css + home-animations.css for lazy loading.
+   ========================================================================== */
+
+/* Viewport Sections */
+.viewport-section {
+  position: relative;
+  min-height: 100dvh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+/* Peek Variant */
+.viewport-section--peek {
+  padding-top: 40vh;
+  padding-bottom: 20vh;
+  align-items: flex-start;
+}
+
+.viewport-section--peek--deep { padding-top: 50vh; }
+.viewport-section--peek--shallow { padding-top: 30vh; }
+
+/* Fog Overlay */
+.viewport-section--peek::before,
+.viewport-section--mystery::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 40vh;
+  background: linear-gradient(
+    to bottom,
+    var(--color-background, #ffffff) 0%,
+    rgba(255, 255, 255, 0.8) 20%,
+    rgba(255, 255, 255, 0.4) 40%,
+    transparent 100%
+  );
+  pointer-events: none;
+  z-index: 10;
+}
+
+/* Dark theme fog */
+[data-theme="dark"] .viewport-section--peek::before,
+[data-theme="dark"] .viewport-section--mystery::before {
+  background: linear-gradient(
+    to bottom,
+    var(--color-background, #1a1a1a) 0%,
+    rgba(26, 26, 26, 0.8) 20%,
+    rgba(26, 26, 26, 0.4) 40%,
+    transparent 100%
+  );
+}
+
+/* Mystery Effect */
+.viewport-section--mystery .viewport-section__content,
+.viewport-section--mystery .viewport-section__inner {
+  filter: blur(8px) grayscale(0.5);
+  opacity: 0.6;
+  transform: scale(0.95) translateY(20px);
+  transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.viewport-section--mystery.is-revealed .viewport-section__content,
+.viewport-section--mystery.is-revealed .viewport-section__inner {
+  filter: blur(0) grayscale(0);
+  opacity: 1;
+  transform: scale(1) translateY(0);
+}
+
+/* Staggered Card Reveal */
+.viewport-section--stagger .card,
+.viewport-section--stagger .token-card,
+.viewport-section--stagger > * {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.viewport-section--stagger.is-revealed .card,
+.viewport-section--stagger.is-revealed .token-card,
+.viewport-section--stagger.is-revealed > * {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Note: Stagger delays are set via JavaScript (transitionDelay inline style) */
+
+/* Parallax Background */
+.viewport-section--parallax {
+  background-attachment: fixed;
+  background-size: cover;
+  background-position: center;
+}
+
+/* Responsive */
+@media (max-width: 1024px) {
+  .viewport-section--peek {
+    padding-top: 30vh;
+    padding-bottom: 15vh;
+  }
+}
+
+@media (max-width: 768px) {
+  .viewport-section--peek {
+    padding-top: 20vh;
+    padding-bottom: 10vh;
+  }
+
+  .viewport-section--mystery .viewport-section__content {
+    filter: blur(4px);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .viewport-section--mystery .viewport-section__content,
+  .viewport-section--stagger > * {
+    transition: none;
+  }
+
+  .scroll-progress-container {
+    transition: none;
+  }
+}
+
+/* Reveal animations (shared for features) */
+.home-reveal {
+  display: inline-block;
+  opacity: 0;
+  transform: translateY(40%) scale(0.85);
+  filter: blur(8px);
+  transition: opacity 0.9s cubic-bezier(0.16, 1, 0.3, 1),
+              transform 0.9s cubic-bezier(0.16, 1, 0.3, 1),
+              filter 0.9s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.home-reveal-in .home-reveal {
+  opacity: 1;
+  transform: translateY(0%) scale(1);
+  filter: blur(0px);
+}
+
+.home-reveal-out .home-reveal {
+  opacity: 0;
+  transform: translateY(-25%) scale(1.1);
+  filter: blur(6px);
+  transition: opacity 0.5s cubic-bezier(0.16, 1, 0.3, 1),
+              transform 0.5s cubic-bezier(0.16, 1, 0.3, 1),
+              filter 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.home-reveal.d0 { transition-delay: 0.00s; }
+.home-reveal.d1 { transition-delay: 0.10s; }
+.home-reveal.d2 { transition-delay: 0.20s; }
+.home-reveal.d3 { transition-delay: 0.30s; }
+
+/* ==========================================================================
+   PARALLAX BACKGROUND - View-driven
+   ========================================================================== */
+
+@supports not (animation-timeline: view()) {
+  .parallax-bg {
+    animation: none;
+  }
+}
+
+.parallax-bg {
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(ellipse at 20% 50%, rgba(124, 106, 247, 0.15) 0%, transparent 60%),
+    radial-gradient(ellipse at 80% 50%, rgba(8, 145, 178, 0.1) 0%, transparent 60%);
+  animation: parallax-move linear;
+  animation-timeline: view();
+  animation-range: contain 0% contain 100%;
+}
+
+@keyframes parallax-move {
+  from {
+    transform: translateY(-12%);
+  }
+  to {
+    transform: translateY(12%);
+  }
+}
+
+/* ==========================================================================
+   SECTION ANIMATIONS
+   ========================================================================== */
+
+.section {
+  position: relative;
+}
+
+.section.in .home-reveal {
+  opacity: 1;
+  transform: translateY(0%) scale(1);
+  filter: blur(0px);
+}
+
+.section.out .home-reveal {
+  opacity: 0;
+  transform: translateY(-25%) scale(1.1);
+  filter: blur(6px);
+}
+
+/* ==========================================================================
+   DEMO SECTION ANIMATIONS
+   ========================================================================== */
+
+.demo-section {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1),
+              transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.demo-section.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ==========================================================================
+   ACCESSIBILITY - Reduced Motion
+   ========================================================================== */
+
+@media (prefers-reduced-motion: reduce) {
+  .parallax-bg,
+  .home-reveal,
+  .demo-section,
+  .viewport-section--mystery .viewport-section__content,
+  .viewport-section--stagger > * {
+    animation: none !important;
+    transition: none !important;
+    opacity: 1 !important;
+    transform: none !important;
+    filter: none !important;
+  }
+
+  .scroll-progress-container {
+    transition: none;
+  }
+}

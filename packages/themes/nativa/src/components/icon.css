@@ -1,0 +1,95 @@
+
+/* ==========================================================================
+   Icon Component - Base SVG Styles
+   Consistent styling for all SVG icons across the system
+
+   Usage:
+   - Add class="icon" to any <svg> element
+   - Use color variants: .icon--gold, .icon--emerald, .icon--ruby, etc.
+   - Icons inherit color from parent by default (currentColor)
+   ========================================================================== */
+
+/* ==========================================================================
+   BASE ICON
+   ========================================================================== */
+.icon {
+  display: inline-block;
+  flex-shrink: 0;
+  stroke: currentColor;
+  fill: none;
+  vertical-align: middle;
+}
+
+.icon--inline {
+  margin-right: var(--space-2);
+  width: 1.2em;
+  height: 1.2em;
+}
+
+.icon--sm {
+  width: 16px;
+  height: 16px;
+}
+
+/* ==========================================================================
+   ICON COLOR VARIANTS
+   Use CSS classes instead of inline stroke colors for consistent theming
+   ========================================================================== */
+.icon--gold {
+  color: var(--brand-gold, #d4af37);
+}
+
+.icon--emerald {
+  color: var(--brand-emerald, #10b981);
+}
+
+.icon--ruby {
+  color: var(--brand-ruby, #ef4444);
+}
+
+.icon--sapphire {
+  color: var(--brand-sapphire, #0891b2);
+}
+
+.icon--amethyst {
+  color: var(--brand-amethyst, #7c3aed);
+}
+
+.icon--success {
+  color: var(--color-success, #22c55e);
+}
+
+.icon--error {
+  color: var(--color-error, #ef4444);
+}
+
+/* ==========================================================================
+   ICON INHERITANCE IN BUTTONS
+   Ensure icons inherit button's color context
+   ========================================================================== */
+.btn .icon {
+  stroke: currentColor;
+  color: inherit;
+}
+
+.btn--primary .icon {
+  color: inherit;
+}
+
+.btn--outline .icon {
+  color: inherit;
+}
+
+/* ==========================================================================
+   ICON IN CARD HEADER ACTIONS
+   Consistent sizing for header action icons
+   ========================================================================== */
+.card--header__actions .icon {
+  width: 20px;
+  height: 20px;
+}
+
+.card--header__action-btn .icon {
+  width: 20px;
+  height: 20px;
+}

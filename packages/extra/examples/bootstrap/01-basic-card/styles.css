@@ -1,0 +1,89 @@
+
+/* Demo page styles */
+body {
+    font-family: var(--font-sans);
+    background: var(--color-bg);
+    color: var(--color-text);
+    padding: var(--space-8);
+    margin: 0;
+    min-height: 100vh;
+}
+
+.demo-header {
+    max-width: 1200px;
+    margin: 0 auto var(--space-8);
+}
+
+.demo-header h1 {
+    font-size: var(--text-3xl);
+    margin-bottom: var(--space-2);
+    color: var(--brand-gold);
+}
+
+.demo-header p {
+    color: var(--color-text-muted);
+    font-size: var(--text-lg);
+}
+
+.demo-section {
+    max-width: 1200px;
+    margin: 0 auto var(--space-12);
+}
+
+.demo-section h2 {
+    font-size: var(--text-2xl);
+    margin-bottom: var(--space-6);
+    padding-bottom: var(--space-3);
+    border-bottom: 2px solid var(--brand-gold);
+}
+
+.demo-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: var(--space-6);
+}
+
+.demo-grid--full {
+    grid-template-columns: 1fr;
+}
+
+.demo-info {
+    background: var(--color-bg-elevated);
+    padding: var(--space-4);
+    border-radius: var(--radius-md);
+    margin-top: var(--space-4);
+    font-size: var(--text-sm);
+    color: var(--color-text-muted);
+}
+
+.demo-code {
+    background: var(--neutral-900);
+    color: var(--neutral-100);
+    padding: var(--space-4);
+    border-radius: var(--radius-md);
+    font-family: var(--font-mono);
+    font-size: var(--text-sm);
+    overflow-x: auto;
+    margin-top: var(--space-2);
+}
+
+.variant-badge {
+    display: inline-block;
+    background: var(--brand-gold);
+    color: var(--neutral-900);
+    padding: var(--space-1) var(--space-3);
+    border-radius: var(--radius-full);
+    font-size: var(--text-xs);
+    font-weight: 600;
+    margin-bottom: var(--space-3);
+}
+
+/* Utilities for inline styles */
+.u-text-success { color: var(--color-success); }
+.u-text-error { color: var(--color-error); }
+.u-text-muted { color: var(--color-text-muted); }
+.u-width-full { width: 100%; }
+.u-height-120 { height: 120px; }
+.u-height-200 { height: 200px; }
+.u-object-cover { object-fit: cover; }
+.u-flex-center { display: flex; align-items: center; justify-content: center; }

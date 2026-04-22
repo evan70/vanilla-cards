@@ -1,0 +1,139 @@
+
+/* ==========================================================================
+   Actions Card
+   Generic actions card with grid of buttons.
+   Used in admin cardboard AND frontend.
+   ========================================================================== */
+
+vanilla-card[variant="actions"],
+.card--actions {
+  display: block;
+  background: var(--cardboard-glass-bg);
+  border: 1px solid var(--cardboard-glass-border);
+  border-radius: var(--cardboard-radius-lg);
+  padding: var(--cardboard-card-padding-md);
+}
+
+/* Header */
+.card--actions__header {
+  margin-bottom: var(--space-5);
+}
+
+.card--actions__title {
+  font-size: var(--text-lg);
+  font-weight: 700;
+  color: var(--color-text);
+  margin: 0 0 var(--space-1) 0;
+}
+
+.card--actions__subtitle {
+  font-size: var(--text-sm);
+  color: var(--color-text-muted);
+  margin: 0;
+}
+
+/* Grid */
+.card--actions__grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+  gap: var(--space-3);
+}
+
+/* Button */
+.card--actions__btn,
+.card--actions__button {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: var(--space-5);
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.08), rgba(255, 255, 255, 0.03));
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: var(--radius-md);
+  text-decoration: none;
+  color: var(--color-text);
+  transition: all var(--transition-fast);
+  min-height: 120px;
+  gap: var(--space-3);
+}
+
+.card--actions__btn:hover,
+.card--actions__button:hover {
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.12), rgba(255, 255, 255, 0.06));
+  border-color: rgba(255, 255, 255, 0.12);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.15);
+}
+
+/* Icon */
+.card--actions__icon {
+  font-size: var(--text-2xl);
+  color: var(--brand-gold);
+}
+
+/* Label */
+.card--actions__label {
+  font-weight: 600;
+  font-size: var(--text-sm);
+  text-align: center;
+}
+
+/* Alias: .card-actions (legacy) */
+.card-actions {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+  gap: var(--space-3);
+}
+
+.card-actions__item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: var(--space-5);
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.08), rgba(255, 255, 255, 0.03));
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: var(--radius-md);
+  text-decoration: none;
+  color: var(--color-text);
+  transition: all var(--transition-fast);
+  min-height: 120px;
+}
+
+.card-actions__item:hover {
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.12), rgba(255, 255, 255, 0.06));
+  border-color: rgba(255, 255, 255, 0.12);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.15);
+}
+
+.card-actions__icon {
+  font-size: var(--text-3xl);
+  margin-bottom: var(--space-3);
+  color: var(--brand-gold);
+}
+
+/* Light theme */
+[data-theme="light"] .card--actions__btn,
+[data-theme="light"] .card--actions__button {
+  background: linear-gradient(180deg, rgba(0, 0, 0, 0.04), rgba(0, 0, 0, 0.02));
+  border-color: rgba(0, 0, 0, 0.08);
+}
+
+[data-theme="light"] .card--actions__btn:hover,
+[data-theme="light"] .card--actions__button:hover {
+  background: linear-gradient(180deg, rgba(0, 0, 0, 0.08), rgba(0, 0, 0, 0.04));
+  border-color: rgba(0, 0, 0, 0.12);
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
+}
+
+[data-theme="light"] .card-actions__item {
+  background: linear-gradient(180deg, rgba(0, 0, 0, 0.04), rgba(0, 0, 0, 0.02));
+  border-color: rgba(0, 0, 0, 0.08);
+}
+
+[data-theme="light"] .card-actions__item:hover {
+  background: linear-gradient(180deg, rgba(0, 0, 0, 0.08), rgba(0, 0, 0, 0.04));
+  border-color: rgba(0, 0, 0, 0.12);
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
+}

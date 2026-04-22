@@ -1,0 +1,25 @@
+.hero-section {
+  display: flex;
+  align-items: center;
+  min-height: 100vh;
+}
+
+.hero-section__content {
+  max-width: 800px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.hero-section__title {
+  margin-bottom: var(--space-4, 1rem);
+}
+
+.hero-section__description {
+  margin-bottom: var(--space-8, 2rem);
+}
+
+.hero-section__buttons {
+  display: flex;
+  gap: var(--space-4, 1rem);
+  justify-content: center;
+}

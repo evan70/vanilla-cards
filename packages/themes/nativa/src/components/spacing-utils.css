@@ -1,0 +1,323 @@
+
+/* ==========================================================================
+   Responsive Padding Utilities
+   Mobile-first responsive padding classes
+   
+   Usage:
+   - Apply .pad-responsive for standard responsive padding
+   - Use .pad-header for header-specific padding
+   - Use .pad-section for section/container padding
+   ========================================================================== */
+
+/* ==========================================================================
+   RESPONSIVE PADDING - BASE
+   Progressive padding: mobile → tablet → desktop
+   ========================================================================== */
+
+/* Standard responsive padding (8px → 16px → 24px) */
+.pad-responsive {
+  padding: var(--space-2) var(--space-3); /* Mobile: 8px 12px */
+}
+
+@media (min-width: 768px) {
+  .pad-responsive {
+    padding: var(--space-3) var(--space-4); /* Tablet: 12px 16px */
+  }
+}
+
+@media (min-width: 1024px) {
+  .pad-responsive {
+    padding: var(--space-4) var(--space-6); /* Desktop: 16px 24px */
+  }
+}
+
+/* Compact responsive padding (4px → 8px → 12px) */
+.pad-responsive-sm {
+  padding: var(--space-1) var(--space-2); /* Mobile: 4px 8px */
+}
+
+@media (min-width: 768px) {
+  .pad-responsive-sm {
+    padding: var(--space-2) var(--space-3); /* Tablet: 8px 12px */
+  }
+}
+
+@media (min-width: 1024px) {
+  .pad-responsive-sm {
+    padding: var(--space-3) var(--space-4); /* Desktop: 12px 16px */
+  }
+}
+
+/* Large responsive padding (12px → 16px → 32px) */
+.pad-responsive-lg {
+  padding: var(--space-3) var(--space-4); /* Mobile: 12px 16px */
+}
+
+@media (min-width: 768px) {
+  .pad-responsive-lg {
+    padding: var(--space-4) var(--space-6); /* Tablet: 16px 24px */
+  }
+}
+
+@media (min-width: 1024px) {
+  .pad-responsive-lg {
+    padding: var(--space-6) var(--space-8); /* Desktop: 24px 32px */
+  }
+}
+
+/* ==========================================================================
+   HEADER PADDING
+   Optimized for header components
+   ========================================================================== */
+
+/* Header padding (mobile-first, sticky headers) */
+.pad-header {
+  padding-inline: var(--space-3); /* Mobile: 12px */
+  padding-block: var(--space-2);  /* Top/Bottom: 8px */
+}
+
+@media (min-width: 768px) {
+  .pad-header {
+    padding-inline: var(--space-4); /* Tablet: 16px */
+    padding-block: var(--space-3);  /* Top/Bottom: 12px */
+  }
+}
+
+@media (min-width: 1024px) {
+  .pad-header {
+    padding-inline: var(--space-6); /* Desktop: 24px */
+    padding-block: var(--space-4);  /* Top/Bottom: 16px */
+  }
+}
+
+/* ==========================================================================
+   SECTION PADDING
+   For page sections and containers
+   ========================================================================== */
+
+/* Section padding with responsive max-width container */
+.pad-section {
+  padding: var(--space-8) var(--space-4); /* Mobile: 32px 16px */
+}
+
+@media (min-width: 640px) {
+  .pad-section {
+    padding: var(--space-10) var(--space-6); /* Tablet: 40px 24px */
+  }
+}
+
+@media (min-width: 1024px) {
+  .pad-section {
+    padding: var(--space-12) var(--space-8); /* Desktop: 48px 32px */
+  }
+}
+
+@media (min-width: 1280px) {
+  .pad-section {
+    padding: var(--space-16) var(--space-12); /* Wide: 64px 48px */
+  }
+}
+
+/* ==========================================================================
+   CONTAINER PADDING
+   Inline padding for containers
+   ========================================================================== */
+
+/* Container inline padding */
+.pad-container {
+  padding-inline: var(--space-4); /* Mobile: 16px */
+}
+
+@media (min-width: 640px) {
+  .pad-container {
+    padding-inline: var(--space-6); /* Tablet: 24px */
+  }
+}
+
+@media (min-width: 1024px) {
+  .pad-container {
+    padding-inline: var(--space-8); /* Desktop: 32px */
+  }
+}
+
+@media (min-width: 1280px) {
+  .pad-container {
+    padding-inline: var(--space-12); /* Wide: 48px */
+  }
+}
+
+/* ==========================================================================
+   CARD PADDING
+   Responsive padding for card components
+   ========================================================================== */
+
+/* Card compact padding */
+.pad-card-sm {
+  padding: var(--space-4); /* 16px all sides */
+}
+
+@media (min-width: 768px) {
+  .pad-card-sm {
+    padding: var(--space-5); /* 20px all sides */
+  }
+}
+
+/* Card standard padding */
+.pad-card {
+  padding: var(--space-6); /* 24px all sides */
+}
+
+@media (min-width: 768px) {
+  .pad-card {
+    padding: var(--space-8); /* 32px all sides */
+  }
+}
+
+/* Card large padding */
+.pad-card-lg {
+  padding: var(--space-8); /* 32px all sides */
+}
+
+@media (min-width: 768px) {
+  .pad-card-lg {
+    padding: var(--space-10); /* 40px all sides */
+  }
+}
+
+/* ==========================================================================
+   INLINE PADDING UTILITIES
+   Horizontal padding only
+   ========================================================================== */
+
+.pad-x-sm {
+  padding-inline: var(--space-2); /* 8px */
+}
+
+.pad-x {
+  padding-inline: var(--space-4); /* 16px */
+}
+
+.pad-x-lg {
+  padding-inline: var(--space-6); /* 24px */
+}
+
+.pad-x-xl {
+  padding-inline: var(--space-8); /* 32px */
+}
+
+/* ==========================================================================
+   BLOCK PADDING UTILITIES
+   Vertical padding only
+   ========================================================================== */
+
+.pad-y-sm {
+  padding-block: var(--space-2); /* 8px */
+}
+
+.pad-y {
+  padding-block: var(--space-4); /* 16px */
+}
+
+.pad-y-lg {
+  padding-block: var(--space-6); /* 24px */
+}
+
+.pad-y-xl {
+  padding-block: var(--space-8); /* 32px */
+}
+
+/* ==========================================================================
+   RESPONSIVE MAX-WIDTH CONTAINERS
+   Centered containers with responsive max-width
+   ========================================================================== */
+
+.container-sm {
+  width: 100%;
+  max-width: 640px;
+  margin-inline: auto;
+}
+
+.container-md {
+  width: 100%;
+  max-width: 768px;
+  margin-inline: auto;
+}
+
+.container-lg {
+  width: 100%;
+  max-width: 1024px;
+  margin-inline: auto;
+}
+
+.container-xl {
+  width: 100%;
+  max-width: 1280px;
+  margin-inline: auto;
+}
+
+.container-2xl {
+  width: 100%;
+  max-width: 1440px;
+  margin-inline: auto;
+}
+
+/* Full-width container with responsive padding */
+.container-fluid {
+  width: 100%;
+  padding-inline: var(--space-4);
+}
+
+@media (min-width: 640px) {
+  .container-fluid {
+    padding-inline: var(--space-6);
+  }
+}
+
+@media (min-width: 1024px) {
+  .container-fluid {
+    padding-inline: var(--space-8);
+  }
+}
+
+/* ==========================================================================
+   FOOTER-SPECIFIC PADDING
+   Optimized for footer components
+   ========================================================================== */
+
+.pad-footer {
+  padding-block: var(--space-10); /* Top/Bottom: 40px */
+  padding-inline: var(--space-4); /* Mobile: 16px */
+}
+
+@media (min-width: 640px) {
+  .pad-footer {
+    padding-inline: var(--space-6); /* Tablet: 24px */
+  }
+}
+
+@media (min-width: 1024px) {
+  .pad-footer {
+    padding-inline: var(--space-8); /* Desktop: 32px */
+  }
+}
+
+@media (min-width: 1280px) {
+  .pad-footer {
+    padding-inline: var(--space-12); /* Wide: 48px */
+  }
+}
+
+/* ==========================================================================
+   AUTH CARD PADDING
+   Optimized for authentication cards
+   ========================================================================== */
+
+.pad-auth {
+  padding: var(--space-5); /* Mobile: 20px */
+}
+
+@media (min-width: 480px) {
+  .pad-auth {
+    padding: var(--space-8); /* Desktop: 32px */
+  }
+}

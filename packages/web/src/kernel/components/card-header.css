@@ -1,0 +1,51 @@
+.card--header {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  width: 100%;
+}
+
+.card--header__inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  margin: 0 auto;
+}
+
+.card--header__logo {
+  display: flex;
+  align-items: center;
+}
+
+.card--header__nav {
+  display: flex;
+}
+
+.card--header__nav ul {
+  display: flex;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.card--header__actions {
+  display: flex;
+  align-items: center;
+}
+
+.card--header__mobile-toggle {
+  display: none;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+@media (max-width: 768px) {
+  .card--header__nav {
+    display: none;
+  }
+  .card--header__mobile-toggle {
+    display: flex;
+  }
+}

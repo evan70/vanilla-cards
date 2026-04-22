@@ -1,0 +1,28 @@
+
+/* ==========================================================================
+   Gallery Grid - Layout Variants
+   ========================================================================== */
+
+/* Default - Auto-fill responsive grid */
+.gallery__grid {
+  display: grid;
+  gap: var(--space-3);
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+}
+
+/* Masonry - Pinterest-style column layout */
+.gallery__grid--masonry {
+  display: block;
+  column-count: 3;
+  column-gap: var(--space-3);
+}
+
+/* Compact - Reduced spacing */
+.gallery__grid--compact {
+  gap: var(--space-2);
+}
+
+/* Spacious - Increased spacing */
+.gallery__grid--spacious {
+  gap: var(--space-4);
+}

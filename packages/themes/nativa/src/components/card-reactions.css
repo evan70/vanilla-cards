@@ -1,0 +1,70 @@
+
+/* ==========================================================================
+   Reactions Card
+   Generic reactions card with items, icons, bars.
+   Used in admin cardboard AND frontend.
+   ========================================================================== */
+
+vanilla-card[variant="reactions"],
+.card--reactions {
+  display: block;
+  background: var(--cardboard-glass-bg);
+  border: 1px solid var(--cardboard-glass-border);
+  border-radius: var(--cardboard-radius-lg);
+  padding: var(--cardboard-card-padding-md);
+}
+
+/* Item */
+.card--reactions__item {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+  padding: var(--space-2) 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.04);
+}
+
+.card--reactions__item:last-child {
+  border-bottom: none;
+}
+
+/* Icon */
+.card--reactions__icon {
+  font-size: var(--text-xl);
+  flex-shrink: 0;
+}
+
+/* Info */
+.card--reactions__info {
+  flex: 1;
+  min-width: 0;
+}
+
+/* Count */
+.card--reactions__count {
+  font-size: var(--text-sm);
+  font-weight: 600;
+  color: var(--color-text);
+}
+
+/* Label */
+.card--reactions__label {
+  font-size: var(--text-xs);
+  color: var(--color-text-muted);
+}
+
+/* Bar */
+.card--reactions__bar {
+  width: 100%;
+  height: 6px;
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: var(--radius-full);
+  overflow: hidden;
+  margin-top: var(--space-1);
+}
+
+.card--reactions__bar-fill {
+  height: 100%;
+  background: var(--brand-gold);
+  border-radius: var(--radius-full);
+  transition: width var(--transition-base);
+}

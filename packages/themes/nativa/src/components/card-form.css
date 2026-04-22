@@ -1,0 +1,108 @@
+
+/* ==========================================================================
+   Form Card
+   Generic form card with groups, inputs, footer.
+   Used in admin cardboard AND frontend.
+   ========================================================================== */
+
+vanilla-card[variant="form"],
+.card--form {
+  display: block;
+  background: var(--cardboard-glass-bg);
+  border: 1px solid var(--cardboard-glass-border);
+  border-radius: var(--cardboard-radius-lg);
+  padding: var(--cardboard-card-padding-lg);
+}
+
+/* Header */
+.card--form__header {
+  margin-bottom: var(--space-6);
+  padding-bottom: var(--space-4);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+.card--form__header--clickable {
+  cursor: pointer;
+}
+
+.card--form__title {
+  font-size: var(--text-lg);
+  font-weight: 700;
+  color: var(--color-text);
+  margin: 0;
+}
+
+/* Groups */
+.card--form__groups {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-5);
+}
+
+.card--form__group {
+  margin-bottom: var(--space-5);
+}
+
+.card--form__label {
+  display: block;
+  margin-bottom: var(--space-2);
+  font-size: var(--text-sm);
+  font-weight: 600;
+  color: var(--color-text);
+}
+
+/* Inputs */
+.card--form__input,
+.card--form__textarea,
+.card--form__select {
+  width: 100%;
+  padding: var(--space-3) var(--space-4);
+  background: var(--input-bg);
+  border: 1px solid var(--input-border);
+  border-radius: var(--cardboard-radius-md);
+  color: var(--color-text);
+  font-size: var(--text-base);
+  transition: all var(--cardboard-transition-fast);
+}
+
+.card--form__input:focus,
+.card--form__textarea:focus,
+.card--form__select:focus {
+  outline: none;
+  border-color: var(--brand-gold);
+  box-shadow: var(--cardboard-focus-ring);
+}
+
+/* Footer */
+.card--form__footer {
+  display: flex;
+  gap: var(--space-3);
+  justify-content: flex-end;
+  margin-top: var(--space-6);
+  padding-top: var(--space-5);
+  border-top: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+/* Collapsible */
+.card--form--collapsed .card--form__groups {
+  display: none !important;
+}
+
+.card--form__toggle {
+  transition: transform 0.2s ease;
+}
+
+.card--form--collapsed .card--form__toggle {
+  transform: rotate(-90deg);
+}
+
+/* Light theme */
+[data-theme="light"] .card--form {
+  background: linear-gradient(180deg, rgba(0, 0, 0, 0.02), transparent);
+  border-color: rgba(0, 0, 0, 0.08);
+}
+
+[data-theme="light"] .card--form__header,
+[data-theme="light"] .card--form__footer {
+  border-color: rgba(0, 0, 0, 0.08);
+}

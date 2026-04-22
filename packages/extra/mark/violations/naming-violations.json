@@ -1,0 +1,164 @@
+[
+  {
+    "file": "entry-points/mark-reset-password.ts",
+    "line": "-",
+    "type": "mixed-naming",
+    "issue": "mix of camelCase and snake_case"
+  },
+  {
+    "file": "entry-points/mark-register.ts",
+    "line": "-",
+    "type": "mixed-naming",
+    "issue": "mix of camelCase and snake_case"
+  },
+  {
+    "file": "entry-points/mark-media.ts",
+    "line": 117,
+    "type": "entry-point-thick",
+    "issue": "business logic in entry point"
+  },
+  {
+    "file": "entry-points/mark-media.ts",
+    "line": 228,
+    "type": "entry-point-thick",
+    "issue": "business logic in entry point"
+  },
+  {
+    "file": "entry-points/mark-media.ts",
+    "line": 231,
+    "type": "entry-point-thick",
+    "issue": "business logic in entry point"
+  },
+  {
+    "file": "entry-points/mark-media.ts",
+    "line": 273,
+    "type": "entry-point-thick",
+    "issue": "business logic in entry point"
+  },
+  {
+    "file": "entry-points/mark-media.ts",
+    "line": 289,
+    "type": "entry-point-thick",
+    "issue": "business logic in entry point"
+  },
+  {
+    "file": "entry-points/mark-media.ts",
+    "line": 358,
+    "type": "entry-point-thick",
+    "issue": "business logic in entry point"
+  },
+  {
+    "file": "entry-points/mark-header.ts",
+    "line": 84,
+    "type": "entry-point-thick",
+    "issue": "business logic in entry point"
+  },
+  {
+    "file": "entry-points/mark-header-theme.ts",
+    "line": 165,
+    "type": "entry-point-thick",
+    "issue": "business logic in entry point"
+  },
+  {
+    "file": "entry-points/mark-header-theme.ts",
+    "line": 212,
+    "type": "entry-point-thick",
+    "issue": "business logic in entry point"
+  },
+  {
+    "file": "entry-points/mark-header-theme.ts",
+    "line": 215,
+    "type": "entry-point-thick",
+    "issue": "business logic in entry point"
+  },
+  {
+    "file": "entry-points/mark-cardboard.ts",
+    "line": 323,
+    "type": "entry-point-thick",
+    "issue": "business logic in entry point"
+  },
+  {
+    "file": "entry-points/mark-cardboard.ts",
+    "line": 353,
+    "type": "entry-point-thick",
+    "issue": "business logic in entry point"
+  },
+  {
+    "file": "entry-points/mark-cardboard.ts",
+    "line": 386,
+    "type": "entry-point-thick",
+    "issue": "business logic in entry point"
+  },
+  {
+    "file": "entry-points/mark-cardboard.ts",
+    "line": 406,
+    "type": "entry-point-thick",
+    "issue": "business logic in entry point"
+  },
+  {
+    "file": "entry-points/mark-cardboard.ts",
+    "line": 416,
+    "type": "entry-point-thick",
+    "issue": "business logic in entry point"
+  },
+  {
+    "file": "entry-points/mark-cardboard.ts",
+    "line": 422,
+    "type": "entry-point-thick",
+    "issue": "business logic in entry point"
+  },
+  {
+    "file": "entry-points/mark-cardboard.ts",
+    "line": 442,
+    "type": "entry-point-thick",
+    "issue": "business logic in entry point"
+  },
+  {
+    "file": "entry-points/mark-cardboard.ts",
+    "line": 448,
+    "type": "entry-point-thick",
+    "issue": "business logic in entry point"
+  },
+  {
+    "file": "entry-points/mark-cardboard.ts",
+    "line": 472,
+    "type": "entry-point-thick",
+    "issue": "business logic in entry point"
+  },
+  {
+    "file": "entry-points/mark-cardboard.ts",
+    "line": 483,
+    "type": "entry-point-thick",
+    "issue": "business logic in entry point"
+  },
+  {
+    "file": "entry-points/mark-cardboard.ts",
+    "line": 518,
+    "type": "entry-point-thick",
+    "issue": "business logic in entry point"
+  },
+  {
+    "file": "entry-points/mark-cardboard.ts",
+    "line": 645,
+    "type": "entry-point-thick",
+    "issue": "business logic in entry point"
+  },
+  {
+    "file": "entry-points/mark-cardboard.ts",
+    "line": 686,
+    "type": "entry-point-thick",
+    "issue": "business logic in entry point"
+  },
+  {
+    "file": "entry-points/mark-cardboard.ts",
+    "line": 689,
+    "type": "entry-point-thick",
+    "issue": "business logic in entry point"
+  },
+  {
+    "file": "entry-points/mark-article-editor.ts",
+    "line": 128,
+    "type": "entry-point-thick",
+    "issue": "business logic in entry point"
+  }
+]

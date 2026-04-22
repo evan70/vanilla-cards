@@ -1,0 +1,23 @@
+.features-section {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: var(--space-8, 2rem);
+}
+
+.features-section__header {
+  grid-column: 1 / -1;
+  text-align: center;
+  margin-bottom: var(--space-12, 3rem);
+}
+
+.features-section__grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: var(--space-6, 1.5rem);
+}
+
+.features-section__item {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4, 1rem);
+}

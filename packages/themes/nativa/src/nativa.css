@@ -1,0 +1,342 @@
+@import "./fonts.css";
+@import "./states.css";
+@import "./components/vanilla-card.css";
+@import "./components/card-variants.css";
+@import "./components/button.css";
+@import "./components/icon.css";
+@import "./components/icon-button.css";
+@import "./components/card-header.css";
+@import "./components/card-nav-mobile.css";
+@import "./components/card-footer.css";
+@import "./components/card-notification.css";
+@import "./components/glass-effects.css";
+@import "./components/card-actions.css";
+@import "./components/card-chart.css";
+@import "./components/card-flex.css";
+@import "./components/card-form.css";
+@import "./components/card-grid.css";
+@import "./components/card-list.css";
+@import "./components/card-reactions.css";
+@import "./components/card-stats.css";
+@import "./components/card-table.css";
+@import "./components/card-viewport.css";
+@import "./components/color-variants.css";
+@import "./components/cookie-consent.css";
+@import "./components/responsive.css";
+@import "./components/spacing-utils.css";
+@import "./components/action-card.css";
+@import "./components/card-case-study.css";
+@import "./components/card-client.css";
+@import "./components/card-fullscreen.css";
+@import "./components/card-project.css";
+@import "./components/card-skill.css";
+@import "./components/cards-all.css";
+@import "./components/portfolio-filter.css";
+@import "./components/gallery/index.css";
+@import "./sections/hero/hero.css";
+@import "./sections/features/features.css";
+@import "./sections/cta/cta.css";
+@import "./sections/stats/stats.css";
+
+/* ==========================================================================
+   Nativa Theme — CSS
+   First theme in the multi-theme architecture.
+  
+   Brand gold, Playfair Display headings, Inter body text.
+   ========================================================================== */
+
+/* 0. Fonts */
+
+/* 1. Theme-Specific Tokens & Scoping */
+[data-theme-id="nativa"] {
+  /* ==========================================================================
+     THEME FONTS
+     ========================================================================== */
+  --font-heading: 'Playfair Display', Georgia, serif;
+  --font-body: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+
+  /* ==========================================================================
+     BRAND COLORS
+     ========================================================================== */
+  --brand-gold: #d4af37;
+  --brand-gold-light: #f4cf57;
+  --brand-gold-dark: #b48f17;
+  --brand-gold-rgb: 212, 175, 55;
+
+  --brand-emerald: #10b981;
+  --brand-emerald-light: #70d898;
+  --brand-emerald-dark: #059669;
+  --brand-emerald-rgb: 80, 200, 120;
+
+  --brand-ruby: #ef4444;
+  --brand-ruby-light: #ff317f;
+  --brand-ruby-dark: #c0003f;
+  --brand-ruby-rgb: 224, 17, 95;
+
+  --brand-sapphire: #0891b2;
+  --brand-sapphire-light: #2f72da;
+  --brand-sapphire-dark: #3b82f6;
+  --brand-sapphire-rgb: 15, 82, 186;
+
+  --brand-amethyst: #7c3aed;
+  --brand-amethyst-light: #b986dc;
+  --brand-amethyst-dark: #8b5cf6;
+  --brand-amethyst-rgb: 153, 102, 204;
+
+  --brand-topaz: #ffc87c;
+  --brand-topaz-light: #ffe8bc;
+  --brand-topaz-dark: #e0a85c;
+  --brand-topaz-rgb: 255, 200, 124;
+
+  /* ==========================================================================
+     VISUAL ATTRIBUTES (Radius, Shadows)
+     ========================================================================== */
+  --radius-none: 0;
+  --radius-sm: 0.25rem;
+  --radius-md: 0.5rem;
+  --radius-lg: 0.75rem;
+  --radius-xl: 1rem;
+  --radius-2xl: 1.5rem;
+  --radius-full: 9999px;
+
+  --shadow-xs: 0 1px 2px rgba(0, 0, 0, 0.05);
+  --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.1);
+  --shadow-md: 0 4px 6px rgba(0, 0, 0, 0.1);
+  --shadow-lg: 0 10px 15px rgba(0, 0, 0, 0.1);
+  --shadow-xl: 0 20px 25px rgba(0, 0, 0, 0.15);
+  --shadow-2xl: 0 25px 50px rgba(0, 0, 0, 0.25);
+
+  /* ==========================================================================
+     COMPONENT VISUAL TOKENS
+     ========================================================================== */
+  --card-radius: var(--radius-xl);
+  --card-shadow: var(--shadow-md);
+  --card-transition: var(--transition-base);
+  --card-padding: var(--space-6);
+  --card-padding-sm: var(--space-4);
+  --card-padding-lg: var(--space-8);
+  
+  --card-title-family: var(--font-heading);
+  --card-title-size: var(--text-xl);
+  --card-title-weight: 700;
+  --card-title-color: var(--color-text);
+  
+  --card-body-size: var(--text-base);
+  --card-body-color: var(--color-text);
+  --card-body-line-height: 1.6;
+
+  --card-hover-shadow: var(--shadow-xl);
+  --card-hover-offset: -4px;
+  --card-active-scale: 0.98;
+
+  --card--content-image-radius: var(--radius-lg);
+  
+  --action-input-radius: var(--radius-md);
+
+  /* Cardboard specifics */
+  --cardboard-radius-sm: var(--radius-md);
+  --cardboard-radius-md: var(--radius-lg);
+  --cardboard-radius-lg: var(--radius-xl);
+  --cardboard-radius-xl: var(--radius-2xl);
+  
+  --cardboard-card-padding-md: var(--space-6);
+  --cardboard-icon-size-lg: 48px;
+  --cardboard-icon-size-md: 40px;
+  --cardboard-icon-size-sm: 32px;
+
+  --cardboard-shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.15);
+  --cardboard-shadow-md: 0 4px 16px rgba(0, 0, 0, 0.2);
+  --cardboard-shadow-lg: 0 8px 32px rgba(0, 0, 0, 0.25);
+  --cardboard-shadow-xl: 0 12px 48px rgba(0, 0, 0, 0.3);
+  --cardboard-shadow-hover: 0 8px 24px rgba(var(--brand-gold-rgb), 0.15);
+
+  --cardboard-transition-fast: 150ms ease;
+  --cardboard-transition-base: 250ms ease;
+  --cardboard-transition-slow: 350ms ease;
+  --cardboard-transition-bounce: 500ms cubic-bezier(0.68, -0.55, 0.265, 1.55);
+
+  --cardboard-focus-ring: 0 0 0 3px rgba(var(--brand-gold-rgb), 0.4);
+  --cardboard-spinner-color: var(--brand-gold);
+
+  /* Stats Card specifics */
+  --stats-value-size-desktop: 2.25rem;
+  --stats-value-weight: 800;
+  --stats-value-line-height: 1;
+  --stats-value-letter-spacing: -0.02em;
+  
+  --stats-label-size: var(--text-xs);
+  --stats-label-weight: 600;
+  --stats-label-color: var(--color-text-muted);
+  --stats-label-text-transform: uppercase;
+  --stats-label-letter-spacing: 0.1em;
+
+  /* Icon backgrounds */
+  --cardboard-icon-bg-gold: linear-gradient(135deg, rgba(212, 175, 55, 0.2), rgba(212, 175, 55, 0.1));
+  --cardboard-icon-bg-emerald: linear-gradient(135deg, rgba(80, 200, 120, 0.2), rgba(80, 200, 120, 0.1));
+  --cardboard-icon-bg-sapphire: linear-gradient(135deg, rgba(15, 82, 186, 0.2), rgba(15, 82, 186, 0.1));
+  --cardboard-icon-bg-amethyst: linear-gradient(135deg, rgba(153, 102, 204, 0.2), rgba(153, 102, 204, 0.1));
+  --cardboard-icon-bg-ruby: linear-gradient(135deg, rgba(224, 17, 95, 0.2), rgba(224, 17, 95, 0.1));
+  --cardboard-icon-bg-topaz: linear-gradient(135deg, rgba(255, 200, 124, 0.2), rgba(255, 200, 124, 0.1));
+
+  /* Icon borders */
+  --cardboard-icon-border-gold: rgba(212, 175, 55, 0.3);
+  --cardboard-icon-border-emerald: rgba(80, 200, 120, 0.3);
+  --cardboard-icon-border-sapphire: rgba(15, 82, 186, 0.3);
+  --cardboard-icon-border-amethyst: rgba(153, 102, 204, 0.3);
+  --cardboard-icon-border-ruby: rgba(224, 17, 95, 0.3);
+  --cardboard-icon-border-topaz: rgba(255, 200, 124, 0.3);
+}
+
+/* 2. States & Animations */
+
+/* 3. Component Styles */
+
+/* 4. Section Styles */
+
+/* 5. Variant Specifics (Nativa Dark/Light) */
+
+[data-theme-id="nativa"] body {
+  font-family: var(--font-body);
+}
+
+[data-theme-id="nativa"] h1,
+[data-theme-id="nativa"] h2,
+[data-theme-id="nativa"] h3,
+[data-theme-id="nativa"] h4,
+[data-theme-id="nativa"] h5,
+[data-theme-id="nativa"] h6 {
+  font-family: var(--font-heading);
+}
+
+[data-theme-id="nativa"] .brand-accent {
+  color: var(--brand-gold);
+}
+
+[data-theme-id="nativa"] .brand-accent--bg {
+  background-color: var(--brand-gold);
+}
+
+[data-theme-id="nativa"] .brand-accent--border {
+  border-color: var(--brand-gold);
+}
+
+/* ==========================================================================
+   RIPPLE COLORS
+   ========================================================================== */
+
+[data-theme-id="nativa"] .card--stats .vanilla-ripple {
+  background: rgba(212, 175, 55, 0.3);
+}
+
+[data-theme-id="nativa"] .card--list .vanilla-ripple {
+  background: rgba(80, 200, 120, 0.3);
+}
+
+[data-theme-id="nativa"] .card--table .vanilla-ripple {
+  background: rgba(15, 82, 186, 0.3);
+}
+
+[data-theme-id="nativa"] .card--chart .vanilla-ripple {
+  background: rgba(153, 102, 204, 0.3);
+}
+
+
+[data-theme-id="nativa"][data-theme="light"] {
+  color-scheme: light;
+  
+  --color-bg: var(--neutral-50);
+  --color-bg-alt: var(--neutral-0);
+  --color-bg-elevated: var(--neutral-0);
+  --color-text: var(--neutral-900);
+  --color-text-muted: var(--neutral-600);
+  --color-text-inverse: var(--neutral-0);
+  --color-border: var(--neutral-200);
+  --color-border-hover: var(--neutral-300);
+
+  --card-bg: rgba(255, 255, 255, 0.95);
+  --card-bg-hover: var(--neutral-50);
+  --card-border: var(--neutral-200);
+  --card-shadow: var(--shadow-md);
+
+  --card-title-color: var(--neutral-900);
+  --card-subtitle-color: var(--neutral-600);
+  --card-body-color: var(--neutral-900);
+
+  --input-bg: var(--neutral-0);
+  --input-border: var(--neutral-300);
+  --input-focus-border: var(--brand-gold);
+
+  --color-success: #16a34a;
+  --color-warning: #ca8a04;
+  --color-error: #dc2626;
+  --color-info: #0284c7;
+
+  --glass-bg: rgba(255, 255, 255, 0.8);
+  --glass-bg-hover: rgba(255, 255, 255, 0.9);
+  --glass-border: 1px solid rgba(0, 0, 0, 0.08);
+  
+  --cardboard-glass-bg: rgba(0, 0, 0, 0.03);
+  --cardboard-glass-bg-hover: rgba(0, 0, 0, 0.06);
+  --cardboard-glass-border: rgba(0, 0, 0, 0.08);
+
+  --stats-value-color: var(--brand-gold);
+
+  --color-primary: var(--brand-gold);
+  --color-primary-hover: var(--brand-gold-dark);
+  --color-secondary: var(--neutral-500);
+  --color-secondary-hover: var(--neutral-600);
+
+  --color-border-focus: var(--brand-gold);
+  --color-text-link: var(--brand-gold);
+  --color-text-link_hover: var(--brand-gold-dark);
+}
+
+[data-theme-id="nativa"][data-theme="dark"] {
+  color-scheme: dark;
+  
+  --color-bg: var(--neutral-950);
+  --color-bg-alt: var(--neutral-900);
+  --color-bg-elevated: var(--neutral-800);
+  --color-text: var(--neutral-50);
+  --color-text-muted: var(--neutral-400);
+  --color-text-inverse: var(--neutral-900);
+  --color-border: var(--neutral-700);
+  --color-border-hover: var(--neutral-600);
+
+  --card-bg: rgba(10, 10, 10, 0.85);
+  --card-bg-hover: rgba(255, 255, 255, 0.05);
+  --card-border: rgba(255, 255, 255, 0.1);
+  --card-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+
+  --card-title-color: var(--neutral-50);
+  --card-subtitle-color: var(--neutral-400);
+  --card-body-color: var(--neutral-50);
+
+  --input-bg: rgba(255, 255, 255, 0.05);
+  --input-border: rgba(255, 255, 255, 0.1);
+  --input-focus-border: var(--brand-gold);
+
+  --color-success: #4ade80;
+  --color-warning: #fbbf24;
+  --color-error: #f87171;
+  --color-info: #60a5fa;
+
+  --glass-bg: rgba(10, 10, 10, 0.85);
+  --glass-bg-hover: rgba(15, 15, 15, 0.9);
+  --glass-border: 1px solid rgba(255, 255, 255, 0.15);
+
+  --cardboard-glass-bg: rgba(255, 255, 255, 0.08);
+  --cardboard-glass-bg-hover: rgba(255, 255, 255, 0.12);
+  --cardboard-glass-border: rgba(255, 255, 255, 0.08);
+
+  --stats-value-color: var(--brand-gold);
+
+  --color-primary: var(--brand-gold);
+  --color-primary-hover: var(--brand-gold-light);
+  --color-secondary: var(--neutral-600);
+  --color-secondary-hover: var(--neutral-500);
+
+  --color-border-focus: var(--brand-gold);
+  --color-text-link: var(--brand-gold);
+  --color-text-link_hover: var(--brand-gold-light);
+}

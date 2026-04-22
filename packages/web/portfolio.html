@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio — Vanilla Cards</title>
+    <link rel="icon" type="image/x-icon" href="/favicon.ico">
+    <script>
+        (function() {
+            const theme = localStorage.getItem('theme') || (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+            document.documentElement.setAttribute('data-theme', theme);
+            document.documentElement.setAttribute('data-theme-id', 'nativa');
+        })();
+    </script>
+    <script type="module" src="./src/portfolio-entry.ts"></script>
+</head>
+<body data-page="portfolio">
+    <div id="app">
+        <!-- Navigation -->
+        <vanilla-card variant="header">
+            <div class="card--header__inner">
+                <a href="./" class="card--header__logo">
+                    VC<span class="card--header__logo-dot">.</span>
+                </a>
+
+                <nav class="card--header__nav">
+                    <ul>
+                        <li><a href="./" class="card--header__nav-link">Home</a></li>
+                        <li><a href="portfolio.html" class="card--header__nav-link card--header__nav-link--active">Portfolio</a></li>
+                        <li><a href="demo.html" class="card--header__nav-link">Showcase</a></li>
+                    </ul>
+                </nav>
+
+                <div class="card--header__actions">
+                    <button class="card--header__theme-toggle" id="theme-toggle" aria-label="Toggle theme">
+                        <svg class="card--header__theme-icon card--header__theme-icon--moon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>
+                        <svg class="card--header__theme-icon card--header__theme-icon--sun" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="5"></circle><line x1="12" y1="1" x2="12" y2="3"></line><line x1="12" y1="21" x2="12" y2="23"></line><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line><line x1="1" y1="12" x2="3" y2="12"></line><line x1="21" y1="12" x2="23" y2="12"></line><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line></svg>
+                    </button>
+                    <button class="card--header__mobile-toggle" aria-label="Menu">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg>
+                    </button>
+                </div>
+            </div>
+        </vanilla-card>
+
+        <main class="portfolio">
+            <!-- Hero -->
+            <section class="portfolio__hero">
+                <div class="portfolio__hero-eyebrow">Available for new projects</div>
+                <h1 class="portfolio__title">Design & <span class="portfolio__title-accent">Development</span></h1>
+                <p class="portfolio__subtitle">I build high-performance, accessible, and beautiful web experiences using vanilla technologies.</p>
+                
+                <div class="portfolio__hero-stats">
+                    <div class="portfolio__hero-stat">
+                        <span class="portfolio__hero-stat-value">5+</span>
+                        <span class="portfolio__hero-stat-label">Years Exp.</span>
+                    </div>
+                    <div class="portfolio__hero-stat">
+                        <span class="portfolio__hero-stat-value">40+</span>
+                        <span class="portfolio__hero-stat-label">Projects</span>
+                    </div>
+                    <div class="portfolio__hero-stat">
+                        <span class="portfolio__hero-stat-value">12</span>
+                        <span class="portfolio__hero-stat-label">Awards</span>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Projects Filter -->
+            <section class="portfolio__section">
+                <div class="portfolio__section-header">
+                    <h2 class="portfolio__section-title">Selected Works</h2>
+                    <div class="portfolio__section-divider"><span class="diamond"></span></div>
+                </div>
+
+                <div class="portfolio__filter">
+                    <button class="portfolio__filter-btn portfolio__filter-btn--active" data-filter="all">All</button>
+                    <button class="portfolio__filter-btn" data-filter="web">Web</button>
+                    <button class="portfolio__filter-btn" data-filter="mobile">Mobile</button>
+                    <button class="portfolio__filter-btn" data-filter="design">Design</button>
+                </div>
+
+                <div class="portfolio__grid">
+                    <!-- Project 1 -->
+                    <vanilla-card variant="project" data-category="web" class="card--project portfolio-reveal">
+                        <div class="card--project__image-wrapper">
+                            <img src="https://picsum.photos/600/400?random=1" alt="Project 1" class="card--project__image">
+                        </div>
+                        <div class="card--project__content">
+                            <h3 class="card__title">E-Commerce Ecosystem</h3>
+                            <p class="card__description">A complete shopping experience built with Vanilla JS.</p>
+                            <div class="card--project__meta">
+                                <span class="card--project__category">Web Development</span>
+                                <span class="card--project__date">2024</span>
+                            </div>
+                        </div>
+                        <div class="card--project__overlay">
+                            <a href="#" class="card--project__overlay-cta">View Project</a>
+                        </div>
+                    </vanilla-card>
+
+                    <!-- Project 2 -->
+                    <vanilla-card variant="project" data-category="design" class="card--project portfolio-reveal">
+                        <div class="card--project__image-wrapper">
+                            <img src="https://picsum.photos/600/400?random=2" alt="Project 2" class="card--project__image">
+                        </div>
+                        <div class="card--project__content">
+                            <h3 class="card__title">Brand Identity</h3>
+                            <p class="card__description">Modern visual language for a fintech startup.</p>
+                            <div class="card--project__meta">
+                                <span class="card--project__category">Graphic Design</span>
+                                <span class="card--project__date">2023</span>
+                            </div>
+                        </div>
+                        <div class="card--project__overlay">
+                            <a href="#" class="card--project__overlay-cta">View Project</a>
+                        </div>
+                    </vanilla-card>
+
+                    <!-- Project 3 -->
+                    <vanilla-card variant="project" data-category="web mobile" class="card--project portfolio-reveal">
+                        <div class="card--project__image-wrapper">
+                            <img src="https://picsum.photos/600/400?random=3" alt="Project 3" class="card--project__image">
+                        </div>
+                        <div class="card--project__content">
+                            <h3 class="card__title">SaaS Dashboard</h3>
+                            <p class="card__description">Real-time analytics platform for enterprise.</p>
+                            <div class="card--project__meta">
+                                <span class="card--project__category">Product Design</span>
+                                <span class="card--project__date">2023</span>
+                            </div>
+                        </div>
+                        <div class="card--project__overlay">
+                            <a href="#" class="card--project__overlay-cta">View Project</a>
+                        </div>
+                    </vanilla-card>
+                </div>
+            </section>
+
+            <!-- Skills -->
+            <section class="portfolio__section">
+                <div class="portfolio__section-header">
+                    <h2 class="portfolio__section-title">Capabilities</h2>
+                    <p class="portfolio__section-subtitle">Specialized in modern web technologies and user-centric design.</p>
+                </div>
+
+                <div class="portfolio__skills portfolio-reveal-stagger">
+                    <vanilla-card variant="stats" class="card--skill">
+                        <h4 class="card__title">Frontend</h4>
+                        <div class="card--skill__progress">
+                            <div class="card--skill__progress-fill" style="width: 95%;"></div>
+                        </div>
+                        <p class="card__description">HTML5, CSS3, TypeScript</p>
+                    </vanilla-card>
+
+                    <vanilla-card variant="stats" class="card--skill">
+                        <h4 class="card__title">Performance</h4>
+                        <div class="card--skill__progress">
+                            <div class="card--skill__progress-fill" style="width: 90%;"></div>
+                        </div>
+                        <p class="card__description">Core Web Vitals, Optimization</p>
+                    </vanilla-card>
+
+                    <vanilla-card variant="stats" class="card--skill">
+                        <h4 class="card__title">UI/UX</h4>
+                        <div class="card--skill__progress">
+                            <div class="card--skill__progress-fill" style="width: 85%;"></div>
+                        </div>
+                        <p class="card__description">Figma, Design Systems</p>
+                    </vanilla-card>
+                </div>
+            </section>
+
+            <!-- CTA -->
+            <section class="portfolio__cta portfolio-reveal">
+                <h2 class="portfolio__cta-title">Ready to start a project?</h2>
+                <p class="portfolio__cta-text">Let's build something amazing together. Currently accepting new freelance opportunities.</p>
+                <div class="portfolio__cta-actions">
+                    <a href="mailto:hello@example.com" class="btn btn--primary">Contact Me</a>
+                    <a href="#" class="btn btn--secondary">Download CV</a>
+                </div>
+            </section>
+        </main>
+
+        <!-- Footer -->
+        <vanilla-card variant="footer">
+            <div class="card--footer__inner">
+                <p>&copy; 2024 VC Portfolio. Built with Vanilla Cards.</p>
+            </div>
+        </vanilla-card>
+
+        <div class="mobile-nav-overlay" id="mobile-nav-overlay" hidden></div>
+    </div>
+</body>
+</html>

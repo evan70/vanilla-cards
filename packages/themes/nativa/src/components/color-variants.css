@@ -1,0 +1,371 @@
+
+/* ==========================================================================
+   Color Variants Utilities
+   Reusable color variant classes for consistent theming
+   
+   Usage:
+   - Apply .variant-gold, .variant-emerald, etc. to any element
+   - Use with icon backgrounds, text colors, borders, glows
+   - Works with glassmorphism utilities
+   ========================================================================== */
+
+/* ==========================================================================
+   BRAND COLOR BACKGROUND VARIANTS
+   Semi-transparent backgrounds for icons, badges, cards
+   ========================================================================== */
+
+/* Gold variant (premium/warm) */
+.variant-gold-bg {
+  background: rgba(212, 175, 55, 0.1);
+}
+
+.variant-gold-bg-light {
+  background: rgba(212, 175, 55, 0.05);
+}
+
+.variant-gold-bg-medium {
+  background: rgba(212, 175, 55, 0.15);
+}
+
+.variant-gold-bg-strong {
+  background: rgba(212, 175, 55, 0.2);
+}
+
+/* Emerald variant (success/calm) */
+.variant-emerald-bg {
+  background: rgba(16, 185, 129, 0.1);
+}
+
+.variant-emerald-bg-light {
+  background: rgba(16, 185, 129, 0.05);
+}
+
+.variant-emerald-bg-medium {
+  background: rgba(16, 185, 129, 0.15);
+}
+
+.variant-emerald-bg-strong {
+  background: rgba(16, 185, 129, 0.2);
+}
+
+/* Ruby variant (danger/passion) */
+.variant-ruby-bg {
+  background: rgba(239, 68, 68, 0.1);
+}
+
+.variant-ruby-bg-light {
+  background: rgba(239, 68, 68, 0.05);
+}
+
+.variant-ruby-bg-medium {
+  background: rgba(239, 68, 68, 0.15);
+}
+
+.variant-ruby-bg-strong {
+  background: rgba(239, 68, 68, 0.2);
+}
+
+/* Sapphire variant (trust/professional) */
+.variant-sapphire-bg {
+  background: rgba(8, 145, 178, 0.1);
+}
+
+.variant-sapphire-bg-light {
+  background: rgba(8, 145, 178, 0.05);
+}
+
+.variant-sapphire-bg-medium {
+  background: rgba(8, 145, 178, 0.15);
+}
+
+.variant-sapphire-bg-strong {
+  background: rgba(8, 145, 178, 0.2);
+}
+
+/* Amethyst variant (creative/luxury) */
+.variant-amethyst-bg {
+  background: rgba(124, 58, 237, 0.1);
+}
+
+.variant-amethyst-bg-light {
+  background: rgba(124, 58, 237, 0.05);
+}
+
+.variant-amethyst-bg-medium {
+  background: rgba(124, 58, 237, 0.15);
+}
+
+.variant-amethyst-bg-strong {
+  background: rgba(124, 58, 237, 0.2);
+}
+
+/* ==========================================================================
+   BRAND COLOR BORDER VARIANTS
+   Semi-transparent borders
+   ========================================================================== */
+
+.variant-gold-border {
+  border-color: rgba(212, 175, 55, 0.3);
+}
+
+.variant-emerald-border {
+  border-color: rgba(16, 185, 129, 0.3);
+}
+
+.variant-ruby-border {
+  border-color: rgba(239, 68, 68, 0.3);
+}
+
+.variant-sapphire-border {
+  border-color: rgba(8, 145, 178, 0.3);
+}
+
+.variant-amethyst-border {
+  border-color: rgba(124, 58, 237, 0.3);
+}
+
+/* ==========================================================================
+   BRAND COLOR TEXT VARIANTS
+   Solid text colors with dark theme enhancements
+   ========================================================================== */
+
+.variant-gold-text {
+  color: var(--brand-gold);
+}
+
+[data-theme="dark"] .variant-gold-text {
+  color: var(--brand-gold-light);
+}
+
+.variant-emerald-text {
+  color: var(--brand-emerald);
+}
+
+[data-theme="dark"] .variant-emerald-text {
+  color: var(--brand-emerald-light);
+}
+
+.variant-ruby-text {
+  color: var(--brand-ruby);
+}
+
+[data-theme="dark"] .variant-ruby-text {
+  color: var(--brand-ruby-light);
+}
+
+.variant-sapphire-text {
+  color: var(--brand-sapphire);
+}
+
+[data-theme="dark"] .variant-sapphire-text {
+  color: var(--brand-sapphire-light);
+}
+
+.variant-amethyst-text {
+  color: var(--brand-amethyst);
+}
+
+[data-theme="dark"] .variant-amethyst-text {
+  color: var(--brand-amethyst-light);
+}
+
+/* ==========================================================================
+   BRAND COLOR GLOW VARIANTS
+   Box-shadow glows for premium effects
+   ========================================================================== */
+
+.variant-gold-glow {
+  box-shadow: 0 0 24px rgba(212, 175, 55, 0.25);
+}
+
+.variant-emerald-glow {
+  box-shadow: 0 0 24px rgba(16, 185, 129, 0.25);
+}
+
+.variant-ruby-glow {
+  box-shadow: 0 0 24px rgba(239, 68, 68, 0.25);
+}
+
+.variant-sapphire-glow {
+  box-shadow: 0 0 24px rgba(8, 145, 178, 0.25);
+}
+
+.variant-amethyst-glow {
+  box-shadow: 0 0 24px rgba(124, 58, 237, 0.25);
+}
+
+/* ==========================================================================
+   COMPLETE VARIANT UTILITIES
+   Combined background + border + glow for common use cases
+   ========================================================================== */
+
+/* Icon background variants (for stats cards, skill cards, etc.) */
+.variant-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 48px;
+  height: 48px;
+  border-radius: var(--radius-lg);
+  flex-shrink: 0;
+}
+
+.variant-icon-gold {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(212, 175, 55, 0.1);
+  color: var(--brand-gold);
+  border: 1px solid rgba(212, 175, 55, 0.3);
+}
+
+[data-theme="dark"] .variant-icon-gold {
+  background: rgba(212, 175, 55, 0.2);
+  color: #f9d96e;
+  border-color: rgba(212, 175, 55, 0.5);
+}
+
+.variant-icon-emerald {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(16, 185, 129, 0.1);
+  color: var(--brand-emerald);
+  border: 1px solid rgba(16, 185, 129, 0.3);
+}
+
+[data-theme="dark"] .variant-icon-emerald {
+  background: rgba(16, 185, 129, 0.2);
+  color: #34d399;
+  border-color: rgba(16, 185, 129, 0.5);
+}
+
+.variant-icon-ruby {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(239, 68, 68, 0.1);
+  color: var(--brand-ruby);
+  border: 1px solid rgba(239, 68, 68, 0.3);
+}
+
+[data-theme="dark"] .variant-icon-ruby {
+  background: rgba(239, 68, 68, 0.2);
+  color: #f87171;
+  border-color: rgba(239, 68, 68, 0.5);
+}
+
+.variant-icon-sapphire {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(8, 145, 178, 0.1);
+  color: var(--brand-sapphire);
+  border: 1px solid rgba(8, 145, 178, 0.3);
+}
+
+[data-theme="dark"] .variant-icon-sapphire {
+  background: rgba(8, 145, 178, 0.2);
+  color: #22d3ee;
+  border-color: rgba(8, 145, 178, 0.5);
+}
+
+.variant-icon-amethyst {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(124, 58, 237, 0.1);
+  color: var(--brand-amethyst);
+  border: 1px solid rgba(124, 58, 237, 0.3);
+}
+
+[data-theme="dark"] .variant-icon-amethyst {
+  background: rgba(124, 58, 237, 0.2);
+  color: #a78bfa;
+  border-color: rgba(124, 58, 237, 0.5);
+}
+
+/* ==========================================================================
+   GRADIENT VARIANTS
+   Background gradients for buttons, cards, badges
+   ========================================================================== */
+
+.variant-gradient-gold {
+  background: linear-gradient(135deg, var(--brand-gold), rgba(212, 175, 55, 0.8));
+}
+
+.variant-gradient-emerald {
+  background: linear-gradient(135deg, var(--brand-emerald), rgba(16, 185, 129, 0.8));
+}
+
+.variant-gradient-ruby {
+  background: linear-gradient(135deg, var(--brand-ruby), rgba(239, 68, 68, 0.8));
+}
+
+.variant-gradient-sapphire {
+  background: linear-gradient(135deg, var(--brand-sapphire), rgba(8, 145, 178, 0.8));
+}
+
+.variant-gradient-amethyst {
+  background: linear-gradient(135deg, var(--brand-amethyst), rgba(124, 58, 237, 0.8));
+}
+
+/* ==========================================================================
+   PROGRESS BAR VARIANTS
+   Gradient progress bars (for skill cards, stats, etc.)
+   ========================================================================== */
+
+.variant-progress-gold {
+  background: linear-gradient(90deg, var(--brand-gold), #f9d96e);
+}
+
+.variant-progress-emerald {
+  background: linear-gradient(90deg, var(--brand-emerald), #34d399);
+}
+
+.variant-progress-ruby {
+  background: linear-gradient(90deg, var(--brand-ruby), #f87171);
+}
+
+.variant-progress-sapphire {
+  background: linear-gradient(90deg, var(--brand-sapphire), #22d3ee);
+}
+
+.variant-progress-amethyst {
+  background: linear-gradient(90deg, var(--brand-amethyst), #c084fc);
+}
+
+/* ==========================================================================
+   BADGE VARIANTS
+   Small badge/pill backgrounds
+   ========================================================================== */
+
+.variant-badge-gold {
+  background: rgba(212, 175, 55, 0.1);
+  color: var(--brand-gold);
+  border: 1px solid rgba(212, 175, 55, 0.2);
+}
+
+.variant-badge-emerald {
+  background: rgba(34, 197, 94, 0.1);
+  color: var(--color-success);
+  border: 1px solid rgba(34, 197, 94, 0.2);
+}
+
+.variant-badge-ruby {
+  background: rgba(239, 68, 68, 0.1);
+  color: var(--color-error);
+  border: 1px solid rgba(239, 68, 68, 0.2);
+}
+
+.variant-badge-sapphire {
+  background: rgba(8, 145, 178, 0.1);
+  color: var(--brand-sapphire);
+  border: 1px solid rgba(8, 145, 178, 0.2);
+}
+
+.variant-badge-amethyst {
+  background: rgba(124, 58, 237, 0.1);
+  color: var(--brand-amethyst);
+  border: 1px solid rgba(124, 58, 237, 0.2);
+}

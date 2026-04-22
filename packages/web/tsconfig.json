@@ -1,0 +1,51 @@
+{
+  "compilerOptions": {
+    "target": "ES2022",
+    "module": "ESNext",
+    "lib": ["ES2022", "DOM", "DOM.Iterable"],
+    "moduleResolution": "bundler",
+    "strict": true,
+    "esModuleInterop": true,
+    "skipLibCheck": true,
+    "forceConsistentCasingInFileNames": true,
+    "resolveJsonModule": true,
+    "isolatedModules": true,
+    "declaration": false,
+    "declarationMap": false,
+    "sourceMap": true,
+    "noUnusedLocals": false,
+    "noUnusedParameters": false,
+    "noImplicitReturns": false,
+    "noFallthroughCasesInSwitch": true,
+    "noEmit": false,
+    "outDir": "./dist",
+    "rootDir": "..",
+    "ignoreDeprecations": "6.0",
+    "baseUrl": ".",
+    "paths": {
+      "@lib/*": ["../core/src/lib/*"],
+      "@kernel/*": ["../core/src/kernel/*"],
+      "@components/*": ["../core/src/components/*"],
+      "@themes/*": ["../themes/*"],
+      "@mark/*": ["../extra/mark/*"],
+      "@mark-styles/*": ["../extra/mark/styles/*"],
+      "@mark-components/*": ["../extra/mark/components/*"],
+      "@vc/core": ["../core/src/index.ts"],
+      "@vc/core/kernel/pages/*": ["./src/pages/*"],
+      "@vc/core/*": ["../core/src/*"],
+      "@vc/theme-nativa": ["../themes/nativa/src/index.ts"],
+      "@vc/theme-nativa/*": ["../themes/nativa/src/*"],
+      "marked": ["node_modules/marked"],
+      "dompurify": ["node_modules/dompurify"],
+      "vitest": ["node_modules/vitest"]
+    }
+  },
+  "include": ["src/**/*", "../core/src/**/*", "../extra/mark/**/*"],
+  "exclude": [
+    "node_modules",
+    "dist",
+    "../core/src/**/*.test.ts",
+    "../extra/mark/**/*.test.ts",
+    "../extra/mark/**/__tests__/**/*"
+  ]
+}

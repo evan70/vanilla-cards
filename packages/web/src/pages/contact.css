@@ -1,0 +1,111 @@
+
+.contact-page {
+  width: min(100%, 84rem);
+  margin: 0 auto;
+  padding: 7rem 1.5rem 4rem;
+}
+
+.contact-hero,
+.contact-form-section__grid,
+.contact-faq {
+  display: grid;
+  gap: 2rem;
+}
+
+.contact-hero {
+  grid-template-columns: minmax(0, 1.2fr) minmax(16rem, 22rem);
+  align-items: center;
+  margin-bottom: 3rem;
+}
+
+.contact-hero__title {
+  font-size: clamp(2.5rem, 5vw, 4.5rem);
+  line-height: 1;
+  margin-bottom: 1rem;
+}
+
+.contact-hero__subtitle,
+.contact-info__text,
+.contact-faq__answer,
+.contact-form__help {
+  color: var(--color-text-muted, #93a0b8);
+  line-height: 1.7;
+}
+
+.contact-hero__image,
+.contact-info,
+.contact-form-wrapper,
+.contact-faq {
+  background: var(--color-bg-elevated, rgba(18, 24, 38, 0.9));
+  border: 1px solid var(--color-border, rgba(212, 175, 55, 0.16));
+  border-radius: 1.5rem;
+  padding: clamp(1.25rem, 2vw, 2rem);
+}
+
+.contact-form-section__grid {
+  grid-template-columns: minmax(18rem, 24rem) minmax(0, 1fr);
+}
+
+.contact-info__items,
+.contact-faq__items {
+  display: grid;
+  gap: 1rem;
+}
+
+.contact-info__item {
+  display: flex;
+  gap: 1rem;
+  align-items: flex-start;
+}
+
+.contact-info__icon {
+  width: 1.25rem;
+  height: 1.25rem;
+  margin-top: 0.2rem;
+  color: var(--brand-gold, #d4af37);
+}
+
+.contact-info__link {
+  color: var(--color-text, #e8edf5);
+  text-decoration: none;
+}
+
+.contact-form {
+  display: grid;
+  gap: 1rem;
+}
+
+.contact-form__group {
+  display: grid;
+  gap: 0.5rem;
+}
+
+.contact-form__input,
+.contact-form__textarea {
+  width: 100%;
+  border: 1px solid var(--color-border, rgba(212, 175, 55, 0.18));
+  border-radius: 1rem;
+  padding: 0.9rem 1rem;
+  background: rgba(8, 12, 20, 0.8);
+  color: var(--color-text, #e8edf5);
+}
+
+.contact-form__textarea {
+  min-height: 10rem;
+  resize: vertical;
+}
+
+.contact-form__input--error,
+.contact-form__textarea.contact-form__input--error {
+  border-color: #f87171;
+}
+
+.contact-form__counter {
+  justify-self: end;
+  color: var(--color-text-muted, #93a0b8);
+  font-size: 0.875rem;
+}
+
+.contact-form__counter--warning {
+  color: #f59e0b;
+}

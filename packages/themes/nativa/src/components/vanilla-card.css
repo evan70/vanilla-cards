@@ -1,0 +1,318 @@
+
+/* ==========================================================================
+   Base Card Component
+   ========================================================================== */
+
+/**
+ * Main card block
+ * 1. Use flexbox for vertical layout
+ * 2. Ensure full height when needed
+ * 3. Smooth transitions for hover states
+ */
+.card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  min-width: 0; /* 1. Prevent flex item overflow */
+  min-height: 0;
+  background: var(--card-bg);
+  border: var(--card-border-width, 1px) solid var(--card-border);
+  border-radius: var(--card-radius);
+  padding: var(--card-padding);
+  box-shadow: var(--card-shadow);
+  transition:
+    transform var(--transition-transform),
+    box-shadow var(--card-transition),
+    background var(--card-transition);
+  overflow: hidden;
+}
+
+/* ==========================================================================
+   Card Modifiers
+   ========================================================================== */
+
+/**
+ * Interactive card - adds hover effects
+ */
+.card--interactive {
+  cursor: pointer;
+}
+
+.card--interactive:hover {
+  transform: translateY(var(--card-hover-offset));
+  box-shadow: var(--card-hover-shadow);
+  background: var(--card-bg-hover);
+}
+
+.card--interactive:active {
+  transform: scale(var(--card-active-scale));
+}
+
+/**
+ * Featured card - highlighted styling
+ */
+.card--featured {
+  border-color: var(--brand-gold);
+  box-shadow:
+    var(--card-shadow),
+    0 0 0 1px rgba(212, 175, 55, 0.2);
+}
+
+/**
+ * Compact card - reduced padding
+ */
+.card--compact {
+  padding: var(--card-padding-sm);
+}
+
+/**
+ * Large card - increased padding
+ */
+.card--large {
+  padding: var(--card-padding-lg);
+}
+
+/**
+ * Loading state - skeleton animation
+ */
+.card--loading {
+  pointer-events: none;
+  overflow: hidden;
+}
+
+.card--loading::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255, 255, 255, 0.1),
+    transparent
+  );
+  animation: card-loading 1.5s infinite;
+}
+
+@keyframes card-loading {
+  0% {
+    transform: translateX(-100%);
+  }
+  100% {
+    transform: translateX(100%);
+  }
+}
+
+/**
+ * Error state
+ */
+.card--error {
+  border-color: var(--color-error);
+  background: linear-gradient(
+    180deg,
+    rgba(239, 68, 68, 0.05),
+    transparent
+  );
+}
+
+/**
+ * Success state
+ */
+.card--success {
+  border-color: var(--color-success);
+  background: linear-gradient(
+    180deg,
+    rgba(34, 197, 94, 0.05),
+    transparent
+  );
+}
+
+/* ==========================================================================
+   Card Elements
+   ========================================================================== */
+
+/**
+ * Card Header
+ */
+.card__header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  margin-bottom: var(--space-4);
+  gap: var(--space-3);
+}
+
+/**
+ * Card Title
+ */
+.card__title {
+  margin: 0;
+  font-size: var(--card-title-size);
+  font-weight: var(--card-title-weight);
+  font-family: var(--card-title-family);
+  color: var(--card-title-color);
+  line-height: var(--leading-tight);
+}
+
+/**
+ * Card Subtitle
+ */
+.card__subtitle {
+  margin: var(--space-1) 0 0;
+  font-size: var(--card-subtitle-size);
+  font-weight: var(--card-subtitle-weight);
+  color: var(--card-subtitle-color);
+}
+
+/**
+ * Card Body
+ */
+.card__body {
+  flex: 1 1 auto;
+  font-size: var(--card-body-size);
+  color: var(--card-body-color);
+  line-height: var(--card-body-line-height);
+}
+
+/**
+ * Card Image
+ */
+.card__image {
+  width: 100%;
+  height: var(--content-card-image-height);
+  object-fit: cover;
+  border-radius: var(--content-card-image-radius);
+  margin-bottom: var(--space-4);
+}
+
+/**
+ * Card Action (button/link container)
+ */
+.card__action {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-2);
+}
+
+/* ==========================================================================
+   CARD FOOTER
+   Fixed height for consistent button/link alignment across cards
+   ========================================================================== */
+
+/**
+ * Card footer - contains actions (buttons, links, metadata)
+ * 1. Push to bottom of card (flexbox)
+ * 2. Fixed minimum height for alignment
+ * 3. Border top for visual separation
+ * 4. Flex layout for horizontal alignment
+ */
+.card__footer {
+  margin-top: auto; /* 1. Push to bottom */
+  padding-top: var(--space-4);
+  border-top: 1px solid var(--color-border); /* 3. Visual separation */
+  min-height: 60px; /* 2. Fixed height for alignment */
+  display: flex; /* 4. Flex layout */
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-3);
+}
+
+/**
+ * Card footer - compact variant
+ */
+.card__footer--compact {
+  min-height: 48px;
+  padding-top: var(--space-3);
+}
+
+/* ==========================================================================
+   GLASSMORPHIC CARD
+   Note: Full glassmorphism implementation moved to utilities/glassmorphism.css
+   Use .glass-card or .glass + .card classes instead
+   ========================================================================== */
+
+/**
+ * @deprecated Use .glass-card from utilities/glassmorphism.css
+ * Kept for backward compatibility
+ */
+.card--glass {
+  background: var(--glass-bg);
+  backdrop-filter: var(--glass-blur);
+  -webkit-backdrop-filter: var(--glass-blur);
+  border: var(--glass-border);
+  box-shadow:
+    var(--glass-shadow),
+    var(--glass-inset-shadow);
+  transition:
+    background var(--transition-base),
+    box-shadow var(--transition-base),
+    border-color var(--transition-base);
+}
+
+.card--glass:hover {
+  background: var(--glass-bg-hover);
+  box-shadow:
+    var(--glass-shadow-hover),
+    var(--glass-inset-shadow),
+    var(--glass-glow);
+  border-color: var(--glass-border-highlight);
+}
+
+/* ==========================================================================
+   GLASSMORPHIC COLOR VARIANTS
+   @deprecated Use .glass-card--gold, .glass-card--emerald, etc. from utilities/glassmorphism.css
+   Kept for backward compatibility
+   ========================================================================== */
+
+/**
+ * @deprecated Use .glass-card--gold
+ */
+.card--glass-gold {
+  --glass-bg: var(--glass-gold-bg);
+  --glass-bg-hover: var(--glass-gold-bg-hover);
+  --glass-border: var(--glass-gold-border);
+  --glass-glow: var(--glass-gold-glow);
+}
+
+/**
+ * @deprecated Use .glass-card--emerald
+ */
+.card--glass-emerald {
+  --glass-bg: var(--glass-emerald-bg);
+  --glass-bg-hover: var(--glass-emerald-bg-hover);
+  --glass-border: var(--glass-emerald-border);
+  --glass-glow: var(--glass-emerald-glow);
+}
+
+/**
+ * @deprecated Use .glass-card--ruby
+ */
+.card--glass-ruby {
+  --glass-bg: var(--glass-ruby-bg);
+  --glass-bg-hover: var(--glass-ruby-bg-hover);
+  --glass-border: var(--glass-ruby-border);
+  --glass-glow: var(--glass-ruby-glow);
+}
+
+/**
+ * @deprecated Use .glass-card--sapphire
+ */
+.card--glass-sapphire {
+  --glass-bg: var(--glass-sapphire-bg);
+  --glass-bg-hover: var(--glass-sapphire-bg-hover);
+  --glass-border: var(--glass-sapphire-border);
+  --glass-glow: var(--glass-sapphire-glow);
+}
+
+/**
+ * @deprecated Use .glass-card--amethyst
+ */
+.card--glass-amethyst {
+  --glass-bg: var(--glass-amethyst-bg);
+  --glass-bg-hover: var(--glass-amethyst-bg-hover);
+  --glass-border: var(--glass-amethyst-border);
+  --glass-glow: var(--glass-amethyst-glow);
+}

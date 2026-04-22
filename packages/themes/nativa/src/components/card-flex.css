@@ -1,0 +1,46 @@
+
+/* ==========================================================================
+   Card Flex System
+   Lineární rozloženie kariet v jednom smere
+   ========================================================================== */
+
+/* Základný flex kontajner */
+.card-flex {
+  display: flex;
+  gap: var(--space-6);
+}
+
+/* Smery */
+.card-flex--column {
+  flex-direction: column;
+}
+
+.card-flex--row {
+  flex-direction: row;
+}
+
+/* Omiešťanie */
+.card-flex--wrap {
+  flex-wrap: wrap;
+}
+
+/* Položky: ako sa majú rozťahovať/zťahovať */
+.card-flex-item {
+  flex: 0 1 auto; /* základné nastavenie: nerastie, môže sa zťahovať, základná šírka podľa obsahu */
+}
+
+.card-flex-item--flex-1 {
+  flex: 1 1 auto; /* rastie a zťahuje sa rovnako ako ostatní, aby vyplnili priestor */
+}
+
+.card-flex-item--flex-0 {
+  flex: 0 0 auto; /* pevná veľkosť podľa obsahu */
+}
+
+.card-flex-item--grow {
+  flex: 1 0 auto; /* len rastie, nezhltáva */
+}
+
+.card-flex-item--shrink {
+  flex: 0 1 auto; /* len zťahuje, nerastie */
+}

@@ -1,0 +1,156 @@
+
+/* ==========================================================================
+   List Card
+   Generic list card with items, titles, meta, actions.
+   Used in admin cardboard AND frontend.
+
+   Primary classes: .card--list, vanilla-card[variant="list"]
+   Legacy aliases: .list-card (for backward compatibility — DEPRECATED)
+   ========================================================================== */
+
+vanilla-card[variant="list"],
+.card--list
+{
+  display: block;
+  background: var(--cardboard-glass-bg);
+  border: 1px solid var(--cardboard-glass-border);
+  border-radius: var(--cardboard-radius-lg);
+  padding: var(--cardboard-card-padding-md);
+  overflow: hidden;
+}
+
+/* Header — Primary: .card--list__* */
+.card--list__header
+{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: var(--space-5) var(--space-6);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+.card--list__title
+{
+  font-size: var(--text-lg);
+  font-weight: 700;
+  color: var(--color-text);
+  margin: 0;
+}
+
+.card--list__action
+{
+  font-size: var(--text-sm);
+  color: var(--brand-gold);
+  text-decoration: none;
+  font-weight: 600;
+  transition: all var(--transition-fast);
+}
+
+.card--list__action:hover
+{
+  color: var(--brand-gold-light, #f5d56e);
+}
+
+/* Content */
+.card--list__content
+{
+  padding: var(--space-4);
+}
+
+/* Item — Primary: .card--list__item */
+.card--list__item
+{
+  display: flex;
+  align-items: center;
+  padding: var(--space-3) var(--space-4);
+  margin-bottom: var(--space-2);
+  transition: all var(--transition-fast);
+  text-decoration: none;
+  color: var(--color-text);
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.03), transparent);
+  list-style: none;
+  border-radius: var(--radius-md);
+}
+
+.card--list__item:hover
+{
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.08), rgba(255, 255, 255, 0.04));
+  transform: translateX(4px);
+}
+
+.card--list__item:last-child {
+  margin-bottom: 0;
+}
+
+/* Item content */
+.card--list__item-content
+{
+  flex: 1;
+  min-width: 0;
+}
+
+/* Item title */
+.card--list__item-title
+{
+  font-weight: 600;
+  font-size: var(--text-sm);
+  color: var(--color-text);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  margin: 0 0 var(--space-1) 0;
+}
+
+/* Item meta */
+.card--list__item-meta
+{
+  display: flex;
+  gap: var(--space-3);
+  align-items: center;
+  font-size: var(--text-xs);
+  color: var(--color-text-muted);
+  font-weight: 500;
+}
+
+.card--list__item-meta-item
+{
+  font-size: var(--text-xs);
+  color: var(--color-text-muted);
+}
+
+/* Item actions */
+.card--list__item-actions
+{
+  display: flex;
+  gap: var(--space-2);
+  margin-top: var(--space-3);
+  flex-shrink: 0;
+}
+
+/* Grid variant */
+.card--list--grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--space-2);
+}
+
+@media (min-width: 768px) {
+  .card--list--grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 1024px) {
+  .card--list--grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+.card--list--grid .card--list__item {
+  margin-bottom: 0;
+}
+
+.card--list--grid .card--list__item:hover {
+  transform: none;
+}
+

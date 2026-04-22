@@ -1,0 +1,210 @@
+
+/* ==========================================================================
+   Client Card Component
+   Card for showcasing client testimonials and logos
+
+   BEM: .card--client (block), .card--client__* (element)
+
+   Theme Variables — override on :root or any parent:
+     --card-client-quote-color: var(--brand-gold);
+     --card-client-avatar-border: var(--brand-gold);
+     --card-client-rating-color: var(--brand-gold);
+   ========================================================================== */
+
+/**
+ * Client card - extends base .card
+ */
+.card--client {
+  text-align: center;
+
+  /* Default theme values */
+  --card-client-quote-color: var(--brand-gold);
+  --card-client-avatar-border: var(--brand-gold);
+  --card-client-rating-color: var(--brand-gold);
+}
+
+/**
+ * Client card logo wrapper
+ */
+.card--client__logo-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: var(--space-4);
+  margin-bottom: var(--space-4);
+}
+
+/**
+ * Client logo
+ */
+.card--client__logo {
+  max-width: 150px;
+  max-height: 80px;
+  object-fit: contain;
+  opacity: 0.7;
+  transition: opacity var(--transition-fast);
+  filter: grayscale(100%);
+}
+
+.card--client__logo:hover {
+  opacity: 1;
+  filter: grayscale(0%);
+}
+
+/**
+ * Client card testimonial quote
+ */
+.card--client__quote {
+  position: relative;
+  margin: 0 0 var(--space-4);
+  padding: 0 var(--space-4);
+  font-size: var(--text-lg);
+  font-style: italic;
+  color: var(--color-text);
+  line-height: var(--leading-relaxed);
+}
+
+.card--client__quote::before {
+  content: '"';
+  position: absolute;
+  top: -20px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 60px;
+  color: var(--card-client-quote-color);
+  font-family: Georgia, serif;
+  line-height: 1;
+}
+
+/**
+ * Client card author
+ */
+.card--client__author {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-2);
+}
+
+/**
+ * Author avatar
+ */
+.card--client__avatar {
+  width: 60px;
+  height: 60px;
+  border-radius: var(--radius-full);
+  object-fit: cover;
+  border: 2px solid var(--card-client-avatar-border);
+}
+
+/**
+ * Author name
+ */
+.card--client__name {
+  margin: 0;
+  font-size: var(--text-base);
+  font-weight: var(--font-semibold);
+  color: var(--color-text);
+}
+
+/**
+ * Author role/title
+ */
+.card--client__role {
+  margin: 0;
+  font-size: var(--text-sm);
+  color: var(--color-text-muted);
+}
+
+/**
+ * Client card rating (stars)
+ */
+.card--client__rating {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-1);
+  margin: var(--space-3) 0;
+}
+
+.card--client__star {
+  width: 20px;
+  height: 20px;
+  color: var(--card-client-rating-color);
+}
+
+.card--client__star--empty {
+  color: var(--color-border);
+}
+
+/**
+ * Client card project info
+ */
+.card--client__project {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2);
+  padding: var(--space-2) var(--space-4);
+  background: var(--card-bg-hover);
+  border-radius: var(--radius-md);
+  font-size: var(--text-sm);
+  color: var(--color-text-muted);
+}
+
+/* ==========================================================================
+   CLIENT CARD MODIFIERS
+   ========================================================================== */
+
+/**
+ * Compact layout (logo + name only)
+ */
+.card--client--compact {
+  padding: var(--space-4);
+}
+
+.card--client--compact .card--client__logo-wrapper {
+  margin-bottom: var(--space-2);
+  padding: var(--space-2);
+}
+
+.card--client--compact .card--client__quote {
+  display: none;
+}
+
+.card--client--compact .card--client__author {
+  flex-direction: row;
+  gap: var(--space-3);
+}
+
+.card--client--compact .card--client__avatar {
+  width: 40px;
+  height: 40px;
+}
+
+/**
+ * Featured client - highlighted styling
+ */
+.card--client--featured {
+  border-color: var(--brand-gold);
+  background: linear-gradient(
+    180deg,
+    rgba(212, 175, 55, 0.05),
+    transparent
+  );
+}
+
+/* ==========================================================================
+   RESPONSIVE
+   ========================================================================== */
+
+@media (max-width: 640px) {
+  .card--client__quote {
+    font-size: var(--text-base);
+    padding: 0 var(--space-2);
+  }
+
+  .card--client__quote::before {
+    font-size: 40px;
+    top: -15px;
+  }
+}

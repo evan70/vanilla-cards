@@ -1,0 +1,34 @@
+@import "../../kernel/tokens/unified.css";
+@import "./cardboard-components.css";
+@import "../../kernel/components/vanilla-card.css";
+@import "../../kernel/components/card-variants.css";
+@import "../../kernel/components/card-stats.css";
+@import "../../kernel/components/card-project.css";
+@import "../../kernel/components/card-case-study.css";
+@import "../../kernel/components/card-client.css";
+@import "../../kernel/components/card-skill.css";
+@import "../../kernel/components/card-header.css";
+@import "../../kernel/components/card-nav-mobile.css";
+@import "../../kernel/components/card-footer.css";
+@import "../../kernel/components/responsive.css";
+@import "../../kernel/base/states.css";
+@import "../../kernel/components/icon.css";
+
+/* ==========================================================================
+   Vanilla Cards Design System
+   Main Bundle Entry Point
+   ========================================================================== */
+
+/* 1. Design Tokens (unified - single source of truth) */
+
+/* 3. Cardboard Components (extracted from cardboard-tokens.css sections 13-20) */
+
+/* 4. Base Card Component */
+
+/* 5. Card Variants */
+
+/* 6. Portfolio Cards */
+
+/* 7. Layout Components */
+
+/* 8. Utilities */

@@ -1,0 +1,370 @@
+
+/* ==========================================================================
+   Fullscreen Card Component
+   Full-viewport immersive experience for galleries and showcases
+
+   Usage:
+   - Portfolio project details
+   - Product showcase
+   - Image galleries
+   - Immersive presentations
+   ========================================================================== */
+
+/* ==========================================================================
+   FULLSCREEN CARD CONTAINER
+   ========================================================================== */
+
+.card--fullscreen {
+  position: fixed;
+  inset: 0;
+  z-index: 99999;
+  background: rgba(0, 0, 0, 0.95);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  visibility: hidden;
+  transition:
+    opacity 0.3s ease,
+    visibility 0.3s ease;
+  overflow: hidden;
+}
+
+.card--fullscreen--active {
+  opacity: 1;
+  visibility: visible;
+}
+
+.card--fullscreen[hidden] {
+  display: none;
+}
+
+/* ==========================================================================
+   CLOSE BUTTON
+   ========================================================================== */
+
+.card--fullscreen__close {
+  position: absolute;
+  top: var(--space-4);
+  right: var(--space-4);
+  z-index: 10;
+  width: 48px;
+  height: 48px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: var(--radius-full);
+  color: var(--neutral-0);
+  font-size: 28px;
+  font-weight: 300;
+  line-height: 1;
+  cursor: pointer;
+  transition:
+    background var(--transition-fast),
+    transform var(--transition-fast);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+}
+
+.card--fullscreen__close:hover {
+  background: rgba(255, 255, 255, 0.2);
+  transform: scale(1.1);
+}
+
+.card--fullscreen__close:active {
+  transform: scale(0.95);
+}
+
+.card--fullscreen__close svg {
+  width: 24px;
+  height: 24px;
+}
+
+/* ==========================================================================
+   CONTENT AREA
+   ========================================================================== */
+
+.card--fullscreen__content {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: var(--space-4);
+}
+
+/* ==========================================================================
+   IMAGE / MEDIA
+   ========================================================================== */
+
+.card--fullscreen__media {
+  max-width: 90vw;
+  max-height: 90vh;
+  object-fit: contain;
+  border-radius: var(--radius-lg);
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
+}
+
+.card--fullscreen__media--zoomed {
+  max-width: none;
+  max-height: none;
+  cursor: grab;
+}
+
+.card--fullscreen__media--zoomed:active {
+  cursor: grabbing;
+}
+
+/* ==========================================================================
+   NAVIGATION ARROWS
+   ========================================================================== */
+
+.card--fullscreen__nav {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 10;
+  width: 56px;
+  height: 56px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: var(--radius-full);
+  color: var(--neutral-0);
+  font-size: 32px;
+  font-weight: 300;
+  line-height: 1;
+  cursor: pointer;
+  transition:
+    background var(--transition-fast),
+    transform var(--transition-fast);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+}
+
+.card--fullscreen__nav:hover {
+  background: rgba(255, 255, 255, 0.2);
+  transform: translateY(-50%) scale(1.1);
+}
+
+.card--fullscreen__nav:active {
+  transform: translateY(-50%) scale(0.95);
+}
+
+.card--fullscreen__nav:disabled {
+  opacity: 0.3;
+  cursor: not-allowed;
+}
+
+.card--fullscreen__nav:disabled:hover {
+  background: rgba(255, 255, 255, 0.1);
+  transform: translateY(-50%);
+}
+
+.card--fullscreen__nav--prev {
+  left: var(--space-4);
+}
+
+.card--fullscreen__nav--next {
+  right: var(--space-4);
+}
+
+/* ==========================================================================
+   THUMBNAIL STRIP
+   ========================================================================== */
+
+.card--fullscreen__thumbnails {
+  position: absolute;
+  bottom: var(--space-4);
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 10;
+  display: flex;
+  gap: var(--space-2);
+  padding: var(--space-2);
+  background: rgba(0, 0, 0, 0.8);
+  border-radius: var(--radius-lg);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  max-width: 90vw;
+  overflow-x: auto;
+  scrollbar-width: thin;
+  scrollbar-color: var(--brand-gold) transparent;
+}
+
+.card--fullscreen__thumbnail {
+  width: 60px;
+  height: 60px;
+  flex-shrink: 0;
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  cursor: pointer;
+  opacity: 0.6;
+  transition:
+    opacity var(--transition-fast),
+    transform var(--transition-fast);
+  border: 2px solid transparent;
+}
+
+.card--fullscreen__thumbnail:hover {
+  opacity: 1;
+  transform: scale(1.05);
+}
+
+.card--fullscreen__thumbnail--active {
+  opacity: 1;
+  border-color: var(--brand-gold);
+}
+
+.card--fullscreen__thumbnail img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* ==========================================================================
+   CAPTION / INFO OVERLAY
+   ========================================================================== */
+
+.card--fullscreen__caption {
+  position: absolute;
+  bottom: var(--space-4);
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 10;
+  max-width: 600px;
+  padding: var(--space-4) var(--space-6);
+  background: rgba(0, 0, 0, 0.8);
+  border-radius: var(--radius-lg);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  text-align: center;
+}
+
+.card--fullscreen__caption-title {
+  margin: 0 0 var(--space-1);
+  font-size: var(--text-lg);
+  font-weight: var(--font-semibold);
+  color: var(--neutral-0);
+}
+
+.card--fullscreen__caption-description {
+  margin: 0;
+  font-size: var(--text-sm);
+  color: var(--neutral-400);
+}
+
+/* ==========================================================================
+   LOADING STATE
+   ========================================================================== */
+
+.card--fullscreen__loader {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 48px;
+  height: 48px;
+  border: 3px solid rgba(255, 255, 255, 0.1);
+  border-top-color: var(--brand-gold);
+  border-radius: 50%;
+  animation: fullscreen-spin 1s linear infinite;
+}
+
+@keyframes fullscreen-spin {
+  to {
+    transform: translate(-50%, -50%) rotate(360deg);
+  }
+}
+
+/* ==========================================================================
+   GALLERY COUNTER
+   ========================================================================== */
+
+.card--fullscreen__counter {
+  position: absolute;
+  top: var(--space-4);
+  left: var(--space-4);
+  z-index: 10;
+  padding: var(--space-2) var(--space-4);
+  background: rgba(0, 0, 0, 0.8);
+  border-radius: var(--radius-full);
+  font-size: var(--text-sm);
+  font-weight: var(--font-medium);
+  color: var(--neutral-400);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+}
+
+/* ==========================================================================
+   RESPONSIVE
+   ========================================================================== */
+
+@media (max-width: 768px) {
+  .card--fullscreen__close {
+    top: var(--space-2);
+    right: var(--space-2);
+    width: 40px;
+    height: 40px;
+  }
+
+  .card--fullscreen__nav {
+    width: 44px;
+    height: 44px;
+    font-size: 24px;
+  }
+
+  .card--fullscreen__nav--prev {
+    left: var(--space-2);
+  }
+
+  .card--fullscreen__nav--next {
+    right: var(--space-2);
+  }
+
+  .card--fullscreen__thumbnails {
+    bottom: var(--space-2);
+  }
+
+  .card--fullscreen__thumbnail {
+    width: 50px;
+    height: 50px;
+  }
+
+  .card--fullscreen__caption {
+    left: var(--space-2);
+    right: var(--space-2);
+    transform: none;
+    max-width: none;
+  }
+}
+
+/* ==========================================================================
+   ACCESSIBILITY
+   ========================================================================== */
+
+.card--fullscreen:focus-visible {
+  outline: 2px solid var(--brand-gold);
+  outline-offset: 4px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .card--fullscreen {
+    transition: none;
+  }
+
+  .card--fullscreen__close,
+  .card--fullscreen__nav,
+  .card--fullscreen__thumbnail {
+    transition: none;
+  }
+
+  .card--fullscreen__loader {
+    animation-duration: 2s;
+  }
+}

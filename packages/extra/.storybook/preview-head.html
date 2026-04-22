@@ -1,0 +1,41 @@
+<style>
+  .sb-main-padded,
+  .sb-story-block,
+  #storybook-docs,
+  .docs-story,
+  [class*="css-"] {
+    background-color: var(--color-bg) !important;
+    color: var(--color-text) !important;
+  }
+
+  /* Docs text */
+  #storybook-docs h1,
+  #storybook-docs h2,
+  #storybook-docs h3,
+  #storybook-docs h4,
+  #storybook-docs p,
+  #storybook-docs li,
+  #storybook-docs td,
+  #storybook-docs th,
+  #storybook-docs code,
+  #storybook-docs span {
+    color: var(--color-text) !important;
+  }
+
+  /* Table rows */
+  #storybook-docs table,
+  #storybook-docs thead,
+  #storybook-docs tbody,
+  #storybook-docs tr,
+  #storybook-docs th,
+  #storybook-docs td {
+    background-color: var(--color-bg) !important;
+    border-color: var(--color-border, rgba(128,128,128,0.2)) !important;
+    color: var(--color-text) !important;
+  }
+
+  /* Alternating rows */
+  #storybook-docs tbody tr:nth-child(even) {
+    background-color: var(--color-bg-alt) !important;
+  }
+</style>

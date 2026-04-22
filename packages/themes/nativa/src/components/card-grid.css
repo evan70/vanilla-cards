@@ -1,0 +1,233 @@
+
+/* ==========================================================================
+   Responsive Breakpoints
+   Mobile-first approach
+   ========================================================================== */
+
+/**
+ * Breakpoint definitions:
+ * --bp-sm: 640px   (small tablets)
+ * --bp-md: 768px   (tablets)
+ * --bp-lg: 1024px  (laptops)
+ * --bp-xl: 1280px  (desktops)
+ * --bp-2xl: 1536px (large desktops)
+ */
+
+/* ==========================================================================
+   Box Sizing Reset
+   Critical for proper width calculations
+   ========================================================================== */
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* ==========================================================================
+   Card Grid System
+   ========================================================================== */
+
+/**
+ * Responsive card grid
+ * Usage: <div class="card-grid card-grid--2-col">
+ */
+.card-grid {
+  display: grid;
+  gap: var(--space-6);
+  grid-template-columns: 1fr;
+}
+
+@media (min-width: 640px) {
+  .card-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 768px) {
+  .card-grid--3-col {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .card-grid--2-col-md {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/**
+ * 2-column grid (always 2 columns, collapses on mobile)
+ */
+.card-grid--2-col {
+  grid-template-columns: repeat(2, 1fr);
+}
+
+@media (max-width: 639px) {
+  .card-grid--2-col {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (min-width: 640px) {
+  .card-grid--4-col {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 1024px) {
+  .card-grid--4-col {
+    grid-template-columns: repeat(4, 1fr);
+  }
+
+  .card-grid--3-col-lg {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (min-width: 1280px) {
+  .card-grid--5-col {
+    grid-template-columns: repeat(5, 1fr);
+  }
+}
+
+/* ==========================================================================
+   Responsive Card Modifiers
+   ========================================================================== */
+
+/**
+ * Hide card content on mobile
+ */
+@media (max-width: 639px) {
+  .card--hide-content-mobile .card__body {
+    display: none;
+  }
+}
+
+/**
+ * Stack on mobile, row on desktop
+ */
+.card--responsive-stack {
+  flex-direction: column;
+}
+
+@media (min-width: 768px) {
+  .card--responsive-stack {
+    flex-direction: row;
+  }
+}
+
+/**
+ * Responsive padding
+ */
+.card--responsive-padding {
+  padding: var(--space-4);
+}
+
+@media (min-width: 768px) {
+  .card--responsive-padding {
+    padding: var(--space-6);
+  }
+}
+
+@media (min-width: 1024px) {
+  .card--responsive-padding {
+    padding: var(--space-8);
+  }
+}
+
+/* ==========================================================================
+   Container Utilities
+   ========================================================================== */
+
+/**
+ * Base container - same padding as header/footer
+ */
+.container {
+  width: 100%;
+  max-width: 1440px;
+  margin: 0 auto;
+  padding-block: var(--space-10) !important;
+  padding-inline: var(--space-4) !important;
+}
+
+@media (min-width: 640px) {
+  .container {
+    padding-inline: var(--space-6) !important;
+  }
+}
+
+@media (min-width: 1024px) {
+  .container {
+    padding-inline: var(--space-8) !important;
+  }
+}
+
+@media (min-width: 1280px) {
+  .container {
+    padding-inline: var(--space-12) !important;
+  }
+}
+
+/* ==========================================================================
+   Card Grid - Homepage & General Use
+   Responsive grid for card layouts
+   ========================================================================== */
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: var(--space-6);
+}
+
+@media (min-width: 640px) {
+  .grid {
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  }
+}
+
+@media (min-width: 1024px) {
+  .grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (min-width: 1280px) {
+  .grid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+/**
+ * Card container with responsive max-width
+ */
+.card-container {
+  width: 100%;
+  max-width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: var(--space-4);
+  padding-right: var(--space-4);
+}
+
+@media (min-width: 640px) {
+  .card-container--sm {
+    max-width: 640px;
+  }
+}
+
+@media (min-width: 768px) {
+  .card-container--md {
+    max-width: 768px;
+  }
+}
+
+@media (min-width: 1024px) {
+  .card-container--lg {
+    max-width: 1024px;
+  }
+}
+
+@media (min-width: 1280px) {
+  .card-container--xl {
+    max-width: 1280px;
+  }
+}

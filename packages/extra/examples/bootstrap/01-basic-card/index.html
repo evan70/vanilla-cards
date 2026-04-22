@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vanilla Cards - Basic Card Examples</title>
+    <link rel="stylesheet" href="../../../styles/core/design-tokens.css">
+    <link rel="stylesheet" href="../../../styles/core/index.css">
+    <link rel="stylesheet" href="../../../styles/components/base-card.css">
+    <link rel="stylesheet" href="../../../styles/ui-utils/buttons.css">
+    <link rel="stylesheet" href="./styles.css">
+</head>
+<body>
+    <header class="demo-header">
+        <h1>🎴 Vanilla Cards - Basic Examples</h1>
+        <p>Complete reference for all 11 card variants</p>
+    </header>
+
+    <!-- Section 1: Basic Variants -->
+    <section class="demo-navigation-section">
+        <h2>1. Basic Variants</h2>
+        <div class="demo-grid">
+            <!-- Elevated -->
+            <div>
+                <span class="variant-badge">elevated</span>
+                <vanilla-card variant="elevated">
+                    <h3 class="card__title">Elevated Card</h3>
+                    <p class="card__description">Default card with shadow elevation for depth.</p>
+                </vanilla-card>
+                <div class="demo-info">
+                    <strong>Use case:</strong> General content cards, articles, products
+                    <div class="demo-code">&lt;vanilla-card variant="elevated"&gt;...&lt;/vanilla-card&gt;</div>
+                </div>
+            </div>
+
+            <!-- Filled -->
+            <div>
+                <span class="variant-badge">filled</span>
+                <vanilla-card variant="filled">
+                    <h3 class="card__title">Filled Card</h3>
+                    <p class="card__description">Card with background fill for emphasis.</p>
+                </vanilla-card>
+                <div class="demo-info">
+                    <strong>Use case:</strong> Highlighted content, call-to-action
+                    <div class="demo-code">&lt;vanilla-card variant="filled"&gt;...&lt;/vanilla-card&gt;</div>
+                </div>
+            </div>
+
+            <!-- Outlined -->
+            <div>
+                <span class="variant-badge">outlined</span>
+                <vanilla-card variant="outlined">
+                    <h3 class="card__title">Outlined Card</h3>
+                    <p class="card__description">Card with border outline, minimal styling.</p>
+                </vanilla-card>
+                <div class="demo-info">
+                    <strong>Use case:</strong> Secondary content, settings, options
+                    <div class="demo-code">&lt;vanilla-card variant="outlined"&gt;...&lt;/vanilla-card&gt;</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section 2: Stats & Data -->
+    <section class="demo-navigation-section">
+        <h2>2. Stats & Data Display</h2>
+        <div class="demo-grid">
+            <!-- Stats -->
+            <div>
+                <span class="variant-badge">stats</span>
+                <vanilla-card variant="stats">
+                    <div class="card--stats__icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <line x1="18" y1="20" x2="18" y2="10"></line>
+                            <line x1="12" y1="20" x2="12" y2="4"></line>
+                            <line x1="6" y1="20" x2="6" y2="14"></line>
+                        </svg>
+                    </div>
+                    <p class="card--stats__value">12,345</p>
+                    <p class="card--stats__label">Total Views</p>
+                </vanilla-card>
+                <div class="demo-info">
+                    <strong>Use case:</strong> Cardboard metrics, KPIs, statistics
+                    <div class="demo-code">&lt;vanilla-card variant="stats"&gt;...&lt;/vanilla-card&gt;</div>
+                </div>
+            </div>
+
+            <!-- List -->
+            <div>
+                <span class="variant-badge">list</span>
+                <vanilla-card variant="list">
+                    <h3 class="card__title">Recent Articles</h3>
+                    <ul class="card--list">
+                        <li class="card--list__item">
+                            <a href="#" class="card--list__link">
+                                <span class="card--list__link-title">Getting Started with Vanilla Cards</span>
+                                <span class="card--list__meta">Mar 15, 2024</span>
+                            </a>
+                        </li>
+                        <li class="card--list__item">
+                            <a href="#" class="card--list__link">
+                                <span class="card--list__link-title">Advanced Card Patterns</span>
+                                <span class="card--list__meta">Mar 10, 2024</span>
+                            </a>
+                        </li>
+                        <li class="card--list__item">
+                            <a href="#" class="card--list__link">
+                                <span class="card--list__link-title">Building Cardboards</span>
+                                <span class="card--list__meta">Mar 5, 2024</span>
+                            </a>
+                        </li>
+                    </ul>
+                </vanilla-card>
+                <div class="demo-info">
+                    <strong>Use case:</strong> Article lists, navigation menus, recent items
+                    <div class="demo-code">&lt;vanilla-card variant="list"&gt;...&lt;/vanilla-card&gt;</div>
+                </div>
+            </div>
+
+            <!-- Table -->
+            <div>
+                <span class="variant-badge">table</span>
+                <vanilla-card variant="table">
+                    <h3 class="card__title">Data Overview</h3>
+                    <table class="card--table">
+                        <thead>
+                            <tr>
+                                <th>Metric</th>
+                                <th>Value</th>
+                                <th>Change</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Users</td>
+                                <td>1,234</td>
+                                <td class="u-text-success">+12%</td>
+                            </tr>
+                            <tr>
+                                <td>Sessions</td>
+                                <td>5,678</td>
+                                <td class="u-text-success">+8%</td>
+                            </tr>
+                            <tr>
+                                <td>Bounce Rate</td>
+                                <td>42.5%</td>
+                                <td class="u-text-error">-3%</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </vanilla-card>
+                <div class="demo-info">
+                    <strong>Use case:</strong> Data tables, comparisons, financial data
+                    <div class="demo-code">&lt;vanilla-card variant="table"&gt;...&lt;/vanilla-card&gt;</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section 3: Interactive Cards -->
+    <section class="demo-navigation-section">
+        <h2>3. Interactive Cards</h2>
+        <div class="demo-grid">
+            <!-- Clickable -->
+            <div>
+                <span class="variant-badge">clickable + href</span>
+                <vanilla-card clickable href="#" variant="elevated">
+                    <h3 class="card__title">Clickable Card</h3>
+                    <p class="card__description">Click anywhere on this card to navigate.</p>
+                </vanilla-card>
+                <div class="demo-info">
+                    <strong>Use case:</strong> Article links, product cards, navigation
+                    <div class="demo-code">&lt;vanilla-card clickable href="/url"&gt;...&lt;/vanilla-card&gt;</div>
+                </div>
+            </div>
+
+            <!-- Actions -->
+            <div>
+                <span class="variant-badge">actions</span>
+                <vanilla-card variant="actions">
+                    <h3 class="card__title">Quick Actions</h3>
+                    <p class="card__description">Choose an action to perform:</p>
+                    <div class="card--actions">
+                        <button class="btn btn--primary">Create New</button>
+                        <button class="btn btn--secondary">Edit</button>
+                        <button class="btn btn--danger">Delete</button>
+                    </div>
+                </vanilla-card>
+                <div class="demo-info">
+                    <strong>Use case:</strong> Action menus, quick operations, cardboards
+                    <div class="demo-code">&lt;vanilla-card variant="actions"&gt;...&lt;/vanilla-card&gt;</div>
+                </div>
+            </div>
+
+            <!-- Horizontal with Media -->
+            <div>
+                <span class="variant-badge">horizontal</span>
+                <vanilla-card variant="horizontal">
+                    <img slot="media" src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='200' height='120' viewBox='0 0 200 120'%3E%3Crect fill='%23d4af37' width='200' height='120'/%3E%3Ctext fill='%231a1a1a' x='50%25' y='50%25' dominant-baseline='middle' text-anchor='middle' font-family='sans-serif' font-size='16'%3EImage%3C/text%3E%3C/svg%3E" alt="Example media" class="u-width-full u-height-120 u-object-cover">
+                    <div slot="content">
+                        <h3 class="card__title">Horizontal Card</h3>
+                        <p class="card__description">Media on the side, content on the right.</p>
+                    </div>
+                    <div slot="actions">
+                        <button class="btn btn--primary btn--sm">Learn More</button>
+                    </div>
+                </vanilla-card>
+                <div class="demo-info">
+                    <strong>Use case:</strong> Product cards, media articles, profiles
+                    <div class="demo-code">&lt;vanilla-card variant="horizontal"&gt;&lt;img slot="media"&gt;...&lt;/vanilla-card&gt;</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section 4: Specialized Cards -->
+    <section class="demo-navigation-section">
+        <h2>4. Specialized Cards</h2>
+        <div class="demo-grid">
+            <!-- Chart -->
+            <div>
+                <span class="variant-badge">chart</span>
+                <vanilla-card variant="chart">
+                    <div class="card--chart__header">
+                        <h3 class="card__title">Views Over Time</h3>
+                        <p class="card--chart__subtitle">Last 30 days</p>
+                    </div>
+                    <div class="card--chart__canvas u-height-200 u-flex-center">
+                        <p class="u-text-muted">[Chart.js canvas would render here]</p>
+                    </div>
+                </vanilla-card>
+                <div class="demo-info">
+                    <strong>Use case:</strong> Analytics, trends, data visualization
+                    <div class="demo-code">&lt;vanilla-card variant="chart"&gt;...&lt;canvas&gt;...&lt;/vanilla-card&gt;</div>
+                </div>
+            </div>
+
+            <!-- Form -->
+            <div>
+                <span class="variant-badge">form</span>
+                <vanilla-card variant="form">
+                    <h3 class="card__title">Quick Contact</h3>
+                    <form class="card--form">
+                        <div class="form-group">
+                            <label for="demo-name" class="form-label">Name</label>
+                            <input type="text" id="demo-name" class="form-input" placeholder="Your name">
+                        </div>
+                        <div class="form-group">
+                            <label for="demo-email" class="form-label">Email</label>
+                            <input type="email" id="demo-email" class="form-input" placeholder="you@example.com">
+                        </div>
+                        <button type="submit" class="btn btn--primary">Send Message</button>
+                    </form>
+                </vanilla-card>
+                <div class="demo-info">
+                    <strong>Use case:</strong> Contact forms, login, quick input
+                    <div class="demo-code">&lt;vanilla-card variant="form"&gt;&lt;form&gt;...&lt;/vanilla-card&gt;</div>
+                </div>
+            </div>
+
+            <!-- Project -->
+            <div>
+                <span class="variant-badge">project</span>
+                <vanilla-card variant="project">
+                    <div class="card--project__image-wrapper">
+                        <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='400' height='200' viewBox='0 0 400 200'%3E%3Crect fill='%231e293b' width='400' height='200'/%3E%3Ctext fill='%23d4af37' x='50%25' y='50%25' dominant-baseline='middle' text-anchor='middle' font-family='sans-serif' font-size='20'%3EProject Image%3C/text%3E%3C/svg%3E" alt="Project" class="card--project__image">
+                    </div>
+                    <div class="card--project__content">
+                        <h3 class="card__title">E-Commerce Platform</h3>
+                        <p class="card__description">Full-stack online shopping platform with payment integration.</p>
+                        <div class="card--project__meta">
+                            <span class="card--project__category">Web Development</span>
+                            <span class="card--project__date">2024</span>
+                        </div>
+                    </div>
+                </vanilla-card>
+                <div class="demo-info">
+                    <strong>Use case:</strong> Portfolio projects, case studies, work samples
+                    <div class="demo-code">&lt;vanilla-card variant="project"&gt;...&lt;/vanilla-card&gt;</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Load Vanilla Cards (built asset) -->
+    <script type="module" src="./vanilla-card.v1.0.0.js" defer></script>
+    <script type="module" src="./main.js" defer></script>
+</body>
+</html>

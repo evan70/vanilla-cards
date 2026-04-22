@@ -1,0 +1,483 @@
+
+/* ==========================================================================
+   Viewport Card Component
+   Full-viewport hero/presentation card
+
+   Usage:
+   - Homepage hero sections
+   - Product showcase
+   - Presentation landing pages
+   - Immersive content introductions
+
+   BEM: .card--viewport (block), .card--viewport__* (element)
+   ========================================================================== */
+
+/* ==========================================================================
+   VIEWPORT CARD (Base)
+   ========================================================================== */
+
+.card--viewport {
+  position: relative;
+  width: 100vw;
+  min-height: 100vh;
+  margin: 0;
+  margin-left: calc(50% - 50vw);
+  margin-right: calc(50% - 50vw);
+  margin-top: 0; /* Start at very top, under fixed header */
+  border: none;
+  border-radius: 0;
+  padding: 0;
+  display: grid;
+  place-items: center;
+  overflow: hidden;
+  background: var(--neutral-950);
+}
+
+/* ==========================================================================
+   BACKGROUND
+   ========================================================================== */
+
+.card--viewport__background {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  overflow: hidden;
+}
+
+.card--viewport__bg-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0.6;
+}
+
+.card--viewport__bg-video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0.6;
+}
+
+.card--viewport__bg-gradient {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    135deg,
+    var(--brand-gold) 0%,
+    var(--brand-amethyst) 50%,
+    var(--brand-sapphire) 100%
+  );
+  opacity: 0.8;
+}
+
+/* ==========================================================================
+   OVERLAY
+   ========================================================================== */
+
+.card--viewport__overlay {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  background: rgba(0, 0, 0, 0.6);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+}
+
+.card--viewport__overlay--light {
+  background: rgba(255, 255, 255, 0.8);
+}
+
+.card--viewport__overlay--dark {
+  background: rgba(0, 0, 0, 0.8);
+}
+
+/* ==========================================================================
+   CONTENT CONTAINER
+   New layout with .top and .bottom sections
+   ========================================================================== */
+
+.card--viewport__container {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  min-height: calc(100vh - 100px);
+  margin: 0 auto;
+  padding: 3em 0;
+  max-width: var(--width-max, 1440px);
+  width: var(--width-content, 90%);
+}
+
+/* Top Section - Two Column Layout */
+.card--viewport__top {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  flex: 1;
+  gap: 3em;
+  justify-content: space-between;
+  margin-bottom: 3em;
+}
+
+/* Text Column */
+.card--viewport__text {
+  flex: 3;
+  display: flex;
+  flex-direction: column;
+  gap: 3em;
+}
+
+/* Headlines wrapper */
+.card--viewport__headlines {
+  line-height: 1.1;
+}
+
+.card--viewport__headlines .card--viewport__title {
+  margin: 0 !important;
+  font-size: clamp(2.5rem, 5vw, 4rem) !important;
+  color: var(--color-text-brand, var(--brand-gold));
+}
+
+/* Custom Content Column (article cards, stats, projects) */
+.card--viewport__custom {
+  flex: 2;
+  width: 100%;
+}
+
+/* Bottom Section - Scroll Indicator */
+.card--viewport__bottom {
+  display: flex;
+  align-items: center;
+  border-top: 1px solid var(--color-border);
+  width: 100%;
+}
+
+.card--viewport__scroll-link {
+  display: block;
+  width: 100%;
+  text-decoration: none;
+  color: var(--color-text);
+  font-family: var(--font-title, sans-serif);
+  font-size: var(--font-size-secondary, 0.875rem);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  transition: background-color 0.2s ease;
+}
+
+.card--viewport__scroll-link:hover {
+  background-color: var(--color-bg-hover);
+}
+
+.card--viewport__scroll-text {
+  display: inline-block;
+  padding: 3em 0;
+}
+
+.card--viewport__scroll-link:hover .card--viewport__scroll-text {
+  padding: 3em 2em;
+}
+
+.card--viewport__scroll-icon {
+  user-select: none;
+  width: 24px;
+  height: 24px;
+  transition: transform 0.2s ease;
+}
+
+.card--viewport__scroll-link:hover .card--viewport__scroll-icon {
+  transform: translateY(4px);
+}
+
+/* Responsive - Portrait Mode */
+@media (orientation: portrait) {
+  .card--viewport__top {
+    flex-direction: column;
+    padding: 5em 0;
+  }
+
+  .card--viewport__text {
+    width: 100%;
+    margin: 0 1em;
+  }
+
+  .card--viewport__custom {
+    width: 100%;
+    max-width: 90vw;
+  }
+
+  .card--viewport__buttons {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1em;
+  }
+
+  .card--viewport__bottom {
+    padding: 3em 1em;
+  }
+}
+
+/* Custom Content Styling */
+.card--viewport__custom-content {
+  width: 100%;
+}
+
+.card--viewport__custom-title {
+  font-size: var(--text-2xl);
+  font-weight: var(--font-bold);
+  margin-bottom: var(--space-6);
+  color: var(--color-text);
+}
+
+.card--viewport__custom-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: var(--space-6);
+}
+
+.card--viewport__custom-grid--stats {
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: var(--space-4);
+}
+
+/* ==========================================================================
+   OLD CONTENT (Deprecated - keep for backward compatibility)
+   ========================================================================== */
+
+.card--viewport__content {
+  position: relative;
+  z-index: 2;
+  max-width: 1200px;
+  padding: var(--space-8);
+  text-align: center;
+  color: var(--neutral-0);
+}
+
+.card--viewport__content--left {
+  text-align: left;
+}
+
+.card--viewport__content--right {
+  text-align: right;
+}
+
+/* ==========================================================================
+   TYPOGRAPHY
+   ========================================================================== */
+
+.card--viewport__title {
+  margin: 0 0 var(--space-4);
+  font-size: clamp(2.5rem, 5vw, 5rem);
+  font-weight: var(--font-bold);
+  line-height: 1.1;
+  letter-spacing: -0.02em;
+}
+
+.card--viewport__subtitle {
+  margin: 0 0 var(--space-6);
+  font-size: clamp(1.25rem, 2vw, 1.75rem);
+  font-weight: var(--font-normal);
+  line-height: 1.5;
+  color: var(--neutral-300);
+}
+
+.card--viewport__description {
+  margin: 0 0 var(--space-8);
+  font-size: clamp(1rem, 1.5vw, 1.25rem);
+  line-height: 1.7;
+  color: var(--neutral-400);
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* ==========================================================================
+   ACTIONS
+   ========================================================================== */
+
+.card--viewport__actions {
+  display: flex;
+  gap: var(--space-4);
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.card--viewport__button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-2);
+  height: 56px;
+  padding: 0 var(--space-8);
+  font-size: var(--text-base);
+  font-weight: var(--font-medium);
+  text-decoration: none;
+  border-radius: var(--radius-full);
+  transition:
+    transform var(--transition-fast),
+    box-shadow var(--transition-fast),
+    background var(--transition-fast);
+  cursor: pointer;
+}
+
+.card--viewport__button--primary {
+  background: var(--brand-gold);
+  color: var(--neutral-900);
+  border: none;
+}
+
+.card--viewport__button--primary:hover {
+  background: #e5c145;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(212, 175, 55, 0.4);
+}
+
+.card--viewport__button--secondary {
+  background: transparent;
+  color: var(--neutral-0);
+  border: 1px solid var(--neutral-600);
+}
+
+.card--viewport__button--secondary:hover {
+  background: rgba(255, 255, 255, 0.1);
+  border-color: var(--neutral-400);
+  transform: translateY(-2px);
+}
+
+/* ==========================================================================
+   SCROLL INDICATOR
+   ========================================================================== */
+
+.card--viewport__scroll-indicator {
+  position: absolute;
+  bottom: var(--space-8);
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-2);
+  color: var(--neutral-400);
+  font-size: var(--text-xs);
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  animation: viewport-bounce 2s ease-in-out infinite;
+}
+
+@keyframes viewport-bounce {
+  0%, 20%, 50%, 80%, 100% {
+    transform: translateX(-50%) translateY(0);
+  }
+  40% {
+    transform: translateX(-50%) translateY(-10px);
+  }
+  60% {
+    transform: translateX(-50%) translateY(-5px);
+  }
+}
+
+.card--viewport__scroll-icon {
+  width: 24px;
+  height: 24px;
+}
+
+/* ==========================================================================
+   MODIFIERS
+   ========================================================================== */
+
+/* Dark theme */
+.card--viewport--dark {
+  background: var(--neutral-950);
+}
+
+.card--viewport--dark .card--viewport__content {
+  color: var(--neutral-0);
+}
+
+/* Light theme */
+.card--viewport--light {
+  background: var(--neutral-50);
+}
+
+.card--viewport--light .card--viewport__content {
+  color: var(--neutral-900);
+}
+
+.card--viewport--light .card--viewport__subtitle,
+.card--viewport--light .card--viewport__description {
+  color: var(--neutral-600);
+}
+
+/* Gradient background */
+.card--viewport--gradient {
+  background: linear-gradient(
+    135deg,
+    var(--brand-gold) 0%,
+    var(--brand-amethyst) 50%,
+    var(--brand-sapphire) 100%
+  );
+}
+
+/* Video background */
+.card--viewport--video {
+  background: var(--neutral-950);
+}
+
+/* Image background */
+.card--viewport--image {
+  background: var(--neutral-950);
+}
+
+/* ==========================================================================
+   RESPONSIVE
+   ========================================================================== */
+
+@media (max-width: 768px) {
+  .card--viewport__content {
+    padding: var(--space-6);
+  }
+
+  .card--viewport__actions {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .card--viewport__button {
+    width: 100%;
+    max-width: 300px;
+  }
+
+  .card--viewport__scroll-indicator {
+    display: none; /* Hide on mobile */
+  }
+}
+
+@media (max-width: 480px) {
+  .card--viewport__title {
+    font-size: clamp(2rem, 8vw, 3rem);
+  }
+
+  .card--viewport__subtitle {
+    font-size: clamp(1rem, 4vw, 1.25rem);
+  }
+}
+
+/* ==========================================================================
+   ACCESSIBILITY
+   ========================================================================== */
+
+@media (prefers-reduced-motion: reduce) {
+  .card--viewport__scroll-indicator {
+    animation: none;
+  }
+
+  .card--viewport__button {
+    transition: none;
+  }
+}
+
+/* Focus states */
+.card--viewport__button:focus-visible {
+  outline: 2px solid var(--brand-gold);
+  outline-offset: 4px;
+}

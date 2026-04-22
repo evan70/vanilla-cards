@@ -1,0 +1,174 @@
+
+/* ==========================================================================
+   Stats Card
+   Generic stats card with icon, value, label, trend.
+   Used in admin cardboard AND frontend.
+
+   Primary classes: .card--stats, vanilla-card[variant="stats"]
+   ========================================================================== */
+
+vanilla-card[variant="stats"],
+.card--stats
+{
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  background: var(--cardboard-glass-bg);
+  border: 1px solid var(--cardboard-glass-border);
+  border-radius: var(--cardboard-radius-lg);
+  padding: var(--cardboard-card-padding-md);
+  transition: all var(--cardboard-transition-fast);
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+vanilla-card[variant="stats"]:hover,
+.card--stats:hover
+{
+  background: var(--cardboard-glass-bg-hover);
+  border-color: var(--cardboard-glass-border-hover);
+  box-shadow: var(--cardboard-shadow-lg);
+  transform: translateY(-2px);
+}
+
+/* Icon — Primary: .card--stats__icon */
+.card--stats__icon {
+  width: var(--cardboard-icon-size-lg);
+  height: var(--cardboard-icon-size-lg);
+  border-radius: var(--cardboard-radius-md);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  background: var(--cardboard-icon-bg-gold);
+  border: 1px solid var(--cardboard-icon-border-gold);
+  box-shadow: inset 0 1px rgba(255, 255, 255, 0.1);
+  margin-bottom: var(--space-3);
+}
+
+.card--stats__icon svg {
+  width: 28px;
+  height: 28px;
+}
+
+/* Value — Primary: .card--stats__value */
+.card--stats__value {
+  font-size: var(--stats-value-size-desktop);
+  font-weight: var(--stats-value-weight);
+  line-height: var(--stats-value-line-height);
+  letter-spacing: var(--stats-value-letter-spacing);
+  color: var(--color-text);
+  margin: 0;
+}
+
+/* Label — Primary: .card--stats__label */
+.card--stats__label {
+  font-size: var(--stats-label-size);
+  font-weight: var(--stats-label-weight);
+  color: var(--stats-label-color);
+  text-transform: var(--stats-label-text-transform);
+  letter-spacing: var(--stats-label-letter-spacing);
+  margin: var(--space-1) 0 0 0;
+}
+
+/* Trend — Primary: .card--stats__trend */
+.card--stats__trend {
+  font-size: var(--stats-trend-size);
+  font-weight: var(--stats-trend-weight);
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-1);
+}
+
+.card--stats__trend--positive
+{
+  color: var(--stats-trend-positive);
+}
+
+.card--stats__trend--negative
+{
+  color: var(--stats-trend-negative);
+}
+
+.card--stats__trend--neutral
+{
+  color: var(--stats-trend-neutral);
+}
+
+/* Icon color variants — Primary: .card--stats__icon--* */
+.card--stats__icon--gold
+{
+  background: var(--cardboard-icon-bg-gold);
+  border-color: var(--cardboard-icon-border-gold);
+}
+
+.card--stats__icon--emerald
+{
+  background: var(--cardboard-icon-bg-emerald);
+  border-color: var(--cardboard-icon-border-emerald);
+}
+
+.card--stats__icon--sapphire
+{
+  background: var(--cardboard-icon-bg-sapphire);
+  border-color: var(--cardboard-icon-border-sapphire);
+}
+
+.card--stats__icon--amethyst
+{
+  background: var(--cardboard-icon-bg-amethyst);
+  border-color: var(--cardboard-icon-border-amethyst);
+}
+
+.card--stats__icon--ruby
+{
+  background: var(--cardboard-icon-bg-ruby);
+  border-color: var(--cardboard-icon-border-ruby);
+}
+
+.card--stats__icon--topaz
+{
+  background: var(--cardboard-icon-bg-topaz);
+  border-color: var(--cardboard-icon-border-topaz);
+}
+
+/* Body wrapper (used by cardboard JS) */
+.card--stats__body {
+  display: flex;
+  align-items: center;
+  gap: var(--space-4);
+  transition: opacity var(--cardboard-transition-fast);
+}
+
+.card--stats__body--loading {
+  opacity: 0.5;
+  pointer-events: none;
+}
+
+.card--stats__content {
+  flex: 1;
+}
+
+/* Clickable variant — Primary: .card--stats--clickable, Legacy: .stats-card--clickable */
+.card--stats--clickable {
+  text-decoration: none;
+  color: inherit;
+  cursor: pointer;
+}
+
+.card--stats--clickable:hover {
+  transform: translateY(-2px);
+}
+
+/* Light theme */
+[data-theme="light"] .card--stats {
+  background: var(--color-bg-card);
+  border-color: var(--color-border);
+}
+
+[data-theme="light"] .card--stats:hover {
+  border-color: rgba(0, 0, 0, 0.12);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+}

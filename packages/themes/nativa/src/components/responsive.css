@@ -1,0 +1,59 @@
+
+/* ==========================================================================
+   Responsive Utilities
+   Responsive visibility and layout utilities
+   ========================================================================== */
+
+/**
+ * Hide element on mobile (max-width: 767px)
+ */
+.hide-on-mobile {
+  @media (max-width: 767px) {
+    display: none !important;
+  }
+}
+
+/**
+ * Hide element on tablet (768px - 1023px)
+ */
+.hide-on-tablet {
+  @media (min-width: 768px) and (max-width: 1023px) {
+    display: none !important;
+  }
+}
+
+/**
+ * Hide element on desktop (min-width: 1024px)
+ */
+.hide-on-desktop {
+  @media (min-width: 1024px) {
+    display: none !important;
+  }
+}
+
+/**
+ * Show only on mobile
+ */
+.show-only-mobile {
+  @media (min-width: 768px) {
+    display: none !important;
+  }
+}
+
+/**
+ * Show only on tablet
+ */
+.show-only-tablet {
+  @media (max-width: 767px), (min-width: 1024px) {
+    display: none !important;
+  }
+}
+
+/**
+ * Show only on desktop
+ */
+.show-only-desktop {
+  @media (max-width: 1023px) {
+    display: none !important;
+  }
+}

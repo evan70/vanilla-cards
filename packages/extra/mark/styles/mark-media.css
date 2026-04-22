@@ -1,0 +1,287 @@
+
+/* ==========================================================================
+   Admin Media Library
+   Media grid, modal, and cloudinary sync
+   ========================================================================== */
+
+/* 1. Media Library Layout
+   ========================================================================== */
+.media-library {
+  padding: var(--space-5);
+}
+
+.media-library__upload {
+  display: flex;
+  gap: var(--space-3);
+  align-items: center;
+  flex-wrap: wrap;
+  margin-bottom: var(--space-5);
+}
+
+.media-library__hint {
+  margin-bottom: var(--space-4);
+  color: var(--color-text-muted);
+}
+
+/* 2. Media Grid (for card layout)
+   ========================================================================== */
+.media-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: var(--space-4);
+}
+
+.media-card {
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.08), rgba(255, 255, 255, 0.03));
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  transition: all var(--transition-fast);
+}
+
+.media-card:hover {
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.12), rgba(255, 255, 255, 0.05));
+  border-color: rgba(255, 255, 255, 0.2);
+  transform: translateY(-2px);
+}
+
+.media-card__preview {
+  width: 100%;
+  height: 160px;
+  object-fit: cover;
+  background: rgba(255, 255, 255, 0.05);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--color-text-muted);
+}
+
+.media-card__info {
+  padding: var(--space-3);
+}
+
+.media-card__name {
+  margin: 0 0 var(--space-1);
+  font-size: var(--text-sm);
+  font-weight: 600;
+  color: var(--color-text);
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.media-card__meta {
+  font-size: var(--text-xs);
+  color: var(--color-text-muted);
+  margin-bottom: var(--space-2);
+}
+
+.media-card__actions {
+  display: flex;
+  gap: var(--space-2);
+}
+
+/* 3. Media Table (for list layout)
+   ========================================================================== */
+.media-library__table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.media-library__cell {
+  text-align: left;
+  padding: var(--space-2);
+  vertical-align: middle;
+}
+
+.media-library__image {
+  object-fit: cover;
+  border-radius: var(--radius-md);
+  width: 60px;
+  height: 60px;
+}
+
+.media-library__open-link {
+  color: var(--brand-sapphire);
+  text-decoration: none;
+  font-weight: 600;
+  transition: all var(--transition-fast);
+}
+
+.media-library__open-link:hover {
+  text-decoration: underline;
+  color: var(--brand-gold);
+}
+
+.media-library__delete-form {
+  margin: 0;
+}
+
+.media-library__delete-button {
+  border-color: rgba(239, 68, 68, 0.3);
+  color: var(--brand-ruby);
+  background: rgba(239, 68, 68, 0.1);
+}
+
+.media-library__delete-button:hover {
+  background: rgba(239, 68, 68, 0.2);
+  border-color: rgba(239, 68, 68, 0.5);
+}
+
+/* 4. Media Modal
+   ========================================================================== */
+.media-modal {
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+  display: grid;
+  place-items: center;
+  padding: var(--space-4);
+}
+
+.media-modal[hidden] {
+  display: none;
+}
+
+.media-modal__backdrop {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.75);
+  backdrop-filter: blur(4px);
+}
+
+.media-modal__dialog {
+  position: relative;
+  width: min(1200px, 100%);
+  height: min(90vh, 900px);
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  display: grid;
+  grid-template-rows: auto 1fr auto;
+  overflow: hidden;
+  box-shadow: 0 25px 100px rgba(0, 0, 0, 0.5);
+}
+
+.media-modal__header,
+.media-modal__footer {
+  padding: var(--space-3) var(--space-4);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-3);
+  background: rgba(16, 21, 29, 0.9);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+.media-modal__footer {
+  border-bottom: none;
+  border-top: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+.media-modal__title {
+  margin: 0;
+  font-size: var(--text-base);
+  font-weight: 600;
+  color: var(--color-text);
+}
+
+.media-modal__counter {
+  font-size: var(--text-sm);
+  color: var(--color-text-muted);
+  font-weight: 500;
+}
+
+.media-modal__body {
+  padding: var(--space-4);
+  overflow: auto;
+  display: grid;
+  place-items: center;
+  background: rgba(0, 0, 0, 0.3);
+}
+
+.media-modal__body .media-modal__image {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+}
+
+.media-modal__body .media-modal__video {
+  max-width: 100%;
+  max-height: 100%;
+}
+
+.media-modal__file-link {
+  color: var(--brand-sapphire);
+  text-decoration: none;
+  font-weight: 600;
+  padding: var(--space-2) var(--space-4);
+  background: rgba(8, 145, 178, 0.1);
+  border: 1px solid rgba(8, 145, 178, 0.3);
+  border-radius: var(--radius-md);
+  transition: all var(--transition-fast);
+}
+
+.media-modal__file-link:hover {
+  background: rgba(8, 145, 178, 0.15);
+  border-color: rgba(8, 145, 178, 0.5);
+}
+
+.media-modal__nav-btn {
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.08), rgba(255, 255, 255, 0.03));
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  color: var(--color-text);
+  padding: var(--space-2) var(--space-3);
+  border-radius: var(--radius-md);
+  cursor: pointer;
+  transition: all var(--transition-fast);
+  font-size: var(--text-sm);
+  font-weight: 500;
+}
+
+.media-modal__nav-btn:hover {
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.12), rgba(255, 255, 255, 0.06));
+  border-color: rgba(255, 255, 255, 0.2);
+  transform: scale(1.05);
+}
+
+.media-modal__nav-btn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+  transform: none;
+}
+
+/* 5. Cloudinary Sync Status
+   ========================================================================== */
+.cloudinary-sync-status {
+  display: none;
+}
+
+/* ==========================================================================
+   Responsive
+   ========================================================================== */
+@media (max-width: 768px) {
+  .media-modal__dialog {
+    height: 100vh;
+    width: 100%;
+    border-radius: 0;
+  }
+
+  .media-modal__header,
+  .media-modal__footer {
+    flex-wrap: wrap;
+  }
+
+  .media-grid {
+    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+  }
+
+  .media-library__upload {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .media-library__upload .media-library__file-input {
+    width: 100%;
+  }
+}

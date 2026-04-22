@@ -1,0 +1,27 @@
+.cta-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: var(--space-12, 3rem) 0;
+}
+
+.cta-section__content {
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.cta-section__title {
+  margin-bottom: var(--space-4, 1rem);
+}
+
+.cta-section__description {
+  margin-bottom: var(--space-8, 2rem);
+}
+
+.cta-section__buttons {
+  display: flex;
+  gap: var(--space-4, 1rem);
+  justify-content: center;
+}

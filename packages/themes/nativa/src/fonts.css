@@ -1,0 +1,38 @@
+
+/* ==========================================================================
+   Local Fonts - @font-face Declarations
+   Vanilla Cards Design System
+   ========================================================================== */
+
+/* ==========================================================================
+   Inter (Sans-Serif)
+   Weights: 400 (Regular)
+   ========================================================================== */
+
+@font-face {
+  font-family: 'Inter';
+  font-weight: 400;
+  font-display: swap;
+  src: url('./assets/fonts/inter/Inter-Regular.woff2') format('woff2');
+}
+
+/* ==========================================================================
+   Playfair Display (Serif)
+   Weights: 400 (Regular), 700 (Bold)
+   ========================================================================== */
+
+@font-face {
+  font-family: 'Playfair Display';
+  font-weight: 400;
+  font-display: swap;
+  src: url('./assets/fonts/playfair/PlayfairDisplay-Regular.woff2') format('woff2');
+}
+
+@font-face {
+  font-family: 'Playfair Display';
+  font-weight: 700;
+  font-display: swap;
+  src: url('./assets/fonts/playfair/PlayfairDisplay-Bold.woff2') format('woff2');
+}
+
+/* Fallback to system-ui for other weights */

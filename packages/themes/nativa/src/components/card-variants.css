@@ -1,0 +1,300 @@
+
+/**
+ * Card Variants
+ * 
+ * Inspired by MDUI v2 card variants: elevated, filled, outlined
+ * 
+ * @see https://mdui.org/docs/card
+ */
+
+/* ==========================================================================
+   Card Variants (MDUI-inspired)
+   ========================================================================== */
+
+/* Elevated (default) - shadow, visual separation from background */
+.card--elevated {
+  background: var(--card-bg);
+  box-shadow: var(--shadow-md);
+  border: none;
+  transition: 
+    box-shadow var(--transition-base), 
+    transform var(--transition-base);
+}
+
+.card--elevated:hover {
+  box-shadow: var(--shadow-lg);
+  transform: translateY(-2px);
+}
+
+.card--elevated:active {
+  box-shadow: var(--shadow-md);
+  transform: translateY(0);
+}
+
+/* Filled - solid background color, lower visual separation */
+.card--filled {
+  background: var(--color-bg-alt);
+  box-shadow: none;
+  border: 1px solid var(--color-border);
+  transition: 
+    box-shadow var(--transition-base), 
+    transform var(--transition-base);
+}
+
+.card--filled:hover {
+  box-shadow: var(--shadow-sm);
+  transform: translateY(-2px);
+}
+
+.card--filled:active {
+  box-shadow: none;
+  transform: translateY(0);
+}
+
+/* Outlined - border only, minimal style, highest visual separation */
+.card--outlined {
+  background: transparent;
+  box-shadow: none;
+  border: 2px solid var(--color-border);
+  transition: 
+    border-color var(--transition-base), 
+    box-shadow var(--transition-base), 
+    transform var(--transition-base);
+}
+
+.card--outlined:hover {
+  border-color: var(--brand-gold);
+  box-shadow: var(--shadow-sm);
+  transform: translateY(-2px);
+}
+
+.card--outlined:active {
+  border-color: var(--brand-gold);
+  box-shadow: none;
+  transform: translateY(0);
+}
+
+/* ==========================================================================
+   Horizontal Variant - Media + Content Layout
+   ========================================================================== */
+
+.card--horizontal {
+  display: grid;
+  grid-template-columns: 40% 60%;
+  gap: var(--spacing-md);
+  padding: 0;
+  overflow: hidden;
+  align-items: stretch;
+}
+
+.card--horizontal .card__media {
+  width: 100%;
+  height: 100%;
+  min-height: 280px;
+  object-fit: cover;
+  border-radius: var(--radius-md) 0 0 var(--radius-md);
+  margin: 0;
+}
+
+.card--horizontal .card__content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: var(--spacing-lg);
+}
+
+.card--horizontal .card__title {
+  font-size: var(--font-size-2xl);
+  margin-bottom: var(--spacing-sm);
+}
+
+.card--horizontal .card__description {
+  font-size: var(--font-size-base);
+  line-height: var(--line-height-relaxed);
+  margin-bottom: var(--spacing-md);
+}
+
+.card--horizontal .card__actions {
+  display: flex;
+  gap: var(--spacing-sm);
+  margin-top: auto;
+}
+
+/* Responsive: Stack on mobile */
+@media (max-width: 768px) {
+  .card--horizontal {
+    grid-template-columns: 1fr;
+  }
+
+  .card--horizontal .card__media {
+    min-height: 200px;
+    border-radius: var(--radius-md) var(--radius-md) 0 0;
+  }
+
+  .card--horizontal .card__content {
+    padding: var(--spacing-md);
+  }
+}
+
+/* ==========================================================================
+   Clickable State - Interactive Cards
+   ========================================================================== */
+
+.card--clickable {
+  cursor: pointer;
+}
+
+/* Enhanced hover effect for clickable cards */
+.card--clickable:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-xl);
+}
+
+.card--clickable:active {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-md);
+}
+
+/* ==========================================================================
+   Focus State - Accessibility
+   ========================================================================== */
+
+.card:focus-visible {
+  outline: 2px solid var(--brand-gold);
+  outline-offset: 2px;
+}
+
+.card--elevated:focus-visible {
+  outline: 2px solid var(--brand-gold);
+  outline-offset: 2px;
+  box-shadow: var(--shadow-lg);
+}
+
+.card--filled:focus-visible {
+  outline: 2px solid var(--brand-gold);
+  outline-offset: 2px;
+  border-color: var(--brand-gold);
+}
+
+.card--outlined:focus-visible {
+  outline: 2px solid var(--brand-gold);
+  outline-offset: 2px;
+  border-color: var(--brand-gold);
+  box-shadow: var(--shadow-md);
+}
+
+/* ==========================================================================
+   Disabled State
+   ========================================================================== */
+
+.card--disabled {
+  opacity: 0.5;
+  pointer-events: none;
+  cursor: not-allowed;
+  filter: grayscale(100%);
+}
+
+.card--elevated.card--disabled {
+  background: var(--color-bg-alt);
+  box-shadow: none;
+}
+
+.card--filled.card--disabled {
+  background: var(--color-bg);
+}
+
+.card--outlined.card--disabled {
+  border-color: var(--color-border);
+  opacity: 0.38;
+}
+
+/* ==========================================================================
+   Drag States (for sortable cards)
+   ========================================================================== */
+
+.card--dragging {
+  opacity: 0.5;
+  box-shadow: var(--shadow-2xl);
+  transform: scale(1.02);
+}
+
+.card--drag-over {
+  border-color: var(--brand-gold);
+  box-shadow: var(--shadow-lg);
+}
+
+/* ==========================================================================
+   Selected State (for selectable cards)
+   ========================================================================== */
+
+.card--selected {
+  border-color: var(--brand-gold);
+  box-shadow: var(--shadow-lg);
+}
+
+.card--selected::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 4px;
+  height: 100%;
+  background: var(--brand-gold);
+  border-radius: var(--radius-sm) 0 0 var(--radius-sm);
+}
+
+/* ==========================================================================
+   Dark Theme Overrides (centralized)
+   ========================================================================== */
+
+[data-theme="dark"] .card--elevated {
+  background: var(--card-bg);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+}
+
+[data-theme="dark"] .card--elevated:hover {
+  box-shadow: 0 10px 15px rgba(0, 0, 0, 0.4);
+}
+
+[data-theme="dark"] .card--filled {
+  background: var(--color-bg-alt);
+  border-color: var(--neutral-700);
+}
+
+[data-theme="dark"] .card--outlined {
+  border-color: var(--neutral-600);
+}
+
+[data-theme="dark"] .card--outlined:hover {
+  border-color: var(--brand-gold);
+}
+
+/* ==========================================================================
+   Responsive Adjustments
+   ========================================================================== */
+
+@media (max-width: 768px) {
+  .card--elevated:hover,
+  .card--filled:hover,
+  .card--outlined:hover {
+    transform: translateY(-2px);
+  }
+  
+  .card--clickable:hover {
+    transform: translateY(-2px);
+  }
+}
+
+/* ==========================================================================
+   Print Styles
+   ========================================================================== */
+
+@media print {
+  .card--elevated,
+  .card--filled,
+  .card--outlined {
+    box-shadow: none;
+    transform: none;
+    border: 1px solid #000;
+  }
+}

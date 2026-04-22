@@ -1,0 +1,228 @@
+
+/* ==========================================================================
+   Glassmorphism Utilities
+   Centralized glassmorphic effects for consistent frosted glass design
+   
+   Usage:
+   - Apply .glass base class for standard glass effect
+   - Add .glass--gold, .glass--emerald, etc. for color variants
+   - Use .glass--hover for hover-enhanced glass effect
+   ========================================================================== */
+
+/* ==========================================================================
+   GLASS BASE
+   Core glassmorphic effect with backdrop blur
+   ========================================================================== */
+.glass {
+  background: var(--glass-bg);
+  backdrop-filter: var(--glass-blur);
+  -webkit-backdrop-filter: var(--glass-blur);
+  border: var(--glass-border);
+  box-shadow:
+    var(--glass-shadow),
+    var(--glass-inset-shadow);
+  transition:
+    background var(--transition-base),
+    box-shadow var(--transition-base),
+    border-color var(--transition-base);
+}
+
+/* Glass with hover enhancement */
+.glass--hover:hover {
+  background: var(--glass-bg-hover);
+  box-shadow:
+    var(--glass-shadow-hover),
+    var(--glass-inset-shadow),
+    var(--glass-glow);
+  border-color: var(--glass-border-highlight);
+}
+
+/* Strong blur variant (for headers, sticky elements) */
+.glass--strong {
+  --glass-blur: blur(20px);
+}
+
+/* Light blur variant (subtle effect) */
+.glass--light {
+  --glass-blur: blur(8px);
+}
+
+/* No blur variant (transparent only) */
+.glass--no-blur {
+  backdrop-filter: none;
+  -webkit-backdrop-filter: none;
+}
+
+/* ==========================================================================
+   GLASS COLOR VARIANTS
+   Apply as modifier classes: .glass.glass--gold
+   ========================================================================== */
+
+/* Gold Glass (premium/warm) */
+.glass--gold {
+  --glass-bg: var(--glass-gold-bg);
+  --glass-bg-hover: var(--glass-gold-bg-hover);
+  --glass-border: var(--glass-gold-border);
+  --glass-glow: var(--glass-gold-glow);
+}
+
+/* Emerald Glass (success/calm) */
+.glass--emerald {
+  --glass-bg: var(--glass-emerald-bg);
+  --glass-bg-hover: var(--glass-emerald-bg-hover);
+  --glass-border: var(--glass-emerald-border);
+  --glass-glow: var(--glass-emerald-glow);
+}
+
+/* Ruby Glass (danger/passion) */
+.glass--ruby {
+  --glass-bg: var(--glass-ruby-bg);
+  --glass-bg-hover: var(--glass-ruby-bg-hover);
+  --glass-border: var(--glass-ruby-border);
+  --glass-glow: var(--glass-ruby-glow);
+}
+
+/* Sapphire Glass (trust/professional) */
+.glass--sapphire {
+  --glass-bg: var(--glass-sapphire-bg);
+  --glass-bg-hover: var(--glass-sapphire-bg-hover);
+  --glass-border: var(--glass-sapphire-border);
+  --glass-glow: var(--glass-sapphire-glow);
+}
+
+/* Amethyst Glass (creative/luxury) */
+.glass--amethyst {
+  --glass-bg: var(--glass-amethyst-bg);
+  --glass-bg-hover: var(--glass-amethyst-bg-hover);
+  --glass-border: var(--glass-amethyst-border);
+  --glass-glow: var(--glass-amethyst-glow);
+}
+
+/* ==========================================================================
+   GLASS CARD COMPONENT
+   Complete glass card with all effects (replaces .card--glass)
+   ========================================================================== */
+.glass-card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+  min-height: 0;
+  background: var(--glass-bg);
+  backdrop-filter: var(--glass-blur);
+  -webkit-backdrop-filter: var(--glass-blur);
+  border: var(--glass-border);
+  box-shadow:
+    var(--glass-shadow),
+    var(--glass-inset-shadow);
+  border-radius: var(--card-radius);
+  padding: var(--card-padding);
+  transition:
+    background var(--transition-base),
+    box-shadow var(--transition-base),
+    border-color var(--transition-base);
+}
+
+.glass-card--hover:hover {
+  background: var(--glass-bg-hover);
+  box-shadow:
+    var(--glass-shadow-hover),
+    var(--glass-inset-shadow),
+    var(--glass-glow);
+  border-color: var(--glass-border-highlight);
+}
+
+/* Glass card color variants */
+.glass-card--gold {
+  --glass-bg: var(--glass-gold-bg);
+  --glass-bg-hover: var(--glass-gold-bg-hover);
+  --glass-border: var(--glass-gold-border);
+  --glass-glow: var(--glass-gold-glow);
+}
+
+.glass-card--emerald {
+  --glass-bg: var(--glass-emerald-bg);
+  --glass-bg-hover: var(--glass-emerald-bg-hover);
+  --glass-border: var(--glass-emerald-border);
+  --glass-glow: var(--glass-emerald-glow);
+}
+
+.glass-card--ruby {
+  --glass-bg: var(--glass-ruby-bg);
+  --glass-bg-hover: var(--glass-ruby-bg-hover);
+  --glass-border: var(--glass-ruby-border);
+  --glass-glow: var(--glass-ruby-glow);
+}
+
+.glass-card--sapphire {
+  --glass-bg: var(--glass-sapphire-bg);
+  --glass-bg-hover: var(--glass-sapphire-bg-hover);
+  --glass-border: var(--glass-sapphire-border);
+  --glass-glow: var(--glass-sapphire-glow);
+}
+
+.glass-card--amethyst {
+  --glass-bg: var(--glass-amethyst-bg);
+  --glass-bg-hover: var(--glass-amethyst-bg-hover);
+  --glass-border: var(--glass-amethyst-border);
+  --glass-glow: var(--glass-amethyst-glow);
+}
+
+/* ==========================================================================
+   GLASS PANEL
+   Simpler glass panel (no padding, for custom layouts)
+   ========================================================================== */
+.glass-panel {
+  background: var(--glass-bg);
+  backdrop-filter: var(--glass-blur);
+  -webkit-backdrop-filter: var(--glass-blur);
+  border: var(--glass-border);
+  box-shadow: var(--glass-shadow);
+}
+
+/* ==========================================================================
+   GLASS OVERLAY
+   Full-screen or large area glass overlay
+   ========================================================================== */
+.glass-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.8);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  z-index: var(--z-modal);
+}
+
+/* ==========================================================================
+   DARK THEME ENHANCEMENTS
+   Applied automatically when [data-theme="dark"] is present
+   ========================================================================== */
+[data-theme="dark"] .glass {
+  --glass-bg: linear-gradient(
+    135deg,
+    rgba(255, 255, 255, 0.1),
+    rgba(255, 255, 255, 0.05)
+  );
+  --glass-bg-hover: linear-gradient(
+    135deg,
+    rgba(255, 255, 255, 0.15),
+    rgba(255, 255, 255, 0.08)
+  );
+  --glass-border: 1px solid rgba(255, 255, 255, 0.15);
+  --glass-inset-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.15);
+}
+
+[data-theme="dark"] .glass-card {
+  --glass-bg: linear-gradient(
+    135deg,
+    rgba(255, 255, 255, 0.1),
+    rgba(255, 255, 255, 0.05)
+  );
+  --glass-bg-hover: linear-gradient(
+    135deg,
+    rgba(255, 255, 255, 0.15),
+    rgba(255, 255, 255, 0.08)
+  );
+  --glass-border: 1px solid rgba(255, 255, 255, 0.15);
+  --glass-inset-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.15);
+}

@@ -1,0 +1,424 @@
+
+/* ==========================================================================
+   Notification Cards - Glassmorphic Design System
+   ========================================================================== */
+
+/* Container - Bottom Right Fixed */
+.card--notifications-container {
+  position: fixed;
+  bottom: 24px;
+  right: 24px;
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-sm, 0.75rem);
+  z-index: 9999;
+  max-width: 420px;
+  pointer-events: none; /* Allow clicks through container */
+}
+
+/* Individual Card */
+.card--notification {
+  position: relative;
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: var(--spacing-md, 1rem);
+  padding: var(--spacing-lg, 1.25rem) var(--spacing-xl, 1.5rem);
+  min-width: 320px;
+  max-width: 420px;
+
+  /* Glassmorphic Design */
+  background: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(12px) saturate(180%);
+  -webkit-backdrop-filter: blur(12px) saturate(180%);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  border-radius: var(--radius-xl, 16px);
+  box-shadow:
+    0 8px 32px rgba(0, 0, 0, 0.08),
+    0 2px 8px rgba(0, 0, 0, 0.04),
+    inset 0 1px 0 rgba(255, 255, 255, 0.4);
+
+  /* Animation */
+  transform: scale(0.9) translateY(10px);
+  opacity: 0;
+  pointer-events: auto;
+  transition:
+    transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1),
+    opacity 0.3s ease,
+    box-shadow 0.3s ease,
+    background 0.3s ease;
+}
+
+/* Hidden state (initial) */
+.card--notification--hidden {
+  transform: scale(0.9) translateY(10px);
+  opacity: 0;
+  pointer-events: none;
+}
+
+/* Visible state (after animation) */
+.card--notification:not(.card--notification--hidden) {
+  transform: scale(1) translateY(0);
+  opacity: 1;
+}
+
+/* Dismissing animation */
+.card--notification--dismissing {
+  transform: scale(0.95) translateY(5px);
+  opacity: 0;
+  pointer-events: none;
+}
+
+/* Hover effect - lift and glow */
+.card--notification:hover {
+  box-shadow:
+    0 12px 40px rgba(0, 0, 0, 0.12),
+    0 4px 12px rgba(0, 0, 0, 0.06),
+    inset 0 1px 0 rgba(255, 255, 255, 0.5);
+}
+
+/* Card Content */
+.card--notification__content {
+  flex: 1;
+  min-width: 0; /* Allow text truncation */
+  transition: opacity 0.3s ease;
+}
+
+/* Content fade transitions */
+.card--notification__content--fading {
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.card--notification__content--fading-in {
+  opacity: 0;
+  animation: notification-content-fade-in 0.3s ease forwards;
+}
+
+@keyframes notification-content-fade-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+/* Title */
+.card--notification__title {
+  margin: 0 0 var(--spacing-xs, 0.5rem) 0;
+  font-size: var(--font-size-lg, 1.0625rem);
+  font-weight: 600;
+  line-height: 1.4;
+  color: var(--color-text, #1a1a1a);
+}
+
+/* Body (icon + message) */
+.card--notification__body {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--spacing-sm, 0.75rem);
+}
+
+/* Icon */
+.card--notification__icon {
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 20px;
+  height: 20px;
+  color: var(--notification-icon-color, #666666);
+}
+
+/* Message */
+.card--notification__message {
+  flex: 1;
+  margin: 0;
+  font-size: var(--font-size-base, 0.9375rem);
+  line-height: 1.5;
+  color: var(--color-text, #1a1a1a);
+}
+
+/* Actions */
+.card--notification__actions {
+  display: flex;
+  gap: var(--spacing-sm, 0.5rem);
+  margin-top: var(--spacing-md, 1rem);
+  justify-content: flex-end;
+  flex-wrap: wrap;
+}
+
+.card--notification__action {
+  padding: var(--spacing-sm, 0.625rem) var(--spacing-md, 1rem);
+  font-size: var(--font-size-sm, 0.875rem);
+  font-weight: 600;
+  border-radius: var(--radius-md, 8px);
+  transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+  cursor: pointer;
+  border: none;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Primary button */
+.card--notification__action.btn--primary {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  box-shadow: 0 2px 8px rgba(102, 126, 234, 0.3);
+}
+
+.card--notification__action.btn--primary:hover {
+  box-shadow: 0 4px 16px rgba(102, 126, 234, 0.5);
+  transform: translateY(-1px);
+}
+
+.card--notification__action.btn--primary:active {
+  transform: translateY(0);
+  box-shadow: 0 2px 6px rgba(102, 126, 234, 0.3);
+}
+
+.card--notification__action.btn--primary:focus-visible {
+  outline: 2px solid #667eea;
+  outline-offset: 2px;
+}
+
+/* Secondary button */
+.card--notification__action.btn--secondary {
+  background: rgba(0, 0, 0, 0.05);
+  color: var(--color-text, #1a1a1a);
+  border: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.card--notification__action.btn--secondary:hover {
+  background: rgba(0, 0, 0, 0.08);
+  border-color: rgba(0, 0, 0, 0.2);
+  transform: translateY(-1px);
+}
+
+.card--notification__action.btn--secondary:active {
+  transform: translateY(0);
+  background: rgba(0, 0, 0, 0.1);
+}
+
+.card--notification__action.btn--secondary:focus-visible {
+  outline: 2px solid #667eea;
+  outline-offset: 2px;
+}
+
+/* Danger button */
+.card--notification__action.btn--danger {
+  background: linear-gradient(135deg, #ef4444 0%, #dc2626 100%);
+  color: white;
+  box-shadow: 0 2px 8px rgba(239, 68, 68, 0.3);
+}
+
+.card--notification__action.btn--danger:hover {
+  box-shadow: 0 4px 16px rgba(239, 68, 68, 0.5);
+  transform: translateY(-1px);
+}
+
+/* Links in messages */
+.card--notification__message a {
+  color: #667eea;
+  text-decoration: underline;
+  text-underline-offset: 2px;
+  font-weight: 500;
+  transition: all 0.2s ease;
+}
+
+.card--notification__message a:hover {
+  color: #764ba2;
+  text-decoration: none;
+}
+
+.card--notification__message a:focus-visible {
+  outline: 2px solid #667eea;
+  outline-offset: 2px;
+  border-radius: 2px;
+}
+
+/* Dark theme links */
+[data-theme="dark"] .card--notification__message a {
+  color: #a5b4fc;
+}
+
+[data-theme="dark"] .card--notification__message a:hover {
+  color: #c7d2fe;
+}
+
+/* Close Button */
+.card--notification__close {
+  flex-shrink: 0;
+  width: 28px;
+  height: 28px;
+  padding: 6px;
+  margin: -8px -8px 0 0;
+  background: transparent;
+  border: none;
+  border-radius: var(--radius-md, 6px);
+  cursor: pointer;
+  color: var(--color-text-muted, #666666);
+  transition: all 0.2s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.card--notification__close:hover {
+  background: rgba(0, 0, 0, 0.05);
+  color: var(--color-text, #1a1a1a);
+}
+
+.card--notification__close:active {
+  transform: scale(0.95);
+}
+
+/* ==========================================================================
+   Notification Types
+   ========================================================================== */
+
+/* Cookie Consent */
+.card--notification--cookie {
+  --notification-icon-color: #8b5cf6;
+  border-left: 4px solid #8b5cf6;
+}
+
+/* Success */
+.card--notification--success {
+  --notification-icon-color: #22c55e;
+  border-left: 4px solid #22c55e;
+}
+
+/* Error */
+.card--notification--error {
+  --notification-icon-color: #ef4444;
+  border-left: 4px solid #ef4444;
+}
+
+/* Warning */
+.card--notification--warning {
+  --notification-icon-color: #f59e0b;
+  border-left: 4px solid #f59e0b;
+}
+
+/* Info */
+.card--notification--info {
+  --notification-icon-color: #0ea5e9;
+  border-left: 4px solid #0ea5e9;
+}
+
+/* ==========================================================================
+   Dark Theme Support
+   ========================================================================== */
+
+[data-theme="dark"] .card--notification {
+  background: rgba(30, 30, 30, 0.75);
+  backdrop-filter: blur(12px) saturate(180%);
+  -webkit-backdrop-filter: blur(12px) saturate(180%);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow:
+    0 8px 32px rgba(0, 0, 0, 0.3),
+    0 2px 8px rgba(0, 0, 0, 0.2),
+    inset 0 1px 0 rgba(255, 255, 255, 0.1);
+}
+
+[data-theme="dark"] .card--notification:hover {
+  box-shadow:
+    0 12px 40px rgba(0, 0, 0, 0.4),
+    0 4px 12px rgba(0, 0, 0, 0.3),
+    inset 0 1px 0 rgba(255, 255, 255, 0.15);
+}
+
+[data-theme="dark"] .card--notification__title,
+[data-theme="dark"] .card--notification__message {
+  color: var(--color-text-light, #f0f0f0);
+}
+
+[data-theme="dark"] .card--notification__close {
+  color: var(--color-text-muted-light, #999999);
+}
+
+[data-theme="dark"] .card--notification__close:hover {
+  background: rgba(255, 255, 255, 0.1);
+  color: var(--color-text-light, #f0f0f0);
+}
+
+/* Dark theme buttons */
+[data-theme="dark"] .card--notification__action.btn--secondary {
+  background: rgba(255, 255, 255, 0.1);
+  color: var(--color-text-light, #f0f0f0);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+[data-theme="dark"] .card--notification__action.btn--secondary:hover {
+  background: rgba(255, 255, 255, 0.15);
+  border-color: rgba(255, 255, 255, 0.3);
+}
+
+[data-theme="dark"] .card--notification__action.btn--secondary:active {
+  background: rgba(255, 255, 255, 0.2);
+}
+
+/* ==========================================================================
+   Responsive Design
+   ========================================================================== */
+
+@media (max-width: 768px) {
+  .card--notifications-container {
+    bottom: 16px;
+    right: 16px;
+    left: 16px;
+    max-width: none;
+  }
+
+  .card--notification {
+    min-width: auto;
+    max-width: none;
+    padding: var(--spacing-md, 1rem);
+  }
+
+  .card--notification__title {
+    font-size: var(--font-size-base, 1rem);
+  }
+
+  .card--notification__message {
+    font-size: var(--font-size-sm, 0.875rem);
+  }
+
+  .card--notification__actions {
+    flex-direction: column;
+  }
+
+  .card--notification__action {
+    width: 100%;
+    text-align: center;
+  }
+}
+
+/* ==========================================================================
+   Reduced Motion
+   ========================================================================== */
+
+@media (prefers-reduced-motion: reduce) {
+  .card--notification {
+    transition: none;
+    animation: none;
+  }
+
+  .card--notification--hidden,
+  .card--notification:not(.card--notification--hidden),
+  .card--notification--dismissing {
+    transform: none;
+  }
+}
+
+/* ==========================================================================
+   Print Styles
+   ========================================================================== */
+
+@media print {
+  .card--notifications-container {
+    display: none !important;
+  }
+}

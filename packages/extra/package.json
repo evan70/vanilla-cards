@@ -1,0 +1,15 @@
+{
+  "name": "@vc/extra",
+  "version": "0.0.1",
+  "type": "module",
+  "scripts": {
+    "typecheck": "tsc --noEmit"
+  },
+  "dependencies": {
+    "@vc/core": "workspace:*",
+    "@vc/theme-nativa": "workspace:*"
+  },
+  "devDependencies": {
+    "typescript": "^6.0.3"
+  }
+}

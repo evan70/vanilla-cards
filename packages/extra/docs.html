@@ -1,0 +1,404 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vanilla Cards - Web Components Library</title>
+    <link rel="stylesheet" href="./docs.css">
+</head>
+<body data-theme="light">
+    <!-- Navigation -->
+    <vanilla-card variant="header">
+        <div class="card--header__inner">
+            <a href="demo.html" class="card--header__logo">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon--inline"><rect width="14" height="20" x="5" y="2" rx="2" ry="2"></rect><path d="M9 7h6"></path><path d="M9 11h6"></path><path d="M9 15h6"></path></svg>
+                Vanilla Cards<span class="card--header__logo-dot">.</span>
+            </a>
+
+            <nav class="card--header__nav">
+                <ul>
+                    <li class="card--header__nav-item">
+                        <a href="index.html" class="card--header__nav-link">Home</a>
+                    </li>
+                    <li class="card--header__nav-item">
+                        <a href="demo.html" class="card--header__nav-link">Showcase</a>
+                    </li>
+                    <li class="card--header__nav-item">
+                        <a href="docs.html" class="card--header__nav-link card--header__nav-link--active">Docs</a>
+                    </li>
+                </ul>
+            </nav>
+
+            <div class="card--header__actions">
+                <button class="card--header__action-btn" aria-label="Search">
+                    <svg class="card--header__action-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+                </button>
+                <button class="card--header__theme-toggle" id="theme-toggle" aria-label="Toggle theme">
+                    <svg class="card--header__theme-icon card--header__theme-icon--moon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>
+                    <svg class="card--header__theme-icon card--header__theme-icon--sun" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"></circle><line x1="12" y1="1" x2="12" y2="3"></line><line x1="12" y1="21" x2="12" y2="23"></line><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line><line x1="1" y1="12" x2="3" y2="12"></line><line x1="21" y1="12" x2="23" y2="12"></line><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line></svg>
+                </button>
+                <button class="card--header__mobile-toggle" aria-label="Open menu">
+                    <svg class="card--header__mobile-icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <rect class="card--header__mobile-icon-dot card--header__mobile-icon-dot--top" x="10.5" y="4.5" width="3" height="3" rx="1.5" />
+                        <rect class="card--header__mobile-icon-dot card--header__mobile-icon-dot--middle" x="10.5" y="10.5" width="3" height="3" rx="1.5" />
+                        <rect class="card--header__mobile-icon-dot card--header__mobile-icon-dot--bottom" x="10.5" y="16.5" width="3" height="3" rx="1.5" />
+                    </svg>
+                </button>
+            </div>
+        </div>
+    </vanilla-card>
+
+    <!-- Hero -->
+    <header class="hero">
+        <div class="hero__content">
+            <h1 class="hero__title">
+                <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon--inline"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"></path><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"></path></svg>
+                Documentation
+            </h1>
+            <p class="hero__subtitle">Complete guide to using Vanilla Cards web components</p>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="docs">
+        <!-- Table of Contents -->
+        <aside class="docs__toc">
+            <div class="toc">
+                <h3 class="toc__title">On this page</h3>
+                <ul class="toc__list">
+                    <li><a href="#getting-started">Getting Started</a></li>
+                    <li><a href="#components">Components</a></li>
+                    <li><a href="#variants">Card Variants</a></li>
+                    <li><a href="#styling">Styling</a></li>
+                    <li><a href="#accessibility">Accessibility</a></li>
+                    <li><a href="#api">API Reference</a></li>
+                </ul>
+            </div>
+        </aside>
+
+        <!-- Documentation Content -->
+        <article class="docs__content">
+            <!-- Getting Started -->
+            <section id="getting-started" class="docs__section">
+                <h2 class="docs__section-title">Getting Started</h2>
+                
+                <div class="docs__card">
+                    <h3 class="docs__card-title">Quick Start</h3>
+                    <p>Include the Vanilla Cards bootstrap in your HTML:</p>
+                    <pre class="docs__code"><code>&lt;link rel="stylesheet" href="vanilla-cards.css"&gt;
+&lt;script type="module" src="vanilla-cards.js"&gt;&lt;/script&gt;</code></pre>
+                </div>
+
+                <div class="docs__card">
+                    <h3 class="docs__card-title">Usage</h3>
+                    <p>Use the card component in your HTML:</p>
+                    <pre class="docs__code"><code>&lt;vanilla-card variant="elevated"&gt;
+    &lt;h3 class="card__title"&gt;Card Title&lt;/h3&gt;
+    &lt;p class="card__description"&gt;Card content goes here.&lt;/p&gt;
+&lt;/vanilla-card&gt;</code></pre>
+                </div>
+            </section>
+
+            <!-- Components -->
+            <section id="components" class="docs__section">
+                <h2 class="docs__section-title">Components</h2>
+                
+                <div class="docs__card">
+                    <h3 class="docs__card-title">&lt;vanilla-card&gt;</h3>
+                    <p>The main card component with multiple variants and configurations.</p>
+                    <h4>Attributes</h4>
+                    <table class="docs__table">
+                        <thead>
+                            <tr>
+                                <th>Attribute</th>
+                                <th>Type</th>
+                                <th>Default</th>
+                                <th>Description</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><code>variant</code></td>
+                                <td>string</td>
+                                <td>elevated</td>
+                                <td>Card variant style</td>
+                            </tr>
+                            <tr>
+                                <td><code>clickable</code></td>
+                                <td>boolean</td>
+                                <td>false</td>
+                                <td>Enable click interactions</td>
+                            </tr>
+                            <tr>
+                                <td><code>disabled</code></td>
+                                <td>boolean</td>
+                                <td>false</td>
+                                <td>Disable card interactions</td>
+                            </tr>
+                            <tr>
+                                <td><code>href</code></td>
+                                <td>string</td>
+                                <td>-</td>
+                                <td>URL for navigation</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+
+            <!-- Card Variants -->
+            <section id="variants" class="docs__section">
+                <h2 class="docs__section-title">Card Variants</h2>
+                
+                <div class="docs__variants-grid">
+                    <!-- Elevated -->
+                    <vanilla-card variant="elevated" class="docs__variant-card">
+                        <h3 class="card__title">Elevated</h3>
+                        <p class="card__description">Default card with shadow elevation.</p>
+                    </vanilla-card>
+
+                    <!-- Filled -->
+                    <vanilla-card variant="filled" class="docs__variant-card">
+                        <h3 class="card__title">Filled</h3>
+                        <p class="card__description">Card with background fill.</p>
+                    </vanilla-card>
+
+                    <!-- Outlined -->
+                    <vanilla-card variant="outlined" class="docs__variant-card">
+                        <h3 class="card__title">Outlined</h3>
+                        <p class="card__description">Card with border outline.</p>
+                    </vanilla-card>
+
+                    <!-- Stats -->
+                    <vanilla-card variant="stats" class="docs__variant-card">
+                        <p class="card--stats__value">1,234</p>
+                        <p class="card--stats__label">Total Views</p>
+                    </vanilla-card>
+
+                    <!-- List -->
+                    <vanilla-card variant="list" class="docs__variant-card">
+                        <ul class="card--list">
+                            <li class="card--list__item">List Item 1</li>
+                            <li class="card--list__item">List Item 2</li>
+                            <li class="card--list__item">List Item 3</li>
+                        </ul>
+                    </vanilla-card>
+
+                    <!-- Actions -->
+                    <vanilla-card variant="actions" class="docs__variant-card">
+                        <h3 class="card__title">Quick Actions</h3>
+                        <div class="card--actions">
+                            <button class="btn btn--primary btn--sm">Action</button>
+                            <button class="btn btn--secondary btn--sm">Cancel</button>
+                        </div>
+                    </vanilla-card>
+                </div>
+
+                <div class="docs__card">
+                    <h3 class="docs__card-title">Variant Reference</h3>
+                    <table class="docs__table">
+                        <thead>
+                            <tr>
+                                <th>Variant</th>
+                                <th>Use Case</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr><td>elevated</td><td>Default content cards</td></tr>
+                            <tr><td>filled</td><td>Highlighted content</td></tr>
+                            <tr><td>outlined</td><td>Secondary content</td></tr>
+                            <tr><td>horizontal</td><td>Media + content layout</td></tr>
+                            <tr><td>stats</td><td>Metrics and KPIs</td></tr>
+                            <tr><td>list</td><td>Article lists, menus</td></tr>
+                            <tr><td>table</td><td>Data tables</td></tr>
+                            <tr><td>chart</td><td>Data visualization</td></tr>
+                            <tr><td>actions</td><td>Action menus</td></tr>
+                            <tr><td>form</td><td>Forms</td></tr>
+                            <tr><td>project</td><td>Portfolio projects</td></tr>
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+
+            <!-- Styling -->
+            <section id="styling" class="docs__section">
+                <h2 class="docs__section-title">Styling</h2>
+                
+                <div class="docs__card">
+                    <h3 class="docs__card-title">CSS Custom Properties</h3>
+                    <p>Customize cards using CSS custom properties:</p>
+                    <pre class="docs__code"><code>:root {
+    --card-padding: 1.5rem;
+    --card-radius: 1rem;
+    --card-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    --brand-gold: #d4af37;
+}</code></pre>
+                </div>
+
+                <div class="docs__card">
+                    <h3 class="docs__card-title">BEM Classes</h3>
+                    <p>Use BEM naming for card content:</p>
+                    <pre class="docs__code"><code>.card__title { }
+.card__description { }
+.card__footer { }
+.card__image { }
+.card__action { }</code></pre>
+                </div>
+            </section>
+
+            <!-- Accessibility -->
+            <section id="accessibility" class="docs__section">
+                <h2 class="docs__section-title">Accessibility</h2>
+                
+                <div class="docs__card docs__card--featured">
+                    <h3 class="docs__card-title">Built-in Accessibility</h3>
+                    <ul class="docs__list-clean">
+                        <li><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon--success icon--inline"><polyline points="20 6 9 17 4 12"></polyline></svg> ARIA roles and attributes</li>
+                        <li><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon--success icon--inline"><polyline points="20 6 9 17 4 12"></polyline></svg> Keyboard navigation support</li>
+                        <li><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon--success icon--inline"><polyline points="20 6 9 17 4 12"></polyline></svg> Focus management</li>
+                        <li><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon--success icon--inline"><polyline points="20 6 9 17 4 12"></polyline></svg> Screen reader compatible</li>
+                    </ul>
+                </div>
+
+                <div class="docs__card">
+                    <h3 class="docs__card-title">Clickable Cards</h3>
+                    <p>For keyboard accessibility, use <code>tabindex</code>:</p>
+                    <pre class="docs__code"><code>&lt;vanilla-card clickable tabindex="0"&gt;
+    Click me via keyboard
+&lt;/vanilla-card&gt;</code></pre>
+                </div>
+            </section>
+
+            <!-- API Reference -->
+            <section id="api" class="docs__section">
+                <h2 class="docs__section-title">API Reference</h2>
+                
+                <div class="docs__card">
+                    <h3 class="docs__card-title">JavaScript API</h3>
+                    <pre class="docs__code"><code>const card = document.querySelector('vanilla-card');
+
+// Get/set variant
+card.variant = 'filled';
+
+// Get/set clickable
+card.clickable = true;
+
+// Get/set disabled
+card.disabled = false;
+
+// Get/set href
+card.href = '/page';
+
+// Focus the card
+card.focus();
+
+// Blur the card
+card.blur();</code></pre>
+                </div>
+
+                <div class="docs__card">
+                    <h3 class="docs__card-title">Events</h3>
+                    <table class="docs__table">
+                        <thead>
+                            <tr>
+                                <th>Event</th>
+                                <th>Description</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr><td>click</td><td>Fired on card click</td></tr>
+                            <tr><td>focus</td><td>Fired on focus</td></tr>
+                            <tr><td>blur</td><td>Fired on blur</td></tr>
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+
+            <!-- Resources -->
+            <section class="docs__section">
+                <h2 class="docs__section-title">Resources</h2>
+                <div class="docs__resources">
+                    <vanilla-card variant="elevated" class="docs__resource-card">
+                        <h3 class="card__title">GitHub Repository</h3>
+                        <p class="card__description">Source code and examples</p>
+                        <a href="https://github.com" class="btn btn--primary">View on GitHub</a>
+                    </vanilla-card>
+                    <vanilla-card variant="elevated" class="docs__resource-card">
+                        <h3 class="card__title">NPM Package</h3>
+                        <p class="card__description">Install via npm</p>
+                        <pre class="docs__code docs__code--inline"><code>npm install vanilla-cards</code></pre>
+                    </vanilla-card>
+                </div>
+            </section>
+        </article>
+    </main>
+
+    <!-- Mobile Navigation Overlay -->
+    <div class="mobile-nav-overlay" id="mobile-nav-overlay" hidden></div>
+
+    <!-- Mobile Navigation Menu -->
+    <vanilla-card variant="nav" class="card--nav-mobile" id="mobile-menu">
+        <div class="card--nav-mobile__inner">
+            <div class="card--nav-mobile__theme">
+                <span class="card--nav-mobile__theme-label">Switch Theme</span>
+                <button class="card--nav-mobile__theme-toggle" id="mobile-theme-toggle" aria-label="Toggle theme">
+                    <svg class="card--nav-mobile__theme-icon card--nav-mobile__theme-icon--moon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>
+                    <svg class="card--nav-mobile__theme-icon card--nav-mobile__theme-icon--sun" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"></circle><line x1="12" y1="1" x2="12" y2="3"></line><line x1="12" y1="21" x2="12" y2="23"></line><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line><line x1="1" y1="12" x2="3" y2="12"></line><line x1="21" y1="12" x2="23" y2="12"></line><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line></svg>
+                </button>
+            </div>
+            <nav class="card--nav-mobile__nav">
+                <div class="card--nav-mobile__item">
+                    <a href="index.html" class="card--nav-mobile__link">
+                        <span class="card--nav-mobile__text">Home</span>
+                    </a>
+                </div>
+                <div class="card--nav-mobile__item">
+                    <a href="demo.html" class="card--nav-mobile__link">
+                        <span class="card--nav-mobile__text">Showcase</span>
+                    </a>
+                </div>
+                <div class="card--nav-mobile__item">
+                    <a href="docs.html" class="card--nav-mobile__link card--nav-mobile__link--active">
+                        <span class="card--nav-mobile__text">Docs</span>
+                    </a>
+                </div>
+            </nav>
+            <div class="card--nav-mobile__footer">
+                <p class="card--nav-mobile__copyright">&copy; 2024 Vanilla Cards</p>
+            </div>
+        </div>
+    </vanilla-card>
+
+    <!-- Footer -->
+    <vanilla-card variant="footer">
+        <div class="card--footer__inner">
+            <div class="card--footer__content">
+                <div class="card--footer__section">
+                    <h3 class="card--footer__title">Vanilla Cards</h3>
+                    <p class="card--footer__text">Lightweight web components for building beautiful card UIs with zero dependencies.</p>
+                </div>
+                <div class="card--footer__section">
+                    <h3 class="card--footer__title">Resources</h3>
+                    <ul class="card--footer__links">
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="demo.html">Showcase</a></li>
+                        <li><a href="docs.html">Documentation</a></li>
+                        <li><a href="https://github.com">GitHub</a></li>
+                    </ul>
+                </div>
+                <div class="card--footer__section">
+                    <h3 class="card--footer__title">Connect</h3>
+                    <ul class="card--footer__social">
+                        <li><a href="#" aria-label="Twitter"><svg class="card--footer__social-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 4s-.7 2.1-2 3.4c1.6 10-9.4 17.3-18 11.6 2.2.1 4.4-.6 6-2C3 15.5.5 9.6 3 5c2.2 2.6 5.6 4.1 9 4-.9-4.2 4-6.6 7-3.8 1.1 0 3-1.2 3-1.2z"></path></svg></a></li>
+                        <li><a href="#" aria-label="GitHub"><svg class="card--footer__social-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg></a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="card--footer__bottom">
+                <p>&copy; 2024 Vanilla Cards. MIT License. Built with love</p>
+            </div>
+        </div>
+    </vanilla-card>
+    <script type="module" src="./src/main.ts"></script>
+</body>
+</html>

@@ -1,0 +1,26 @@
+{
+  "name": "@vc/api",
+  "version": "0.0.1",
+  "type": "module",
+  "main": "./src/index.ts",
+  "scripts": {
+    "dev": "tsx watch src/index.ts",
+    "build": "tsc && esbuild src/index.ts --bundle --platform=node --format=esm --outfile=dist/index.js --external:better-sqlite3 --banner:js=\"import { createRequire } from 'module'; const require = createRequire(import.meta.url);\"",
+    "preview": "node dist/index.js",
+    "view": "node dist/index.js",
+    "init": "echo 'API initialized'",
+    "clean": "rm -rf node_modules dist"
+  },
+  "dependencies": {
+    "@hono/node-server": "^2.0.0",
+    "@vc/shared": "workspace:*",
+    "better-sqlite3": "^12.9.0",
+    "drizzle-orm": "^0.45.2",
+    "hono": "^4.12.14"
+  },
+  "devDependencies": {
+    "@types/node": "^25.6.0",
+    "esbuild": "^0.28.0",
+    "tsx": "^4.21.0"
+  }
+}

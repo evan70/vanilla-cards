@@ -1,0 +1,243 @@
+
+/* ==========================================================================
+   Footer Card Component
+   Card-first architecture for frontend footer
+   
+   BEM: .card--footer (block), .card--footer__* (element)
+   
+   Design: card--footer has NO outer padding — .card--footer__inner handles
+   all content spacing. This prevents double padding when inside .body-card.
+   ========================================================================== */
+
+/* ==========================================================================
+   FOOTER CARD (outer shell)
+   ========================================================================== */
+.card--footer,
+vanilla-card[variant="footer"] {
+  background: var(--color-bg-alt);
+  border-top: 1px solid var(--color-border);
+  margin-top: auto;
+  border-radius: 0;
+  box-shadow: none;
+  padding: 0; /* Removed default card padding */
+}
+
+/* Full-width inside .body-card (same edge-to-edge as .card--header) */
+.body-card > .card--footer,
+.body-card > vanilla-card[variant="footer"] {
+  margin-left: calc(var(--space-6) * -1);
+  margin-right: calc(var(--space-6) * -1);
+  margin-bottom: calc(var(--space-6) * -1);
+}
+
+@media (min-width: 768px) {
+  .body-card > .card--footer,
+  .body-card > vanilla-card[variant="footer"] {
+    margin-left: calc(var(--space-8) * -1);
+    margin-right: calc(var(--space-8) * -1);
+    margin-bottom: calc(var(--space-8) * -1);
+  }
+}
+
+@media (min-width: 1024px) {
+  .body-card > .card--footer,
+  .body-card > vanilla-card[variant="footer"] {
+    margin-left: calc(var(--space-10) * -1);
+    margin-right: calc(var(--space-10) * -1);
+    margin-bottom: calc(var(--space-10) * -1);
+  }
+}
+
+/* ==========================================================================
+   FOOTER INNER (content spacing lives here)
+   ========================================================================== */
+.card--footer__inner {
+  max-width: 1440px;
+  margin: 0 auto;
+  width: 100%;
+  padding-block: var(--space-10);
+  padding-inline: 0;
+}
+
+@media (min-width: 640px) {
+  .card--footer__inner {
+    padding-inline: 0;
+  }
+}
+
+@media (min-width: 1024px) {
+  .card--footer__inner {
+    padding-inline: 0;
+  }
+}
+
+@media (min-width: 1280px) {
+  .card--footer__inner {
+    padding-inline: 0;
+  }
+}
+
+/**
+ * Compact variant — for admin panels where footer is just a copyright line
+ * Reduces vertical padding while keeping horizontal spacing
+ */
+.card--footer--compact .card--footer__inner {
+  padding-block: var(--space-4);
+}
+
+@media (min-width: 768px) {
+  .card--footer--compact .card--footer__inner {
+    padding-block: var(--space-6);
+  }
+}
+
+/* ==========================================================================
+   FOOTER CONTENT
+   ========================================================================== */
+.card--footer__content {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--space-8);
+  margin-bottom: var(--space-8);
+}
+
+/* ==========================================================================
+   FOOTER SECTION
+   ========================================================================== */
+.card--footer__section {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+}
+
+.card--footer__title {
+  margin: 0;
+  font-family: var(--font-serif);
+  font-size: var(--text-lg);
+  font-weight: 600;
+  color: var(--color-text);
+}
+
+/* ==========================================================================
+   FOOTER LINKS
+   ========================================================================== */
+.card--footer__links {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+}
+
+.card--footer__links li {
+  margin: 0;
+}
+
+.card--footer__links a {
+  color: var(--color-text-muted);
+  text-decoration: none;
+  font-size: var(--text-base);
+  transition: color var(--transition-fast), text-decoration var(--transition-fast);
+}
+
+.card--footer__links a:hover {
+  color: var(--brand-gold);
+  text-decoration: underline;
+}
+
+/* ==========================================================================
+   FOOTER SOCIAL LINKS
+   ========================================================================== */
+.card--footer__social {
+  display: flex;
+  gap: var(--space-3);
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.card--footer__social a {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  border-radius: var(--radius-md);
+  background: var(--card-bg);
+  border: 1px solid var(--color-border);
+  color: var(--color-text);
+  transition: all var(--transition-fast);
+}
+
+.card--footer__social a:hover {
+  background: var(--brand-gold);
+  border-color: var(--brand-gold);
+  color: var(--neutral-900);
+  text-decoration: none;
+}
+
+.card--footer__social-icon {
+  width: 20px;
+  height: 20px;
+}
+
+/* ==========================================================================
+   FOOTER TEXT
+   ========================================================================== */
+
+.card--footer__text {
+  margin: 0;
+  font-size: var(--text-sm);
+  color: var(--color-text-muted);
+  opacity: 0.8;
+}
+
+/* ==========================================================================
+   FOOTER BOTTOM
+   ========================================================================== */
+.card--footer__bottom {
+  padding-top: var(--space-6);
+  border-top: 1px solid var(--color-border);
+  text-align: center;
+}
+
+.card--footer__bottom p {
+  margin: 0;
+  color: var(--color-text-muted);
+  font-size: var(--text-sm);
+}
+
+/* ==========================================================================
+   RESPONSIVE
+   ========================================================================== */
+@media (max-width: 768px) {
+  .card--footer__inner {
+    padding-block: var(--space-8);
+    padding-inline: var(--space-4);
+  }
+
+  .card--footer__content {
+    grid-template-columns: 1fr;
+    gap: var(--space-6);
+  }
+
+  .card--footer__section {
+    gap: var(--space-2);
+  }
+}
+
+@media (max-width: 640px) {
+  .card--footer__inner {
+    padding-block: var(--space-6);
+    padding-inline: var(--space-4);
+  }
+
+  .card--footer__title {
+    font-size: var(--text-base);
+  }
+
+  .card--footer__links a {
+    font-size: var(--text-sm);
+  }
+}

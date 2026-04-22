@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vanilla Cards - Form Card Example</title>
+    <link rel="stylesheet" href="../../../styles/core/design-tokens.css">
+    <link rel="stylesheet" href="../../../styles/core/base.css">
+    <link rel="stylesheet" href="../../../styles/components/card.css">
+    <link rel="stylesheet" href="../../../styles/ui-utils/buttons.css">
+    <link rel="stylesheet" href="./styles.css">
+</head>
+<body>
+    <header class="form-header">
+        <h1>📝 Form Card Example</h1>
+        <p>Complete form with validation, error states, and success feedback</p>
+    </header>
+
+    <div class="form-container">
+        <!-- Contact Form -->
+        <section class="form-section">
+            <h2>Contact Form</h2>
+            <vanilla-card variant="form">
+                <form class="card--form" id="contactForm" novalidate>
+                    <!-- Name -->
+                    <div class="form-group">
+                        <label for="name" class="form-label form-label--required">Name</label>
+                        <input type="text" id="name" name="name" class="form-input" placeholder="John Doe" required>
+                        <span class="form-error" id="nameError">Please enter your name</span>
+                    </div>
+
+                    <!-- Email -->
+                    <div class="form-group">
+                        <label for="email" class="form-label form-label--required">Email</label>
+                        <input type="email" id="email" name="email" class="form-input" placeholder="you@example.com" required>
+                        <span class="form-error" id="emailError">Please enter a valid email address</span>
+                        <span class="form-hint">We'll never share your email with anyone else.</span>
+                    </div>
+
+                    <!-- Subject -->
+                    <div class="form-group">
+                        <label for="subject" class="form-label form-label--required">Subject</label>
+                        <select id="subject" name="subject" class="form-select" required>
+                            <option value="">Select a subject...</option>
+                            <option value="general">General Inquiry</option>
+                            <option value="support">Technical Support</option>
+                            <option value="feedback">Feedback</option>
+                            <option value="partnership">Partnership</option>
+                            <option value="other">Other</option>
+                        </select>
+                        <span class="form-error" id="subjectError">Please select a subject</span>
+                    </div>
+
+                    <!-- Message -->
+                    <div class="form-group">
+                        <label for="message" class="form-label form-label--required">Message</label>
+                        <textarea id="message" name="message" class="form-textarea" placeholder="Tell us how we can help..." required maxlength="500"></textarea>
+                        <div class="form-counter"><span id="charCount">0</span> / 500 characters</div>
+                        <span class="form-error" id="messageError">Please enter your message (minimum 10 characters)</span>
+                    </div>
+
+                    <!-- Newsletter Checkbox -->
+                    <div class="form-group">
+                        <div class="form-checkbox-group">
+                            <input type="checkbox" id="newsletter" name="newsletter" class="form-checkbox" checked>
+                            <label for="newsletter" class="form-label u-font-weight-normal">Subscribe to our newsletter</label>
+                        </div>
+                    </div>
+
+                    <!-- Success Message -->
+                    <div class="form-success" id="formSuccess">
+                        <div class="form-success__icon">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
+                                <polyline points="22 4 12 14.01 9 11.01"></polyline>
+                            </svg>
+                        </div>
+                        <div class="form-success__title">Message Sent!</div>
+                        <div class="form-success__message">Thank you for contacting us. We'll get back to you within 24 hours.</div>
+                    </div>
+
+                    <!-- Actions -->
+                    <div class="form-actions">
+                        <button type="submit" class="btn btn--primary" id="submitBtn">
+                            Send Message
+                        </button>
+                        <button type="reset" class="btn btn--secondary">
+                            Reset
+                        </button>
+                    </div>
+                </form>
+            </vanilla-card>
+        </section>
+
+        <!-- Login Form -->
+        <section class="form-section">
+            <h2>Login Form</h2>
+            <vanilla-card variant="form">
+                <form class="card--form" id="loginForm" novalidate>
+                    <div class="form-group">
+                        <label for="loginEmail" class="form-label form-label--required">Email</label>
+                        <input type="email" id="loginEmail" name="email" class="form-input" placeholder="you@example.com" required>
+                        <span class="form-error" id="loginEmailError">Please enter your email</span>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="loginPassword" class="form-label form-label--required">Password</label>
+                        <input type="password" id="loginPassword" name="password" class="form-input" placeholder="••••••••" required minlength="8">
+                        <span class="form-error" id="loginPasswordError">Password must be at least 8 characters</span>
+                    </div>
+
+                    <div class="form-group">
+                        <div class="form-checkbox-group">
+                            <input type="checkbox" id="remember" name="remember" class="form-checkbox">
+                            <label for="remember" class="form-label u-font-weight-normal">Remember me</label>
+                        </div>
+                    </div>
+
+                    <div class="form-actions">
+                        <button type="submit" class="btn btn--primary u-flex-1">
+                            Sign In
+                        </button>
+                    </div>
+
+                    <p class="u-text-center u-color-muted u-font-size-sm u-margin-top-4">
+                        Don't have an account? 
+                        <a href="#" class="u-color-gold u-no-decoration">Sign up</a>
+                    </p>
+                </form>
+            </vanilla-card>
+        </section>
+    </div>
+
+    <!-- Load Vanilla Cards -->
+    <script type="module" src="./main.js" defer></script>
+</body>
+</html>

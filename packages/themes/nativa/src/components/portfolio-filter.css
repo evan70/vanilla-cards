@@ -1,0 +1,119 @@
+
+/* ==========================================================================
+   Portfolio Filter Component
+   Search and category filtering for portfolio cards
+   ========================================================================== */
+
+/**
+ * Filter container
+ */
+.portfolio-filter {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+  margin-bottom: var(--space-6);
+  padding: var(--space-4);
+  background: var(--card-bg);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+}
+
+@media (min-width: 768px) {
+  .portfolio-filter {
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+  }
+}
+
+/* ==========================================================================
+   Search Input
+   ========================================================================== */
+
+.portfolio-filter__search {
+  flex: 1;
+  max-width: 100%;
+}
+
+@media (min-width: 768px) {
+  .portfolio-filter__search {
+    max-width: 300px;
+  }
+}
+
+.portfolio-filter__input {
+  width: 100%;
+  height: 44px;
+  padding: 0 var(--space-4);
+  background: var(--input-bg);
+  border: 1px solid var(--input-border);
+  border-radius: var(--radius-md);
+  font-size: var(--text-base);
+  color: var(--color-text);
+  transition:
+    border-color var(--transition-fast),
+    box-shadow var(--transition-fast);
+}
+
+.portfolio-filter__input::placeholder {
+  color: var(--color-text-muted);
+}
+
+.portfolio-filter__input:focus {
+  outline: none;
+  border-color: var(--brand-gold);
+  box-shadow: 0 0 0 3px rgba(212, 175, 55, 0.1);
+}
+
+/* ==========================================================================
+   Filter Buttons
+   ========================================================================== */
+
+.portfolio-filter__buttons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-2);
+}
+
+.portfolio-filter__btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  height: 40px;
+  padding: 0 var(--space-4);
+  background: transparent;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-full);
+  font-size: var(--text-sm);
+  font-weight: var(--font-medium);
+  color: var(--color-text);
+  cursor: pointer;
+  transition:
+    background var(--transition-fast),
+    border-color var(--transition-fast),
+    color var(--transition-fast);
+}
+
+.portfolio-filter__btn:hover {
+  background: var(--card-bg-hover);
+  border-color: var(--color-border-hover);
+}
+
+.portfolio-filter__btn--active {
+  background: var(--brand-gold);
+  border-color: var(--brand-gold);
+  color: var(--neutral-900);
+}
+
+.portfolio-filter__btn--active:hover {
+  background: #e5c145;
+  border-color: #e5c145;
+}
+
+/* ==========================================================================
+   Hidden State
+   ========================================================================== */
+
+.portfolio-card--hidden {
+  display: none !important;
+}

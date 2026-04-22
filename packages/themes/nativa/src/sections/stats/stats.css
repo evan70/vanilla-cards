@@ -1,0 +1,65 @@
+
+/* ==========================================================================
+   Stats Section Styles
+   Extracted from home.css + home-animations.css for lazy loading.
+   ========================================================================== */
+
+/* Stats Section */
+.homepage__stats {
+  padding: var(--space-12) 0;
+  background: var(--color-bg-alt);
+  border-bottom: var(--glass-border);
+}
+
+.homepage__stats .stats-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: var(--space-6);
+}
+
+/* Card stagger animations (from home-animations.css) */
+.grid .card {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.6s cubic-bezier(0.16, 1, 0.3, 1),
+              transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.grid .card.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Stagger delays */
+.grid .card:nth-child(1) { transition-delay: 0.00s; }
+.grid .card:nth-child(2) { transition-delay: 0.05s; }
+.grid .card:nth-child(3) { transition-delay: 0.10s; }
+.grid .card:nth-child(4) { transition-delay: 0.15s; }
+.grid .card:nth-child(5) { transition-delay: 0.20s; }
+.grid .card:nth-child(6) { transition-delay: 0.25s; }
+.grid .card:nth-child(7) { transition-delay: 0.30s; }
+.grid .card:nth-child(8) { transition-delay: 0.35s; }
+.grid .card:nth-child(9) { transition-delay: 0.40s; }
+
+/* Fade in up animation */
+.fade-in-up {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.6s cubic-bezier(0.16, 1, 0.3, 1),
+              transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.fade-in-up-visible {
+  opacity: 1 !important;
+  transform: translateY(0) !important;
+}
+
+/* Reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  .grid .card {
+    animation: none !important;
+    transition: none !important;
+    opacity: 1 !important;
+    transform: none !important;
+  }
+}

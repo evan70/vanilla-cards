@@ -1,0 +1,313 @@
+
+/* ==========================================================================
+   Button Component - Vanilla Cards Design System
+   Reusable button styles for all UI interactions
+
+   Usage:
+   - Apply .btn for base button styles
+   - Add .btn--primary, .btn--secondary, etc. for variants
+   - Use .btn--sm, .btn--lg for sizes
+   ========================================================================== */
+
+/* ==========================================================================
+   BASE BUTTON
+   ========================================================================== */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-2);
+  height: 44px;
+  padding: 0 var(--space-5);
+  background: var(--color-bg);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  font-family: var(--font-sans);
+  font-size: var(--text-base);
+  font-weight: var(--font-medium);
+  color: var(--color-text);
+  text-decoration: none;
+  cursor: pointer;
+  transition:
+    background var(--transition-fast),
+    border-color var(--transition-fast),
+    color var(--transition-fast),
+    transform var(--transition-fast),
+    box-shadow var(--transition-fast);
+  flex-shrink: 0;
+}
+
+.btn:hover {
+  background: var(--card-bg-hover);
+  border-color: var(--brand-gold);
+  color: var(--brand-gold);
+  transform: translateY(-1px);
+}
+
+.btn:active {
+  transform: translateY(0);
+  transform: scale(0.98);
+}
+
+.btn:focus-visible {
+  outline: none;
+  box-shadow: 0 0 0 2px var(--brand-gold);
+}
+
+.btn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+  transform: none;
+}
+
+/* Icon in button */
+.btn .icon {
+  width: 18px;
+  height: 18px;
+  stroke: currentColor;
+}
+
+/* ==========================================================================
+   BUTTON VARIANTS
+   ========================================================================== */
+
+/* Primary - Gold accent */
+.btn--primary {
+  background: var(--brand-gold);
+  border-color: var(--brand-gold);
+  color: var(--neutral-900);
+}
+
+.btn--primary:hover {
+  background: var(--brand-gold);
+  border-color: var(--brand-gold);
+  color: var(--neutral-900);
+  box-shadow: 0 4px 12px rgba(212, 175, 55, 0.3);
+}
+
+.btn--primary:focus-visible {
+  box-shadow: 0 0 0 2px var(--brand-gold), 0 4px 12px rgba(212, 175, 55, 0.3);
+}
+
+/* Secondary - Outline */
+.btn--secondary {
+  background: transparent;
+  border-color: var(--color-border);
+  color: var(--color-text);
+}
+
+.btn--secondary:hover {
+  background: var(--card-bg-hover);
+  border-color: var(--brand-gold);
+  color: var(--brand-gold);
+}
+
+/* Ghost - Transparent, no border */
+.btn--ghost {
+  background: transparent;
+  border-color: transparent;
+  color: var(--color-text);
+}
+
+.btn--ghost:hover {
+  background: var(--card-bg-hover);
+  border-color: transparent;
+  color: var(--brand-gold);
+}
+
+/* Danger - Error actions */
+.btn--danger {
+  background: var(--color-error);
+  border-color: var(--color-error);
+  color: var(--neutral-0);
+}
+
+.btn--danger:hover {
+  background: var(--color-error);
+  border-color: var(--color-error);
+  color: var(--neutral-0);
+  box-shadow: 0 4px 12px rgba(239, 68, 68, 0.3);
+}
+
+/* Success - Positive actions */
+.btn--success {
+  background: var(--color-success);
+  border-color: var(--color-success);
+  color: var(--neutral-0);
+}
+
+.btn--success:hover {
+  background: var(--color-success);
+  border-color: var(--color-success);
+  color: var(--neutral-0);
+  box-shadow: 0 4px 12px rgba(34, 197, 94, 0.3);
+}
+
+/* ==========================================================================
+   BUTTON SIZES
+   ========================================================================== */
+
+/* Small (36px) */
+.btn--sm {
+  height: 36px;
+  padding: 0 var(--space-3);
+  font-size: var(--text-sm);
+}
+
+.btn--sm .icon {
+  width: 16px;
+  height: 16px;
+}
+
+/* Large (52px) */
+.btn--lg {
+  height: 52px;
+  padding: 0 var(--space-6);
+  font-size: var(--text-lg);
+}
+
+.btn--lg .icon {
+  width: 20px;
+  height: 20px;
+}
+
+/* ==========================================================================
+   BUTTON SHAPES
+   ========================================================================== */
+
+/* Rounded (pill shape) */
+.btn--rounded {
+  border-radius: var(--radius-full);
+}
+
+/* Square */
+.btn--square {
+  border-radius: var(--radius-sm);
+}
+
+/* ==========================================================================
+   BUTTON GROUP
+   Container for multiple buttons
+   ========================================================================== */
+.btn-group {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  flex-wrap: wrap;
+}
+
+.btn-group--compact {
+  gap: var(--space-1);
+}
+
+.btn-group--vertical {
+  flex-direction: column;
+  align-items: stretch;
+}
+
+/* ==========================================================================
+   BUTTON WITH ICON ONLY
+   Square button for icon-only use cases
+   ========================================================================== */
+.btn--icon {
+  width: 44px;
+  padding: 0;
+}
+
+.btn--icon .icon {
+  width: 20px;
+  height: 20px;
+}
+
+/* ==========================================================================
+   LOADING STATE
+   ========================================================================== */
+.btn--loading {
+  position: relative;
+  color: transparent;
+  pointer-events: none;
+}
+
+.btn--loading::after {
+  content: "";
+  position: absolute;
+  width: 16px;
+  height: 16px;
+  border: 2px solid currentColor;
+  border-top-color: transparent;
+  border-radius: 50%;
+  animation: btn-spin 0.6s linear infinite;
+  color: var(--color-text);
+}
+
+.btn--primary.btn--loading::after {
+  color: var(--neutral-900);
+}
+
+@keyframes btn-spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* ==========================================================================
+   FULL WIDTH BUTTON
+   ========================================================================== */
+.btn--full-width {
+  width: 100%;
+}
+
+/* ==========================================================================
+   ACCESSIBILITY
+   ========================================================================== */
+
+/* High contrast mode */
+@media (prefers-contrast: more), (forced-colors: active) {
+  .btn {
+    border-width: 2px;
+  }
+
+  .btn:focus-visible {
+    box-shadow: 0 0 0 3px var(--color-text);
+  }
+}
+
+/* Reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  .btn {
+    transition: none;
+  }
+
+  .btn:hover,
+  .btn:active {
+    transform: none;
+  }
+
+  .btn--loading::after {
+    animation-duration: 2s;
+  }
+}
+
+/* ==========================================================================
+   DARK THEME SUPPORT
+   Centralized dark theme overrides
+   ========================================================================== */
+[data-theme="dark"] .btn--secondary {
+  border-color: var(--color-border);
+  color: var(--color-text);
+}
+
+[data-theme="dark"] .btn--secondary:hover {
+  background: var(--card-bg-hover);
+  border-color: var(--brand-gold);
+  color: var(--brand-gold);
+}
+
+[data-theme="dark"] .btn--ghost {
+  color: var(--color-text);
+}
+
+[data-theme="dark"] .btn--ghost:hover {
+  background: var(--card-bg-hover);
+  color: var(--brand-gold);
+}

@@ -1,0 +1,183 @@
+@import "@vc/theme-nativa/nativa.css";
+@import "@vc/core/styles.css";
+
+
+/* ==========================================================================
+   Demo Page Styles
+   ========================================================================== */
+
+/* Hero */
+.hero {
+    background: var(--color-bg-alt);
+    padding: var(--space-20) 0;
+    text-align: center;
+}
+
+.hero__content {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 0 var(--space-4);
+}
+
+.hero__title {
+    font-size: var(--text-5xl);
+    font-weight: var(--font-bold);
+    margin-bottom: var(--space-6);
+}
+
+.hero__subtitle {
+    font-size: var(--text-xl);
+    color: var(--color-text-muted);
+    margin-bottom: var(--space-10);
+}
+
+.hero__actions {
+    display: flex;
+    gap: var(--space-4);
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+/* Demo Layout */
+.demo {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: var(--space-12) var(--space-4);
+}
+
+.demo__section {
+    margin-bottom: var(--space-16);
+}
+
+.demo__section-title {
+    font-size: var(--text-3xl);
+    margin-bottom: var(--space-8);
+    text-align: center;
+}
+
+.demo__section-description {
+    text-align: center;
+    color: var(--color-text-muted);
+    margin-bottom: var(--space-12);
+}
+
+.demo__grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: var(--space-6);
+}
+
+/* Card Grid */
+.card-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: var(--space-8);
+}
+
+/* Stats Grid */
+.stats-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: var(--space-6);
+    margin-bottom: var(--space-12);
+}
+
+/* Cardboard */
+.cardboard {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: var(--space-6);
+}
+
+/* Chart Styles */
+.card--chart__canvas {
+    height: 160px;
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-around;
+    padding: var(--space-4);
+}
+
+.chart-bar {
+    width: 12%;
+    background: var(--brand-gold);
+    border-radius: var(--radius-sm) var(--radius-sm) 0 0;
+}
+
+.chart-bar--40 { height: 40%; }
+.chart-bar--55 { height: 55%; }
+.chart-bar--45 { height: 45%; }
+.chart-bar--70 { height: 70%; }
+.chart-bar--65 { height: 65%; }
+.chart-bar--80 { height: 80%; }
+.chart-bar--75 { height: 75%; }
+
+/* Form Styles */
+.form-group {
+    margin-bottom: var(--space-4);
+}
+
+.form-input-full {
+    width: 100%;
+    padding: var(--space-2);
+    border-radius: var(--radius-sm);
+    border: 1px solid var(--color-border);
+}
+
+.btn-full {
+    width: 100%;
+}
+
+/* Footer */
+.footer-main {
+    margin-top: var(--space-20);
+}
+
+.card--footer__inner {
+    text-align: center;
+    padding: var(--space-12) 0;
+}
+
+/* Mobile Nav */
+.mobile-nav-overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,0.5);
+    z-index: 100;
+}
+
+/* Stats Icon Colors */
+.card--stats__icon--gold { color: var(--brand-gold); }
+.card--stats__icon--emerald { color: var(--brand-emerald); }
+.card--stats__icon--sapphire { color: var(--brand-sapphire); }
+.card--stats__icon--amethyst { color: var(--brand-amethyst); }
+.card--stats__icon--ruby { color: var(--brand-ruby); }
+.card--stats__icon--success { color: var(--color-success); }
+.card--stats__icon--info { color: var(--color-info); }
+
+/* Utility Colors */
+.text-success { color: var(--color-success); }
+.text-error { color: var(--color-error); }
+
+/* Responsive */
+@media (max-width: 768px) {
+    .hero__title {
+        font-size: var(--text-3xl);
+    }
+
+    .hero__actions {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .demo {
+        padding: var(--space-8) var(--space-4);
+    }
+
+    .stats-grid,
+    .cardboard {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* Theme */

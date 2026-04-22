@@ -1,0 +1,13 @@
+
+pre.code-enhance,
+.code-enhance {
+  overflow-x: auto;
+  padding: 1rem 1.25rem;
+  border-radius: 1rem;
+  background: rgba(8, 12, 20, 0.92);
+  border: 1px solid rgba(148, 163, 184, 0.18);
+}
+
+code {
+  font-family: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, monospace;
+}
