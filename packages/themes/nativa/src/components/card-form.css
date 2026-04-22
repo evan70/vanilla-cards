@@ -84,7 +84,7 @@ vanilla-card[variant="form"],
 }
 
 /* Collapsible */
-.card--form--collapsed .card--form__groups {
+.card--form--collapsed__groups {
   display: none !important;
 }
 
@@ -92,7 +92,7 @@ vanilla-card[variant="form"],
   transition: transform 0.2s ease;
 }
 
-.card--form--collapsed .card--form__toggle {
+.card--form--collapsed__toggle {
   transform: rotate(-90deg);
 }
 

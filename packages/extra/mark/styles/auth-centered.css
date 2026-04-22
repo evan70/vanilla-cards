@@ -21,6 +21,7 @@
 }
 
 /* Card inside centered body */
+.auth-centered .auth-centered__card,
 .auth-centered .card {
   width: 100% !important;
   min-width: 320px !important;
@@ -32,24 +33,28 @@
 }
 
 /* Card footer for centered cards */
+.auth-centered .auth-centered__footer,
 .auth-centered .card__footer {
   margin-top: var(--space-6);
   padding-top: var(--space-4);
   border-top: 1px solid rgba(255, 255, 255, 0.06);
 }
 
+.auth-centered .auth-centered__footer-text,
 .auth-centered .card__footer-text {
   font-size: var(--text-sm);
   color: var(--color-text-muted);
   text-align: center;
 }
 
+.auth-centered .auth-centered__footer-link,
 .auth-centered .card__footer-link {
   color: var(--brand-gold);
   text-decoration: none;
   font-weight: var(--font-medium);
 }
 
+.auth-centered .auth-centered__footer-link:hover,
 .auth-centered .card__footer-link:hover {
   text-decoration: underline;
 }

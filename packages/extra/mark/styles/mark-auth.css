@@ -116,7 +116,8 @@ body.auth-page {
   align-items: center;
 }
 
-.auth-card__password-wrapper .auth-card__form-input {
+.auth-card__password-wrapper .auth-card__form-input,
+.auth-card__password-wrapper--input {
   padding-right: calc(var(--space-4) + 28px + var(--space-2));
 }
 

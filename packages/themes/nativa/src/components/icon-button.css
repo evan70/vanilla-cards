@@ -49,7 +49,16 @@
   cursor: not-allowed;
 }
 
+/* Base icon element inside icon button */
+.icon-btn__icon {
+  width: 20px;
+  height: 20px;
+  stroke: currentColor;
+  flex-shrink: 0;
+}
+
 /* Icon sizing within button */
+.icon-btn .icon-btn__icon,
 .icon-btn .icon {
   width: 20px;
   height: 20px;
@@ -66,6 +75,7 @@
   height: 32px;
 }
 
+.icon-btn--sm .icon-btn__icon,
 .icon-btn--sm .icon {
   width: 16px;
   height: 16px;
@@ -77,6 +87,7 @@
   height: 48px;
 }
 
+.icon-btn--lg .icon-btn__icon,
 .icon-btn--lg .icon {
   width: 24px;
   height: 24px;
@@ -151,6 +162,7 @@
   height: 56px;
 }
 
+.icon-btn--glass.icon-btn--lg .icon-btn__icon,
 .icon-btn--glass.icon-btn--lg .icon {
   width: 24px;
   height: 24px;
@@ -235,6 +247,7 @@
   border-radius: var(--radius-md);
 }
 
+.icon-btn--theme .icon-btn__icon,
 .icon-btn--theme .icon {
   width: 20px;
   height: 20px;

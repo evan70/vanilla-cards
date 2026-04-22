@@ -189,11 +189,11 @@
   padding: var(--space-4);
 }
 
-.card--skill--compact .card--skill__progress {
+.card--skill--compact__progress {
   display: none;
 }
 
-.card--skill--compact .card--skill__percentage {
+.card--skill--compact__percentage {
   margin-top: var(--space-2);
 }
 
@@ -205,26 +205,26 @@
   text-align: center;
 }
 
-.card--skill--minimal .card--skill__header {
+.card--skill--minimal__header {
   flex-direction: column;
   margin-bottom: 0;
 }
 
-.card--skill--minimal .card--skill__icon {
+.card--skill--minimal__icon {
   width: 56px;
   height: 56px;
   font-size: var(--text-3xl);
 }
 
-.card--skill--minimal .card--skill__title {
+.card--skill--minimal__title {
   font-size: var(--text-base);
   text-align: center;
 }
 
-.card--skill--minimal .card--skill__level,
-.card--skill--minimal .card--skill__progress,
-.card--skill--minimal .card--skill__percentage,
-.card--skill--minimal .card--skill__tags {
+.card--skill--minimal__level,
+.card--skill--minimal__progress,
+.card--skill--minimal__percentage,
+.card--skill--minimal__tags {
   display: none;
 }
 
@@ -236,55 +236,55 @@
 /**
  * @deprecated Use .variant-progress-gold
  */
-.card--skill--gold .card--skill__progress-fill {
+.card--skill--gold__progress-fill {
   background: linear-gradient(90deg, var(--brand-gold), #f9d96e);
 }
 
-.card--skill--gold .card--skill__percentage {
+.card--skill--gold__percentage {
   color: var(--brand-gold);
 }
 
 /**
  * @deprecated Use .variant-progress-emerald
  */
-.card--skill--emerald .card--skill__progress-fill {
+.card--skill--emerald__progress-fill {
   background: linear-gradient(90deg, var(--brand-emerald), #34d399);
 }
 
-.card--skill--emerald .card--skill__percentage {
+.card--skill--emerald__percentage {
   color: var(--brand-emerald);
 }
 
 /**
  * @deprecated Use .variant-progress-ruby
  */
-.card--skill--ruby .card--skill__progress-fill {
+.card--skill--ruby__progress-fill {
   background: linear-gradient(90deg, var(--brand-ruby), #f87171);
 }
 
-.card--skill--ruby .card--skill__percentage {
+.card--skill--ruby__percentage {
   color: var(--brand-ruby);
 }
 
 /**
  * @deprecated Use .variant-progress-sapphire
  */
-.card--skill--sapphire .card--skill__progress-fill {
+.card--skill--sapphire__progress-fill {
   background: linear-gradient(90deg, var(--brand-sapphire), #22d3ee);
 }
 
-.card--skill--sapphire .card--skill__percentage {
+.card--skill--sapphire__percentage {
   color: var(--brand-sapphire);
 }
 
 /**
  * @deprecated Use .variant-progress-amethyst
  */
-.card--skill--amethyst .card--skill__progress-fill {
+.card--skill--amethyst__progress-fill {
   background: linear-gradient(90deg, var(--brand-amethyst), #c084fc);
 }
 
-.card--skill--amethyst .card--skill__percentage {
+.card--skill--amethyst__percentage {
   color: var(--brand-amethyst);
 }
 

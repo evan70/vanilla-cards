@@ -160,14 +160,14 @@
   flex-direction: row;
 }
 
-.card--content--horizontal .card--content__image-wrapper {
+.card--content--horizontal__image-wrapper {
   width: 40%;
   margin: calc(var(--card-padding) * -1) 0 calc(var(--card-padding) * -1) calc(var(--card-padding) * -1);
   border-top-right-radius: 0;
   border-bottom-left-radius: var(--card-radius);
 }
 
-.card--content--horizontal .card--content__body {
+.card--content--horizontal__body {
   width: 60%;
   padding-left: var(--card-padding);
 }
@@ -189,7 +189,7 @@
   min-height: 400px;
 }
 
-.card--content--full-image .card--content__image-wrapper {
+.card--content--full-image__image-wrapper {
   margin: 0;
   width: 100%;
   height: 100%;
@@ -198,13 +198,13 @@
   border-radius: 0;
 }
 
-.card--content--full-image .card--content__image {
+.card--content--full-image__image {
   width: 100%;
   height: 100%;
   object-fit: cover;
 }
 
-.card--content--full-image .card__body {
+.card--content--full-image__body {
   position: relative;
   z-index: 1;
   background: linear-gradient(to top, rgba(0, 0, 0, 0.9) 0%, rgba(0, 0, 0, 0.5) 50%, transparent 100%);
@@ -216,21 +216,21 @@
   min-height: 100%;
 }
 
-.card--content--full-image .card__title {
+.card--content--full-image__title {
   color: var(--neutral-0);
   margin-bottom: var(--space-2);
 }
 
-.card--content--full-image .card--content__excerpt {
+.card--content--full-image__excerpt {
   color: var(--neutral-200);
   -webkit-line-clamp: 2;
 }
 
-.card--content--full-image .card--content__meta {
+.card--content--full-image__meta {
   color: var(--neutral-300);
 }
 
-.card--content--full-image .card--content__link {
+.card--content--full-image__link {
   color: var(--brand-gold);
 }
 
@@ -249,7 +249,7 @@
   overflow: hidden;
 }
 
-.card--content--half-image .card--content__image-wrapper {
+.card--content--half-image__image-wrapper {
   margin: 0;
   width: 100%;
   height: 50%;
@@ -257,13 +257,13 @@
   border-radius: 0;
 }
 
-.card--content--half-image .card--content__image {
+.card--content--half-image__image {
   width: 100%;
   height: 100%;
   object-fit: cover;
 }
 
-.card--content--half-image .card__body {
+.card--content--half-image__body {
   padding: var(--card-padding);
   height: 50%;
   display: flex;
@@ -271,7 +271,7 @@
   justify-content: center;
 }
 
-.card--content--half-image .card__title {
+.card--content--half-image__title {
   margin-top: 0;
 }
 
@@ -280,7 +280,7 @@
    Override base card footer for content cards
    ========================================================================== */
 
-.card--content .card__footer {
+.card--content__footer {
   margin-top: auto; /* Ensure pushed to bottom */
 }
 

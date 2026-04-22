@@ -67,16 +67,13 @@
    ICON INHERITANCE IN BUTTONS
    Ensure icons inherit button's color context
    ========================================================================== */
-.btn .icon {
-  stroke: currentColor;
-  color: inherit;
-}
-
-.btn--primary .icon {
-  color: inherit;
-}
-
+.btn .btn__icon,
+.btn .icon,
+.btn--primary .btn__icon,
+.btn--primary .icon,
+.btn--outline .btn__icon,
 .btn--outline .icon {
+  stroke: currentColor;
   color: inherit;
 }
 
