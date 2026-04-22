@@ -39,6 +39,18 @@
   background: none;
   border: none;
   cursor: pointer;
+  padding: 4px;
+  color: inherit;
+}
+
+.card--header__mobile-icon {
+  width: 24px;
+  height: 24px;
+}
+
+.card--header__mobile-icon-dot,
+.card--header__icon-dot {
+  fill: currentColor;
 }
 
 @media (max-width: 768px) {
