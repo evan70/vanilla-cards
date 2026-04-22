@@ -73,7 +73,7 @@
 /* Hero Background/Overlay */
 .hero-section__background {
   position: absolute;
-  inset: 0;
+  top: 0; left: 0; right: 0; bottom: 0;
   overflow: hidden;
 }
 
@@ -86,7 +86,7 @@
 
 .hero-section__overlay {
   position: absolute;
-  inset: 0;
+  top: 0; left: 0; right: 0; bottom: 0;
 }
 
 .hero-section__overlay--dark {
@@ -137,7 +137,7 @@
 
 .hero-section__token-grid {
   position: absolute;
-  inset: 0;
+  top: 0; left: 0; right: 0; bottom: 0;
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   gap: 2rem;
@@ -226,7 +226,7 @@
 
 .hero-section__code-wrapper {
   position: absolute;
-  inset: 0;
+  top: 0; left: 0; right: 0; bottom: 0;
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 4rem;

@@ -39,7 +39,7 @@
 
 .card--viewport__background {
   position: absolute;
-  inset: 0;
+  top: 0; left: 0; right: 0; bottom: 0;
   z-index: 0;
   overflow: hidden;
 }
@@ -60,7 +60,7 @@
 
 .card--viewport__bg-gradient {
   position: absolute;
-  inset: 0;
+  top: 0; left: 0; right: 0; bottom: 0;
   background: linear-gradient(
     135deg,
     var(--brand-gold) 0%,
@@ -76,7 +76,7 @@
 
 .card--viewport__overlay {
   position: absolute;
-  inset: 0;
+  top: 0; left: 0; right: 0; bottom: 0;
   z-index: 1;
   background: rgba(0, 0, 0, 0.6);
   backdrop-filter: blur(10px);
