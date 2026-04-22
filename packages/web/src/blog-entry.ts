@@ -9,6 +9,7 @@ import './blog-styles.css';
 import '@vc/theme-nativa';
 import { AppKernel, VanillaCard } from '@vc/core';
 import './pages/blog'; // Registers the 'blog' page with kernel
+import './pages/blog-detail'; // Registers the 'blog-detail' page with kernel
 
 // Register only the main web component
 if (!customElements.get('vanilla-card')) {

@@ -51,7 +51,7 @@ AppKernel.getInstance().registerPage('blog', () => {
             ? `<img class="blog-card__image" src="${article.image}" alt="${article.title}" loading="lazy">`
             : '<div class="blog-card__image-placeholder" aria-hidden="true">No Image</div>'}
           <div class="blog-card__content">
-            <h2 class="blog-card__title"><a href="/blog/${article.slug}">${article.title}</a></h2>
+            <h2 class="blog-card__title"><a href="blog-detail.html?slug=${article.slug}">${article.title}</a></h2>
             <p class="blog-card__excerpt">${article.excerpt ?? ''}</p>
             <div class="blog-card__meta">
               ${article.published_label ? `<span class="blog-card__date">${article.published_label}</span>` : ''}
@@ -76,6 +76,9 @@ AppKernel.getInstance().registerPage('blog', () => {
     searchInput.addEventListener('input', (event) => {
       render((event.target as HTMLInputElement).value);
     });
+
+    // Initial render
+    render('');
   }
 
   // Pagination link handling

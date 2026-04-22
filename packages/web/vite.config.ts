@@ -35,6 +35,7 @@ export default defineConfig({
         demo: resolve(__dirname, 'demo.html'),
         portfolio: resolve(__dirname, 'portfolio.html'),
         blog: resolve(__dirname, 'blog.html'),
+        'blog-detail': resolve(__dirname, 'blog-detail.html'),
       },
     },
   },
