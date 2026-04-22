@@ -22,6 +22,7 @@ vanilla-card[variant="header"] {
   padding-inline: 0; /* Removed side padding for full width */
   box-shadow: none;
   transition: background var(--transition-base), box-shadow var(--transition-base);
+  overflow: visible !important;
 }
 
 /* Tablet - left/right padding */
@@ -326,17 +327,17 @@ vanilla-card[variant="header"] .card--header__mobile-toggle {
 }
 
 /* Animation: 3 dots → X */
-.card--header__mobile-toggle--open .card--header__icon-dot--top {
+.card--header--mobile-open .card--header__icon-dot--top {
   transform: translateY(6px) scaleX(5) rotate(45deg);
   border-radius: 1px;
 }
 
-.card--header__mobile-toggle--open .card--header__icon-dot--middle {
+.card--header--mobile-open .card--header__icon-dot--middle {
   opacity: 0;
   transform: scale(0);
 }
 
-.card--header__mobile-toggle--open .card--header__icon-dot--bottom {
+.card--header--mobile-open .card--header__icon-dot--bottom {
   transform: translateY(-6px) scaleX(5) rotate(-45deg);
   border-radius: 1px;
 }
