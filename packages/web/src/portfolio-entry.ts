@@ -5,8 +5,6 @@
  * Page Specific (15kb): Portfolio-specific logic, styles, and elements.
  */
 
-import './portfolio-styles.css';
-import '@vc/theme-nativa';
 import { AppKernel, VanillaCard } from '@vc/core';
 import './pages/portfolio'; // Registers the 'portfolio' page with kernel
 
