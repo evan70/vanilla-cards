@@ -13,6 +13,7 @@ export default defineConfig({
       '@lib': resolve(__dirname, '../core/src/lib'),
       '@kernel': resolve(__dirname, '../core/src/kernel'),
       '@vc/core': resolve(__dirname, '../core/src'),
+      '@vc/theme-nativa': resolve(__dirname, '../themes/nativa/src'),
     },
   },
   build: {
