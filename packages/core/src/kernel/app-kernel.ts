@@ -206,11 +206,9 @@ export class AppKernel {
     // 3. Find current page
     const page = document.body.dataset.page;
 
-    // 3a. Init cookie consent (non-admin pages only)
-    if (!location.pathname.startsWith('/mark/')) {
-      const consent = new CookieConsent();
-      consent.init();
-    }
+    // 3a. Init cookie consent
+    const consent = new CookieConsent();
+    consent.init();
 
     // 3b. Find and init page
     if (page && this.pages.has(page)) {

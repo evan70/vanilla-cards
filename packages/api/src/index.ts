@@ -2,9 +2,6 @@ import { Hono, type Context } from 'hono';
 import { serve } from '@hono/node-server';
 import { cors } from 'hono/cors';
 import { serveStatic } from '@hono/node-server/serve-static';
-import { cardsRouter } from './routes/cards';
-import { boardsRouter } from './routes/boards';
-import { setupWebSocket } from './websocket';
 
 const app = new Hono();
 
@@ -12,14 +9,10 @@ const app = new Hono();
 app.use('*', cors());
 
 // API Routes
-app.route('/api/cards', cardsRouter);
-app.route('/api/boards', boardsRouter);
+// (Currently no API routes registered in reduced scope)
 
 // Health check
 app.get('/health', (c: Context) => c.json({ status: 'ok' }));
-
-// WebSocket setup
-setupWebSocket(app);
 
 // Serve static files from the web package (for production/preview)
 // Based on vite.config.ts base path '/vanilla-cards/'

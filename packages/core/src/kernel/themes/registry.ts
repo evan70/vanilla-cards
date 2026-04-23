@@ -95,10 +95,10 @@ export class ThemeRegistry {
   }
 
   /**
-   * Set the admin default theme (cookie-based, used by /mark/settings).
+   * Set the admin default theme (cookie-based).
    */
   static setAdminDefault(themeId: string): void {
-    document.cookie = `${COOKIE_DEFAULT_THEME}=${themeId}; Path=/mark; Max-Age=31536000; SameSite=Lax`;
+    document.cookie = `${COOKIE_DEFAULT_THEME}=${themeId}; Path=/; Max-Age=31536000; SameSite=Lax`;
   }
 
   /**

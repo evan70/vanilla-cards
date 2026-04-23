@@ -6,7 +6,7 @@
  * @example
  *   const http = new HttpClient();
  *   const data = await http.get<User>('/api/user');
- *   const result = await http.post('/mark/login', { email, password });
+ *   const result = await http.post('/api/login', { email, password });
  */
 
 export interface HttpClientConfig {

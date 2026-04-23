@@ -82,19 +82,6 @@ importers:
         specifier: ^4.1.5
         version: 4.1.5(@types/node@25.6.0)(jsdom@29.0.2)(vite@8.0.9(@types/node@25.6.0)(esbuild@0.28.0)(tsx@4.21.0))
 
-  packages/extra:
-    dependencies:
-      '@vc/core':
-        specifier: workspace:*
-        version: link:../core
-      '@vc/theme-nativa':
-        specifier: workspace:*
-        version: link:../themes/nativa
-    devDependencies:
-      typescript:
-        specifier: ^6.0.3
-        version: 6.0.3
-
   packages/shared:
     dependencies:
       better-sqlite3:
@@ -125,9 +112,6 @@ importers:
       '@vc/core':
         specifier: workspace:*
         version: link:../core
-      '@vc/extra':
-        specifier: workspace:*
-        version: link:../extra
       '@vc/shared':
         specifier: workspace:*
         version: link:../shared

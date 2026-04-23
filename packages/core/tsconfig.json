@@ -9,8 +9,7 @@
       "@vc/theme-nativa": ["../themes/nativa/src/index.ts"],
       "@components/*": ["./src/components/*"],
       "@kernel/*": ["./src/kernel/*"],
-      "@lib/*": ["./src/lib/*"],
-      "@mark-components/*": ["../extra/mark/components/*"]
+      "@lib/*": ["./src/lib/*"]
     }
   },
   "include": ["src/**/*"]

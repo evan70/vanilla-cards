@@ -3,8 +3,7 @@ import { escapeHtml } from '../../lib/escape-html';
 /**
  * Notification Service — toast notification utility.
  *
- * Moved from mark/utils/notification.ts to kernel/ui/.
- * API unchanged — all existing callers continue to work.
+ * All existing callers continue to work.
  */
 
 export type NotificationType = 'success' | 'error' | 'info' | 'warning';
@@ -43,7 +42,7 @@ const ICONS: Record<NotificationType, string> = {
 };
 
 export class NotificationService {
-  private static readonly REDIRECT_STORAGE_KEY = 'mark_notification_redirect';
+  private static readonly REDIRECT_STORAGE_KEY = 'vc_notification_redirect';
 
   private static container: HTMLElement | null = null;
 

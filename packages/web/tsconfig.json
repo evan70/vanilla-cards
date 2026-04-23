@@ -14,9 +14,6 @@
       "@kernel/*": ["../core/src/kernel/*"],
       "@components/*": ["../core/src/components/*"],
       "@themes/*": ["../themes/*"],
-      "@mark/*": ["../extra/mark/*"],
-      "@mark-styles/*": ["../extra/mark/styles/*"],
-      "@mark-components/*": ["../extra/mark/components/*"],
       "@vc/core": ["../core/src/index.ts"],
       "@vc/core/kernel/pages/*": ["./src/pages/*"],
       "@vc/core/*": ["../core/src/*"],
@@ -27,12 +24,10 @@
       "vitest": ["node_modules/vitest"]
     }
   },
-  "include": ["src/**/*", "../core/src/**/*", "../extra/mark/**/*"],
+  "include": ["src/**/*", "../core/src/**/*"],
   "exclude": [
     "node_modules",
     "dist",
-    "../core/src/**/*.test.ts",
-    "../extra/mark/**/*.test.ts",
-    "../extra/mark/**/__tests__/**/*"
+    "../core/src/**/*.test.ts"
   ]
 }
