@@ -1,4 +1,4 @@
-import { Hono } from 'hono';
+import { Hono, type Context } from 'hono';
 import { serve } from '@hono/node-server';
 import { cors } from 'hono/cors';
 import { serveStatic } from '@hono/node-server/serve-static';
@@ -16,7 +16,7 @@ app.route('/api/cards', cardsRouter);
 app.route('/api/boards', boardsRouter);
 
 // Health check
-app.get('/health', (c) => c.json({ status: 'ok' }));
+app.get('/health', (c: Context) => c.json({ status: 'ok' }));
 
 // WebSocket setup
 setupWebSocket(app);
@@ -25,7 +25,7 @@ setupWebSocket(app);
 // Based on vite.config.ts base path '/vanilla-cards/'
 app.use('/vanilla-cards/*', serveStatic({ 
   root: '../web/dist',
-  rewriteRequestPath: (path) => path.replace(/^\/vanilla-cards/, '')
+  rewriteRequestPath: (path: string) => path.replace(/^\/vanilla-cards/, '')
 }));
 
 // Fallback for SPA

@@ -1,8 +1,8 @@
-import { Hono } from 'hono';
+import { Hono, type Context } from 'hono';
 
 export function setupWebSocket(app: Hono) {
   // WebSocket endpoint for real-time updates
-  app.get('/ws', (c) => {
+  app.get('/ws', (c: Context) => {
     const upgradeHeader = c.req.header('Upgrade');
     
     if (upgradeHeader !== 'websocket') {
