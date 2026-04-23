@@ -3,9 +3,10 @@
   "compilerOptions": {
     "ignoreDeprecations": "6.0",
     "paths": {
-      "@vc/shared": ["../shared/src/index.ts"]
+      "@vc/core": ["../core/src/index.ts"],
+      "@vc/theme-nativa": ["../themes/nativa/src/index.ts"]
     }
   },
-  "include": ["src/**/*"],
+  "include": ["src/**/*", "mark/**/*"],
   "exclude": ["node_modules", "dist"]
 }
