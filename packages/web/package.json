@@ -12,7 +12,6 @@
   },
   "dependencies": {
     "@vc/core": "workspace:*",
-    "@vc/shared": "workspace:*",
     "@vc/theme-nativa": "workspace:*",
     "chart.js": "^4.5.1",
     "dompurify": "^3.4.1",

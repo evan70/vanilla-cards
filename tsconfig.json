@@ -22,7 +22,6 @@
     "noEmit": true,
     "ignoreDeprecations": "6.0",
     "paths": {
-      "@vc/shared": ["./packages/shared/src/index.ts"],
       "@vc/core": ["./packages/core/src/index.ts"],
       "@vc/theme-nativa": ["./packages/themes/nativa/src/index.ts"]
     }

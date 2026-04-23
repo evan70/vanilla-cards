@@ -6,13 +6,6 @@ export default defineConfig({
   server: {
     port: 3001,
     allowedHosts: ['.trycloudflare.com'],
-    proxy: {
-      '/api': 'http://localhost:3000',
-      '/ws': {
-        target: 'http://localhost:3000',
-        ws: true,
-      },
-    },
   },
   resolve: {
     alias: {
