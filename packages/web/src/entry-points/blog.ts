@@ -4,7 +4,7 @@
 
 // 1. CORE STYLES
 import '@vc/core/styles.css';
-import '@vc/core/kernel/components/card-content.css';
+import '@vc/theme-nativa/components/card-content.css';
 
 // 2. PAGE STYLES
 import '../pages/blog.css';

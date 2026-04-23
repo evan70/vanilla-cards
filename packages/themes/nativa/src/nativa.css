@@ -25,6 +25,8 @@
 @import "./components/responsive.css";
 @import "./components/spacing-utils.css";
 @import "./components/action-card.css";
+@import "./components/navbar.css";
+@import "./components/theme-toggle.css";
 @import "./components/card-case-study.css";
 @import "./components/card-client.css";
 @import "./components/card-fullscreen.css";

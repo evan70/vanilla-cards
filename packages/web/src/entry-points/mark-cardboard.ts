@@ -4,8 +4,8 @@
 
 // 1. CORE STYLES
 import '@vc/core/styles.css';
-import '@vc/core/kernel/components/card-grid.css';
-import '@vc/core/kernel/components/card-stats.css';
+import '@vc/theme-nativa/components/card-grid.css';
+import '@vc/theme-nativa/components/card-stats.css';
 
 // 2. PAGE STYLES
 import '../styles/cardboard-tokens.css';

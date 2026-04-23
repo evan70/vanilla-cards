@@ -1,15 +1,5 @@
-@import "./kernel/tokens/unified.css";
-@import "../../core/src/kernel/base/core.css";
-@import "../../themes/nativa/src/fonts.css";
-@import "../../themes/nativa/src/states.css";
-@import "./kernel/components/vanilla-card.css";
-@import "./kernel/components/button.css";
-@import "./kernel/components/card-header.css";
-@import "./kernel/components/card-footer.css";
-@import "../../themes/nativa/src/components/card-project.css";
-@import "../../themes/nativa/src/components/card-stats.css";
-@import "./kernel/components/card-grid.css";
-@import "../../themes/nativa/src/components/responsive.css";
+@import "@vc/theme-nativa/nativa.css";
+@import "@vc/core/styles.css";
 @import "./pages/portfolio.css";
 
 /* Portfolio Page Specific Styles */
