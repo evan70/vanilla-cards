@@ -36,6 +36,7 @@
     <link rel="stylesheet" href="./src/portfolio-styles.css" fetchpriority="high">
 
     <link rel="icon" type="image/x-icon" href="/favicon.ico">
+    <script type="module" src="./src/theme-init.ts"></script>
 
     <!-- Core JS (CardManager, ThemeToggle, HeaderScroll, MobileMenu) -->
     <script type="module" src="./src/entry-points/vanilla-cards.js" defer></script>
@@ -208,26 +209,26 @@
                 </div>
 
                 <div class="portfolio__skills portfolio-reveal-stagger">
-                    <vanilla-card variant="stats" class="card--skill">
+                    <vanilla-card variant="stats" class="card--skill" data-progress="95%">
                         <h4 class="card__title">Frontend</h4>
                         <div class="card--skill__progress">
-                            <div class="card--skill__progress-fill" style="width: 95%;"></div>
+                            <div class="card--skill__progress-fill"></div>
                         </div>
                         <p class="card__description">HTML5, CSS3, TypeScript</p>
                     </vanilla-card>
 
-                    <vanilla-card variant="stats" class="card--skill">
+                    <vanilla-card variant="stats" class="card--skill" data-progress="90%">
                         <h4 class="card__title">Performance</h4>
                         <div class="card--skill__progress">
-                            <div class="card--skill__progress-fill" style="width: 90%;"></div>
+                            <div class="card--skill__progress-fill"></div>
                         </div>
                         <p class="card__description">Core Web Vitals, Optimization</p>
                     </vanilla-card>
 
-                    <vanilla-card variant="stats" class="card--skill">
+                    <vanilla-card variant="stats" class="card--skill" data-progress="85%">
                         <h4 class="card__title">UI/UX</h4>
                         <div class="card--skill__progress">
-                            <div class="card--skill__progress-fill" style="width: 85%;"></div>
+                            <div class="card--skill__progress-fill"></div>
                         </div>
                         <p class="card__description">Figma, Design Systems</p>
                     </vanilla-card>

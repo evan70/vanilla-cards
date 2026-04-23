@@ -5,59 +5,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Vanilla Cards - Core Visual Test</title>
     <link rel="icon" type="image/x-icon" href="/favicon.ico">
-    <script>
-      (function() {
-        const theme = localStorage.getItem('theme') || (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
-        document.documentElement.setAttribute('data-theme', theme);
-        document.documentElement.setAttribute('data-theme-id', 'nativa');
-      })();
-    </script>
-    <style>
-      .test-container {
-        display: flex;
-        flex-direction: column;
-        gap: 40px;
-        max-width: 1200px;
-        margin: 0 auto;
-        padding: 40px 20px;
-      }
-      .test-section {
-        display: flex;
-        flex-direction: column;
-        gap: 16px;
-      }
-      .test-section h2 {
-        margin: 0;
-        border-bottom: 1px solid var(--color-border);
-        padding-bottom: 8px;
-        font-size: 1.5rem;
-        color: var(--color-text-muted);
-      }
-      .grid-test {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-        gap: 24px;
-      }
-      /* Custom chart bars for test */
-      .card--chart__canvas {
-        height: 120px;
-        display: flex;
-        align-items: flex-end;
-        gap: 8px;
-        padding: 16px;
-      }
-      .chart-bar {
-        flex: 1;
-        background: var(--brand-gold, #d4af37);
-        border-radius: 4px 4px 0 0;
-      }
-      .chart-bar--40 { height: 40%; }
-      .chart-bar--55 { height: 55%; }
-      .chart-bar--70 { height: 70%; }
-    </style>
+    <script type="module" src="./src/theme-init.ts"></script>
   </head>
   <body>
-    <div id="app" class="test-container">
+    <div id="app" class="demo">
       
       <header>
         <h1>Core Cards Visual Test</h1>
@@ -65,7 +16,7 @@
       </header>
 
       <!-- 1. Header & Nav -->
-      <section class="test-section">
+      <section class="demo__section">
         <h2>Header & Nav</h2>
         <vanilla-card variant="header">
           <div class="card--header__inner">
@@ -83,21 +34,21 @@
         </vanilla-card>
         
         <vanilla-card variant="nav">
-          <div style="padding: 1.5rem;">
+          <div class="pad-card">
             <strong>Nav Variant</strong>
             <p>Typically used for navigation sidebars or menus.</p>
-            <ul style="list-style: none; padding: 0; margin-top: 1rem;">
-              <li><a href="#" style="text-decoration: none; color: var(--brand-gold);">Link 1</a></li>
-              <li><a href="#" style="text-decoration: none; color: var(--brand-gold);">Link 2</a></li>
+            <ul class="card--list">
+              <li><a href="#" class="card--list__action">Link 1</a></li>
+              <li><a href="#" class="card--list__action">Link 2</a></li>
             </ul>
           </div>
         </vanilla-card>
       </section>
 
       <!-- 2. Basic Elevation Variants -->
-      <section class="test-section">
+      <section class="demo__section">
         <h2>Basic Elevation Variants</h2>
-        <div class="grid-test">
+        <div class="demo__grid">
           <vanilla-card variant="elevated">
             <h3 class="card__title">Elevated Card</h3>
             <p class="card__description">Default variant with shadow elevation for depth.</p>
@@ -116,11 +67,11 @@
       </section>
 
       <!-- 3. Complex Content Variants -->
-      <section class="test-section">
+      <section class="demo__section">
         <h2>Complex Content Variants</h2>
-        <div class="grid-test">
+        <div class="demo__grid">
           <vanilla-card variant="horizontal">
-            <img slot="media" src="https://picsum.photos/200/150?random=1" alt="Test" style="object-fit: cover;">
+            <img slot="media" src="https://picsum.photos/200/150?random=1" alt="Test" class="card__media">
             <div slot="content">
               <h3 class="card__title">Horizontal Variant</h3>
               <p class="card__description">Side-by-side media and content layout.</p>
@@ -140,14 +91,15 @@
       </section>
 
       <!-- 4. Data & Lists -->
-      <section class="test-section">
+      <section class="demo__section">
         <h2>Data & Lists</h2>
-        <div class="grid-test">
+        <div class="demo__grid">
           <vanilla-card variant="stats">
-            <div class="card--stats__icon" style="color: var(--brand-gold); font-size: 2rem;">📈</div>
+            <div class="card--stats__icon variant-gold-text">📈</div>
             <p class="card--stats__value">24.5k</p>
             <p class="card--stats__label">Daily Visitors</p>
           </vanilla-card>
+
 
           <vanilla-card variant="list">
             <h3 class="card__title">List Variant</h3>

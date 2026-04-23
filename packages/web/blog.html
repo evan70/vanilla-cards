@@ -5,13 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Blog — Vanilla Cards</title>
     <link rel="icon" type="image/x-icon" href="/favicon.ico">
-    <script>
-        (function() {
-            const theme = localStorage.getItem('theme') || (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
-            document.documentElement.setAttribute('data-theme', theme);
-            document.documentElement.setAttribute('data-theme-id', 'nativa');
-        })();
-    </script>
+    <script type="module" src="./src/theme-init.ts"></script>
     <script type="module" src="./src/blog-entry.ts"></script>
 </head>
 <body data-page="blog">
@@ -98,7 +92,7 @@
             </div>
 
             <!-- Message Area -->
-            <div id="blog-message" class="blog-listing__message" style="display: none;"></div>
+            <div id="blog-message" class="blog-listing__message" hidden></div>
 
             <!-- Data for Blog Logic -->
             <div id="blog-data" data-articles='[{"title":"Getting Started with Vanilla JS","slug":"getting-started-with-vanilla-js","excerpt":"Learn how to build modern web applications without heavy frameworks.","image":"https://picsum.photos/600/400?random=10","published_label":"March 15, 2024","author_name":"John Doe","views":1200},{"title":"Mastering CSS Grid","slug":"mastering-css-grid","excerpt":"A comprehensive guide to creating complex layouts with CSS Grid.","image":"https://picsum.photos/600/400?random=11","published_label":"March 10, 2024","author_name":"Jane Smith","views":850},{"title":"Optimizing Web Performance","slug":"optimizing-web-performance","excerpt":"Tips and tricks to make your website load faster and run smoother.","image":"https://picsum.photos/600/400?random=12","published_label":"March 5, 2024","author_name":"Bob Johnson","views":2100}]' hidden></div>
