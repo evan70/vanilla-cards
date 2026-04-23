@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog Detail — Vanilla Cards</title>
+    <link rel="icon" type="image/x-icon" href="/vanilla-cards/favicon.ico">
+  <script type="module" crossorigin src="/vanilla-cards/assets/src-CVsrfxtY.js"></script>
+  <script type="module" crossorigin src="/vanilla-cards/assets/src-Dvwe_QRz.js"></script>
+  <script type="module" crossorigin src="/vanilla-cards/assets/blog-entry-CBJLAA7a.js"></script>
+  <script type="module" crossorigin src="/vanilla-cards/assets/theme-init-QcEfo5qA.js"></script>
+  <link rel="stylesheet" crossorigin href="/vanilla-cards/assets/src-Ds5RaPgN.css">
+  <link rel="stylesheet" crossorigin href="/vanilla-cards/assets/blog-entry-4X9eJbsX.css">
+</head>
+<body data-page="blog-detail">
+    <div id="app">
+        <!-- Navigation -->
+        <vanilla-card variant="header">
+          <div class="card--header__inner">
+            <a href="./" class="card--header__logo">
+              Vanilla Cards<span class="card--header__logo-dot">.</span>
+            </a>
+
+            <nav class="card--header__nav">
+              <ul class="card--header__nav-list">
+                <li class="card--header__nav-item">
+                  <a href="./" class="card--header__nav-link">Home</a>
+                </li>
+                <li class="card--header__nav-item">
+                  <a href="portfolio.html" class="card--header__nav-link">Portfolio</a>
+                </li>
+                <li class="card--header__nav-item">
+                  <a href="demo.html" class="card--header__nav-link">Showcase</a>
+                </li>
+                <li class="card--header__nav-item">
+                  <a href="docs.html" class="card--header__nav-link">Docs</a>
+                </li>
+                <li class="card--header__nav-item">
+                  <a href="blog.html" class="card--header__nav-link card--header__nav-link--active">Blog</a>
+                </li>
+              </ul>
+            </nav>
+
+            <div class="card--header__actions">
+              <button class="card--header__action-btn" aria-label="Search">
+                <svg class="card--header__action-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <circle cx="11" cy="11" r="8"></circle>
+                  <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+                </svg>
+              </button>
+              <button class="card--header__theme-toggle" id="theme-toggle" aria-label="Toggle theme">
+                <svg class="card--header__theme-icon card--header__theme-icon--moon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                </svg>
+                <svg class="card--header__theme-icon card--header__theme-icon--sun" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <circle cx="12" cy="12" r="5"></circle>
+                  <line x1="12" y1="1" x2="12" y2="3"></line>
+                  <line x1="12" y1="21" x2="12" y2="23"></line>
+                  <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                  <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                  <line x1="1" y1="12" x2="3" y2="12"></line>
+                  <line x1="21" y1="12" x2="23" y2="12"></line>
+                  <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                  <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                </svg>
+              </button>
+              <button class="card--header__mobile-toggle" aria-label="Open menu">
+                <svg class="card--header__mobile-icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <rect class="card--header__icon-dot card--header__icon-dot--top" x="10.5" y="4.5" width="3" height="3" rx="1.5" />
+                  <rect class="card--header__icon-dot card--header__icon-dot--middle" x="10.5" y="10.5" width="3" height="3" rx="1.5" />
+                  <rect class="card--header__icon-dot card--header__icon-dot--bottom" x="10.5" y="16.5" width="3" height="3" rx="1.5" />
+                </svg>
+              </button>
+            </div>
+          </div>
+        </vanilla-card>
+
+        <!-- Reading Progress -->
+        <div id="blog-progress" class="blog-detail-enhancer__progress"></div>
+
+        <main class="blog-article">
+            <div class="blog-container">
+                <header class="blog-article__header">
+                    <a href="blog.html" class="blog-detail__back-link">← Back to Blog</a>
+                    <h1 class="blog-detail__title">Getting Started with Vanilla JS</h1>
+                    <div class="blog-article__meta">
+                        <span class="blog-detail__reading-time">
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
+                            5 min read
+                        </span>
+                        <span class="blog-card__date">March 15, 2024</span>
+                        <span class="blog-card__author">John Doe</span>
+                    </div>
+                </header>
+
+                <div class="blog-detail-enhancer" id="blog-detail-enhancer">
+                    <span>Article Resources</span>
+                    <div></div>
+                    <button id="blog-copy-btn" class="btn btn--secondary btn--sm">Copy Link</button>
+                </div>
+
+                <img src="https://picsum.photos/1200/600?random=10" alt="Hero" class="blog-detail__image">
+
+                <div class="blog-detail__content blog-article__content">
+                    <p>Vanilla JavaScript is the foundation of the modern web. In this article, we'll explore why choosing plain JS over heavy frameworks can lead to better performance and more maintainable code.</p>
+                    
+                    <h2>Why Vanilla?</h2>
+                    <p>Frameworks come and go, but the web standards remain. By learning and using Vanilla JS, you're investing in skills that will never become obsolete.</p>
+                    
+                    <h3>Performance</h3>
+                    <p>Every byte counts. When you skip the framework, you're skipping the overhead of downloading, parsing, and executing thousands of lines of code before your app even starts.</p>
+                    
+                    <h3>Simplicity</h3>
+                    <p>Modern browser APIs are incredibly powerful. Things that used to require jQuery or complex framework logic can now often be done in a single line of standard JS.</p>
+                    
+                    <blockquote>
+                        "Simplicity is the soul of efficiency."
+                    </blockquote>
+                    
+                    <h2>Conclusion</h2>
+                    <p>Start small, stay close to the platform, and only add abstractions when you truly need them. Your users (and your lighthouse score) will thank you.</p>
+                </div>
+
+                <footer class="blog-related">
+                    <h3>Related Articles</h3>
+                    <div class="blog-listing__grid">
+                        <article class="blog-card">
+                            <img class="blog-card__image" src="https://picsum.photos/600/400?random=11" alt="Mastering CSS Grid">
+                            <div class="blog-card__content">
+                                <h2 class="blog-card__title"><a href="blog-detail.html">Mastering CSS Grid</a></h2>
+                                <p class="blog-card__excerpt">A comprehensive guide to creating complex layouts with CSS Grid.</p>
+                            </div>
+                        </article>
+                    </div>
+                </footer>
+            </div>
+        </main>
+
+        <!-- Footer -->
+        <vanilla-card variant="footer">
+            <div class="card--footer__inner">
+                <p>&copy; 2024 Vanilla Cards. The complete web component library.</p>
+            </div>
+        </vanilla-card>
+
+        <div class="mobile-nav-overlay" id="mobile-nav-overlay" hidden></div>
+    </div>
+</body>
+</html>

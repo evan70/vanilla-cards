@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="sk" data-theme-id="nativa" data-theme="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio - Nativa .</title>
+    <meta name="description" content="Prehľad projektov a realizácií vytvorených s Nativa CMS platformou.">
+    <link rel="canonical" href="http://localhost:8000/portfolio">
+
+    <!-- Preconnect to external origins -->
+    <link rel="preconnect" href="https://res.cloudinary.com" crossorigin>
+
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="http://localhost:8000/portfolio">
+    <meta property="og:title" content="Portfolio">
+    <meta property="og:description" content="Prehľad projektov a realizácií vytvorených s Nativa CMS platformou.">
+    <meta property="og:site_name" content="Nativa .">
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:url" content="http://localhost:8000/portfolio">
+    <meta name="twitter:title" content="Portfolio">
+    <meta name="twitter:description" content="Prehľad projektov a realizácií vytvorených s Nativa CMS platformou.">
+
+    <!-- CSRF Token for JavaScript -->
+    <meta name="csrf-token" content="dfe73e5e33a7ff74e5986949f00a2391cd75028be8df6c73f4f02bd88d4175e8">
+
+    <!-- Open Graph Image (if provided) -->
+    
+    <!-- Additional page-specific styles (set in page template) -->
+
+    <link rel="icon" type="image/x-icon" href="/vanilla-cards/favicon.ico">
+
+    <!-- Core JS (CardManager, ThemeToggle, HeaderScroll, MobileMenu) -->
+
+    <!-- Portfolio Entry Point (Kernel handles data-page="portfolio") -->
+  <script type="module" crossorigin src="/vanilla-cards/assets/portfolio-CTNSLlhw.js"></script>
+  <link rel="modulepreload" crossorigin href="/vanilla-cards/assets/src-CVsrfxtY.js">
+  <link rel="modulepreload" crossorigin href="/vanilla-cards/assets/theme-init-QcEfo5qA.js">
+  <link rel="stylesheet" crossorigin href="/vanilla-cards/assets/portfolio-CyF00LBO.css">
+  <link rel="stylesheet" crossorigin href="/vanilla-cards/assets/styles-DefXMDD7.css">
+</head>
+<body class="body-card" data-page="portfolio">
+    <div id="app">
+        <!-- Navigation -->
+        <vanilla-card variant="header">
+          <div class="card--header__inner">
+            <a href="./" class="card--header__logo">
+              Vanilla Cards<span class="card--header__logo-dot">.</span>
+            </a>
+
+            <nav class="card--header__nav">
+              <ul class="card--header__nav-list">
+                <li class="card--header__nav-item">
+                  <a href="./" class="card--header__nav-link">Home</a>
+                </li>
+                <li class="card--header__nav-item">
+                  <a href="portfolio.html" class="card--header__nav-link card--header__nav-link--active">Portfolio</a>
+                </li>
+                <li class="card--header__nav-item">
+                  <a href="demo.html" class="card--header__nav-link">Showcase</a>
+                </li>
+                <li class="card--header__nav-item">
+                  <a href="docs.html" class="card--header__nav-link">Docs</a>
+                </li>
+                <li class="card--header__nav-item">
+                  <a href="blog.html" class="card--header__nav-link">Blog</a>
+                </li>
+              </ul>
+            </nav>
+
+            <div class="card--header__actions">
+              <button class="card--header__action-btn" aria-label="Search">
+                <svg class="card--header__action-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <circle cx="11" cy="11" r="8"></circle>
+                  <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+                </svg>
+              </button>
+              <button class="card--header__theme-toggle" id="theme-toggle" aria-label="Toggle theme">
+                <svg class="card--header__theme-icon card--header__theme-icon--moon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                </svg>
+                <svg class="card--header__theme-icon card--header__theme-icon--sun" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <circle cx="12" cy="12" r="5"></circle>
+                  <line x1="12" y1="1" x2="12" y2="3"></line>
+                  <line x1="12" y1="21" x2="12" y2="23"></line>
+                  <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                  <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                  <line x1="1" y1="12" x2="3" y2="12"></line>
+                  <line x1="21" y1="12" x2="23" y2="12"></line>
+                  <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                  <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                </svg>
+              </button>
+              <button class="card--header__mobile-toggle" aria-label="Open menu">
+                <svg class="card--header__mobile-icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <rect class="card--header__icon-dot card--header__icon-dot--top" x="10.5" y="4.5" width="3" height="3" rx="1.5" />
+                  <rect class="card--header__icon-dot card--header__icon-dot--middle" x="10.5" y="10.5" width="3" height="3" rx="1.5" />
+                  <rect class="card--header__icon-dot card--header__icon-dot--bottom" x="10.5" y="16.5" width="3" height="3" rx="1.5" />
+                </svg>
+              </button>
+            </div>
+          </div>
+        </vanilla-card>
+
+        <main class="portfolio">
+            <!-- Hero -->
+            <section class="portfolio__hero">
+                <div class="portfolio__hero-eyebrow">Available for new projects</div>
+                <h1 class="portfolio__title">Design & <span class="portfolio__title-accent">Development</span></h1>
+                <p class="portfolio__subtitle">I build high-performance, accessible, and beautiful web experiences using vanilla technologies.</p>
+                
+                <div class="portfolio__hero-stats">
+                    <div class="portfolio__hero-stat">
+                        <span class="portfolio__hero-stat-value">5+</span>
+                        <span class="portfolio__hero-stat-label">Years Exp.</span>
+                    </div>
+                    <div class="portfolio__hero-stat">
+                        <span class="portfolio__hero-stat-value">40+</span>
+                        <span class="portfolio__hero-stat-label">Projects</span>
+                    </div>
+                    <div class="portfolio__hero-stat">
+                        <span class="portfolio__hero-stat-value">12</span>
+                        <span class="portfolio__hero-stat-label">Awards</span>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Projects Filter -->
+            <section class="portfolio__section">
+                <div class="portfolio__section-header">
+                    <h2 class="portfolio__section-title">Selected Works</h2>
+                    <div class="portfolio__section-divider"><span class="diamond"></span></div>
+                </div>
+
+                <div class="portfolio__filter">
+                    <button class="portfolio__filter-btn portfolio__filter-btn--active" data-filter="all">All</button>
+                    <button class="portfolio__filter-btn" data-filter="web">Web</button>
+                    <button class="portfolio__filter-btn" data-filter="mobile">Mobile</button>
+                    <button class="portfolio__filter-btn" data-filter="design">Design</button>
+                </div>
+
+                <div class="portfolio__grid">
+                    <!-- Project 1 -->
+                    <vanilla-card variant="project" data-category="web" class="card--project portfolio-reveal">
+                        <div class="card--project__image-wrapper">
+                            <img src="https://picsum.photos/600/400?random=1" alt="Project 1" class="card--project__image">
+                        </div>
+                        <div class="card--project__content">
+                            <h3 class="card__title">E-Commerce Ecosystem</h3>
+                            <p class="card__description">A complete shopping experience built with Vanilla JS.</p>
+                            <div class="card--project__meta">
+                                <span class="card--project__category">Web Development</span>
+                                <span class="card--project__date">2024</span>
+                            </div>
+                        </div>
+                        <div class="card--project__overlay">
+                            <a href="#" class="card--project__overlay-cta">View Project</a>
+                        </div>
+                    </vanilla-card>
+
+                    <!-- Project 2 -->
+                    <vanilla-card variant="project" data-category="design" class="card--project portfolio-reveal">
+                        <div class="card--project__image-wrapper">
+                            <img src="https://picsum.photos/600/400?random=2" alt="Project 2" class="card--project__image">
+                        </div>
+                        <div class="card--project__content">
+                            <h3 class="card__title">Brand Identity</h3>
+                            <p class="card__description">Modern visual language for a fintech startup.</p>
+                            <div class="card--project__meta">
+                                <span class="card--project__category">Graphic Design</span>
+                                <span class="card--project__date">2023</span>
+                            </div>
+                        </div>
+                        <div class="card--project__overlay">
+                            <a href="#" class="card--project__overlay-cta">View Project</a>
+                        </div>
+                    </vanilla-card>
+
+                    <!-- Project 3 -->
+                    <vanilla-card variant="project" data-category="web mobile" class="card--project portfolio-reveal">
+                        <div class="card--project__image-wrapper">
+                            <img src="https://picsum.photos/600/400?random=3" alt="Project 3" class="card--project__image">
+                        </div>
+                        <div class="card--project__content">
+                            <h3 class="card__title">SaaS Dashboard</h3>
+                            <p class="card__description">Real-time analytics platform for enterprise.</p>
+                            <div class="card--project__meta">
+                                <span class="card--project__category">Product Design</span>
+                                <span class="card--project__date">2023</span>
+                            </div>
+                        </div>
+                        <div class="card--project__overlay">
+                            <a href="#" class="card--project__overlay-cta">View Project</a>
+                        </div>
+                    </vanilla-card>
+                </div>
+            </section>
+
+            <!-- Skills -->
+            <section class="portfolio__section">
+                <div class="portfolio__section-header">
+                    <h2 class="portfolio__section-title">Capabilities</h2>
+                    <p class="portfolio__section-subtitle">Specialized in modern web technologies and user-centric design.</p>
+                </div>
+
+                <div class="portfolio__skills portfolio-reveal-stagger">
+                    <vanilla-card variant="stats" class="card--skill" data-progress="95%">
+                        <h4 class="card__title">Frontend</h4>
+                        <div class="card--skill__progress">
+                            <div class="card--skill__progress-fill"></div>
+                        </div>
+                        <p class="card__description">HTML5, CSS3, TypeScript</p>
+                    </vanilla-card>
+
+                    <vanilla-card variant="stats" class="card--skill" data-progress="90%">
+                        <h4 class="card__title">Performance</h4>
+                        <div class="card--skill__progress">
+                            <div class="card--skill__progress-fill"></div>
+                        </div>
+                        <p class="card__description">Core Web Vitals, Optimization</p>
+                    </vanilla-card>
+
+                    <vanilla-card variant="stats" class="card--skill" data-progress="85%">
+                        <h4 class="card__title">UI/UX</h4>
+                        <div class="card--skill__progress">
+                            <div class="card--skill__progress-fill"></div>
+                        </div>
+                        <p class="card__description">Figma, Design Systems</p>
+                    </vanilla-card>
+                </div>
+            </section>
+
+            <!-- CTA -->
+            <section class="portfolio__cta portfolio-reveal">
+                <h2 class="portfolio__cta-title">Ready to start a project?</h2>
+                <p class="portfolio__cta-text">Let's build something amazing together. Currently accepting new freelance opportunities.</p>
+                <div class="portfolio__cta-actions">
+                    <a href="mailto:hello@example.com" class="btn btn--primary">Contact Me</a>
+                    <a href="#" class="btn btn--secondary">Download CV</a>
+                </div>
+            </section>
+        </main>
+
+        <!-- Footer -->
+        <vanilla-card variant="footer">
+            <div class="card--footer__inner">
+                <p>&copy; 2024 Vanilla Cards. The complete web component library.</p>
+            </div>
+        </vanilla-card>
+
+        <div class="mobile-nav-overlay" id="mobile-nav-overlay" hidden></div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Vanilla Cards - Core Visual Test</title>
+    <link rel="icon" type="image/x-icon" href="/vanilla-cards/favicon.ico">
+    <script type="module" crossorigin src="/vanilla-cards/assets/main-BsS2vFv0.js"></script>
+    <link rel="modulepreload" crossorigin href="/vanilla-cards/assets/src-CVsrfxtY.js">
+    <link rel="modulepreload" crossorigin href="/vanilla-cards/assets/src-Dvwe_QRz.js">
+    <link rel="modulepreload" crossorigin href="/vanilla-cards/assets/theme-init-QcEfo5qA.js">
+    <link rel="stylesheet" crossorigin href="/vanilla-cards/assets/src-Ds5RaPgN.css">
+    <link rel="stylesheet" crossorigin href="/vanilla-cards/assets/web-BEdUvQtA.css">
+    <link rel="stylesheet" crossorigin href="/vanilla-cards/assets/styles-DefXMDD7.css">
+  </head>
+  <body>
+    <!-- Top-level fixed header using core components -->
+    <vanilla-navbar>
+      <vanilla-card variant="header">
+        <div class="nav-container">
+          <div class="card--header__logo">Core Test<span class="card--header__logo-dot">.</span></div>
+          
+          <div class="nav-menu" id="nav-menu">
+            <ul class="nav-links">
+              <li><a href="#" class="card--header__nav-link card--header__nav-link--active">Home</a></li>
+              <li><a href="#" class="card--header__nav-link">Cards</a></li>
+              <li><a href="#" class="card--header__nav-link">About</a></li>
+            </ul>
+          </div>
+
+          <div class="nav-actions">
+            <vanilla-theme-toggle id="theme-toggle"></vanilla-theme-toggle>
+            <button class="nav-toggle" id="nav-toggle" aria-label="Toggle menu">
+              <span></span>
+              <span></span>
+              <span></span>
+            </button>
+          </div>
+        </div>
+      </vanilla-card>
+    </vanilla-navbar>
+
+    <div id="app" class="demo" style="margin-top: 80px;">
+      
+      <header class="hero">
+        <div class="hero__content">
+          <h1 class="hero__title">Core Architecture</h1>
+          <p class="hero__subtitle">Refactored with separated Theme and structural Core components.</p>
+        </div>
+      </header>
+
+      <section class="demo__section">
+        <h2 class="demo__section-title">Card Grid System</h2>
+        <div class="cardboard">
+          
+          <!-- Basic Elevation Variants -->
+          <vanilla-card variant="elevated">
+            <h3 class="card__title">Elevated Card</h3>
+            <p class="card__description">Default variant with shadow elevation for depth.</p>
+          </vanilla-card>
+          
+          <vanilla-card variant="filled">
+            <h3 class="card__title">Filled Card</h3>
+            <p class="card__description">Background fill variant for emphasis in busy layouts.</p>
+          </vanilla-card>
+          
+          <vanilla-card variant="outlined">
+            <h3 class="card__title">Outlined Card</h3>
+            <p class="card__description">Bordered variant, perfect for secondary content.</p>
+          </vanilla-card>
+
+          <!-- Complex Content Variants -->
+          <vanilla-card variant="horizontal">
+            <img slot="media" src="https://picsum.photos/200/150?random=1" alt="Test" class="card__media">
+            <div slot="content">
+              <h3 class="card__title">Horizontal Variant</h3>
+              <p class="card__description">Side-by-side media and content layout.</p>
+            </div>
+          </vanilla-card>
+
+          <!-- Data & Lists -->
+          <vanilla-card variant="stats">
+            <div class="card--stats__icon variant-gold-text">📈</div>
+            <p class="card--stats__value">24.5k</p>
+            <p class="card--stats__label">Daily Visitors</p>
+          </vanilla-card>
+
+          <vanilla-card variant="list">
+            <h3 class="card__title">List Variant</h3>
+            <ul class="card--list">
+              <li class="card--list__item"><a href="#" class="card--list__link">Navigation Item One</a></li>
+              <li class="card--list__item"><a href="#" class="card--list__link">Navigation Item Two</a></li>
+            </ul>
+          </vanilla-card>
+
+          <!-- Interactive & Visual -->
+          <vanilla-card variant="actions">
+            <h3 class="card__title">Actions Variant</h3>
+            <div class="card--actions">
+              <button class="btn btn--primary btn--sm">Confirm</button>
+              <button class="btn btn--secondary btn--sm">Cancel</button>
+            </div>
+          </vanilla-card>
+
+          <vanilla-card variant="form">
+            <h3 class="card__title">Form Variant</h3>
+            <form class="card--form">
+              <div class="form-group">
+                <input type="text" class="form-input form-input-full" placeholder="Enter your name">
+              </div>
+              <button type="submit" class="btn btn--primary btn-full">Submit Form</button>
+            </form>
+          </vanilla-card>
+
+        </div>
+      </section>
+
+      <!-- Footer -->
+      <footer class="footer-main">
+        <vanilla-card variant="footer">
+          <div class="card--footer__inner">
+            <p>&copy; 2024 Vanilla Cards Core Visual Test. No fluff, just cards.</p>
+          </div>
+        </vanilla-card>
+      </footer>
+
+    </div>
+  </body>
+</html>
