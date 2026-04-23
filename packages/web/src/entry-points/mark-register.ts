@@ -8,7 +8,7 @@
 // CSS imports
 import '@vc/core/kernel/tokens/unified.css';
 import '@vc/core/kernel/base/core.css';
-import '@vc/core/kernel/components/action-card.css';
+import '@vc/theme-nativa/components/action-card.css';
 import '../styles/auth-card.css';
 
 // Nativa theme (separate entry point — must register itself)

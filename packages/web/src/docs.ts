@@ -1,24 +1,14 @@
 import '../docs.css';
 import { VanillaCard } from '@vc/core';
-import { initTheme, toggleTheme } from './kernel/theme';
+import { NativaThemeManager } from '@vc/theme-nativa';
 
 if (!customElements.get('vanilla-card')) {
     customElements.define('vanilla-card', VanillaCard);
 }
 
 // Initialize Theme
-initTheme();
-
-// --- Theme Switching Logic ---
-const themeToggle = document.getElementById('theme-toggle');
-
-const handleThemeToggle = () => {
-    toggleTheme();
-};
-
-if (themeToggle) {
-    themeToggle.addEventListener('click', handleThemeToggle);
-}
+const themeManager = new NativaThemeManager();
+themeManager.init();
 
 // --- Header Scroll Effect ---
 const header = document.querySelector('vanilla-card[variant="header"]');

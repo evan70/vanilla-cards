@@ -44,4 +44,4 @@ export {
 };
 
 // Export types for TypeScript users
-export type { VanillaCardVariant } from '@vc/core/components/vanilla-card';
+export type { VanillaCardVariant } from '@vc/core';

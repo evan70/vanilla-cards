@@ -6,8 +6,8 @@
 import '@vc/core/styles.css';
 
 // Ostatné komponenty z core
-import '@vc/core/kernel/components/card-content.css';
-import '@vc/core/kernel/components/responsive.css';
+import '@vc/theme-nativa/components/card-content.css';
+import '@vc/theme-nativa/components/responsive.css';
 
 // 2. PAGE STYLES (Prepísanie core pre konkrétnu stránku)
 import '../pages/home-layout.css';
