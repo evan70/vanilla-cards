@@ -4,9 +4,9 @@
  * Main entry point for page card orchestrator component.
  */
 
-export { PageCardController } from './controller';
-export { default } from './controller';
-export { normalizePageCardPayload } from './normalizers';
+export { PageCardController } from '@lib/page-card/controller';
+export { default } from '@lib/page-card/controller';
+export { normalizePageCardPayload } from '@lib/page-card/normalizers';
 export type {
   PageCardConfig,
   PageCardModel,
@@ -14,4 +14,4 @@ export type {
   MenuItem,
   FooterLink,
   FooterSection,
-} from './types';
+} from '@lib/page-card/types';

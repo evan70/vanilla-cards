@@ -5,7 +5,7 @@
  */
 
 import './cta.css';
-import { BaseSection } from '../BaseSection';
+import { BaseSection } from '@kernel/sections/BaseSection';
 
 export class CTASection extends BaseSection {
   init(): void {

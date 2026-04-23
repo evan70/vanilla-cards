@@ -5,8 +5,8 @@
  * Manages state, events, and dynamic data loading.
  */
 
-import type { PageCardConfig, MenuItem, FooterSection } from './types';
-import { escapeHtml } from '../escape-html';
+import type { PageCardConfig, MenuItem, FooterSection } from '@lib/page-card/types';
+import { escapeHtml } from '@lib/escape-html';
 
 /**
  * SVG Icons for header and mobile menu

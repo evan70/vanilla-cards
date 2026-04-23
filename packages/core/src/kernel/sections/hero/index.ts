@@ -1,1 +1,1 @@
-export { HeroSection, HeroSection as default } from './HeroSection';
+export { HeroSection, HeroSection as default } from '@kernel/sections/hero/HeroSection';

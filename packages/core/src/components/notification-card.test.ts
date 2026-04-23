@@ -5,7 +5,7 @@
  */
 
 import { describe, it, expect, beforeEach, afterEach, vi } from 'vitest';
-import { NotificationCard } from './notification-card';
+import { NotificationCard } from '@components/notification-card';
 
 describe('NotificationCard', () => {
   beforeEach(() => {

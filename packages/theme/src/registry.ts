@@ -5,7 +5,7 @@
  * Themes register themselves via side-effect import.
  */
 
-import type { ThemeDefinition } from './types';
+import type { ThemeDefinition } from '@vc/theme/types';
 
 const COOKIE_THEME_ID = 'theme-id';
 const COOKIE_DEFAULT_THEME = 'theme-default';

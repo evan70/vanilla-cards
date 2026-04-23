@@ -72,7 +72,7 @@
  * ```
  */
 
-import { RippleEffect } from '../lib/ripple-effect';
+import { RippleEffect } from '@lib/ripple-effect';
 
 export type VanillaCardVariant = 
   | 'elevated' 

@@ -1,5 +1,5 @@
-import { BaseSection } from '../BaseSection';
-import { AppKernel } from '../../app-kernel';
+import { BaseSection } from '@kernel/sections/BaseSection';
+import { AppKernel } from '@kernel/app-kernel';
 
 export default class NavigationSection extends BaseSection {
   private navToggle: HTMLElement | null = null;

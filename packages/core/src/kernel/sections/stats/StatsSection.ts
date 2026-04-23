@@ -5,7 +5,7 @@
  */
 
 import './stats.css';
-import { BaseSection } from '../BaseSection';
+import { BaseSection } from '@kernel/sections/BaseSection';
 
 export class StatsSection extends BaseSection {
   init(): void {

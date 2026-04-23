@@ -5,7 +5,7 @@
  */
 
 import { describe, it, expect, beforeEach, afterEach, vi } from 'vitest';
-import { CookieConsent } from '../entry-points/cookie-consent';
+import { CookieConsent } from './cookie-consent';
 
 // Mock the import
 vi.mock('@vc/core', async (importOriginal) => {

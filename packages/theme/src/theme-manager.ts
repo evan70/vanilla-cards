@@ -5,8 +5,8 @@
  * Visual components (icons, specific font handling) belong in theme-specific managers.
  */
 
-import { ThemeRegistry } from './registry';
-import type { ThemeDefinition } from './types';
+import { ThemeRegistry } from '@vc/theme/registry';
+import type { ThemeDefinition } from '@vc/theme/types';
 
 export type ThemeName = 'light' | 'dark' | string;
 

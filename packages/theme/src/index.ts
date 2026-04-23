@@ -1,3 +1,3 @@
-export * from './types';
-export * from './registry';
-export * from './theme-manager';
+export * from '@vc/theme/types';
+export * from '@vc/theme/registry';
+export * from '@vc/theme/theme-manager';

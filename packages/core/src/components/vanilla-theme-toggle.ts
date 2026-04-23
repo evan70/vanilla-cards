@@ -7,7 +7,7 @@
  * @element vanilla-theme-toggle
  */
 
-import { AppKernel } from '../kernel/app-kernel';
+import { AppKernel } from '@kernel/app-kernel';
 
 export class VanillaThemeToggle extends HTMLElement {
   connectedCallback(): void {
