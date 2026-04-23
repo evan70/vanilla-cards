@@ -8,47 +8,36 @@
     <script type="module" src="./src/theme-init.ts"></script>
   </head>
   <body>
-    <div id="app" class="demo">
+    <!-- Top-level fixed header -->
+    <vanilla-card variant="header">
+      <div class="card--header__inner">
+        <div class="card--header__logo">Core Test<span class="card--header__logo-dot">.</span></div>
+        <nav class="card--header__nav">
+          <ul class="card--header__nav-list">
+            <li class="card--header__nav-item"><a href="#" class="card--header__nav-link card--header__nav-link--active">Home</a></li>
+            <li class="card--header__nav-item"><a href="#" class="card--header__nav-link">Cards</a></li>
+          </ul>
+        </nav>
+        <div class="card--header__actions">
+          <button class="card--header__theme-toggle" id="theme-toggle" aria-label="Toggle theme">🌓</button>
+        </div>
+      </div>
+    </vanilla-card>
+
+    <div id="app" class="demo" style="margin-top: 80px;">
       
-      <header>
-        <h1>Core Cards Visual Test</h1>
-        <p>This page contains only the core Vanilla Card variants for visual verification.</p>
+      <header class="hero">
+        <div class="hero__content">
+          <h1 class="hero__title">Core Cards Visual Test</h1>
+          <p class="hero__subtitle">This page contains only the core Vanilla Card variants for visual verification.</p>
+        </div>
       </header>
 
-      <!-- 1. Header & Nav -->
       <section class="demo__section">
-        <h2>Header & Nav</h2>
-        <vanilla-card variant="header">
-          <div class="card--header__inner">
-            <div class="card--header__logo">Core Test<span class="card--header__logo-dot">.</span></div>
-            <nav class="card--header__nav">
-              <ul class="card--header__nav-list">
-                <li class="card--header__nav-item"><a href="#" class="card--header__nav-link card--header__nav-link--active">Home</a></li>
-                <li class="card--header__nav-item"><a href="#" class="card--header__nav-link">Cards</a></li>
-              </ul>
-            </nav>
-            <div class="card--header__actions">
-              <button class="card--header__theme-toggle" id="theme-toggle" aria-label="Toggle theme">🌓</button>
-            </div>
-          </div>
-        </vanilla-card>
-        
-        <vanilla-card variant="nav">
-          <div class="pad-card">
-            <strong>Nav Variant</strong>
-            <p>Typically used for navigation sidebars or menus.</p>
-            <ul class="card--list">
-              <li><a href="#" class="card--list__action">Link 1</a></li>
-              <li><a href="#" class="card--list__action">Link 2</a></li>
-            </ul>
-          </div>
-        </vanilla-card>
-      </section>
-
-      <!-- 2. Basic Elevation Variants -->
-      <section class="demo__section">
-        <h2>Basic Elevation Variants</h2>
-        <div class="demo__grid">
+        <h2 class="demo__section-title">Card Grid System</h2>
+        <div class="cardboard">
+          
+          <!-- Basic Elevation Variants -->
           <vanilla-card variant="elevated">
             <h3 class="card__title">Elevated Card</h3>
             <p class="card__description">Default variant with shadow elevation for depth.</p>
@@ -63,13 +52,8 @@
             <h3 class="card__title">Outlined Card</h3>
             <p class="card__description">Bordered variant, perfect for secondary content.</p>
           </vanilla-card>
-        </div>
-      </section>
 
-      <!-- 3. Complex Content Variants -->
-      <section class="demo__section">
-        <h2>Complex Content Variants</h2>
-        <div class="demo__grid">
+          <!-- Complex Content Variants -->
           <vanilla-card variant="horizontal">
             <img slot="media" src="https://picsum.photos/200/150?random=1" alt="Test" class="card__media">
             <div slot="content">
@@ -87,19 +71,13 @@
               <p class="card__description">Showcasing portfolio items or case studies.</p>
             </div>
           </vanilla-card>
-        </div>
-      </section>
 
-      <!-- 4. Data & Lists -->
-      <section class="demo__section">
-        <h2>Data & Lists</h2>
-        <div class="demo__grid">
+          <!-- Data & Lists -->
           <vanilla-card variant="stats">
             <div class="card--stats__icon variant-gold-text">📈</div>
             <p class="card--stats__value">24.5k</p>
             <p class="card--stats__label">Daily Visitors</p>
           </vanilla-card>
-
 
           <vanilla-card variant="list">
             <h3 class="card__title">List Variant</h3>
@@ -122,13 +100,8 @@
               </tbody>
             </table>
           </vanilla-card>
-        </div>
-      </section>
 
-      <!-- 5. Interactive & Visual -->
-      <section class="test-section">
-        <h2>Interactive & Visual</h2>
-        <div class="grid-test">
+          <!-- Interactive & Visual -->
           <vanilla-card variant="actions">
             <h3 class="card__title">Actions Variant</h3>
             <p class="card__description">Card with dedicated button area.</p>
@@ -158,18 +131,29 @@
               <div class="chart-bar chart-bar--40"></div>
             </div>
           </vanilla-card>
+
+          <vanilla-card variant="nav">
+            <div class="pad-card">
+              <strong>Nav Variant Card</strong>
+              <p>Typically used for navigation sidebars or menus.</p>
+              <ul class="card--list">
+                <li><a href="#" class="card--list__action">Link 1</a></li>
+                <li><a href="#" class="card--list__action">Link 2</a></li>
+              </ul>
+            </div>
+          </vanilla-card>
+
         </div>
       </section>
 
       <!-- 6. Footer -->
-      <section class="test-section">
-        <h2>Footer</h2>
+      <footer class="footer-main">
         <vanilla-card variant="footer">
           <div class="card--footer__inner">
             <p>&copy; 2024 Vanilla Cards Core Visual Test. No fluff, just cards.</p>
           </div>
         </vanilla-card>
-      </section>
+      </footer>
 
     </div>
     <script type="module" src="./src/main.ts"></script>

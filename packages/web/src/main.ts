@@ -1,4 +1,5 @@
 import './styles.css';
+import '../index.css';
 import { VanillaCard } from '@vc/core';
 import { NativaThemeManager } from '@vc/theme-nativa';
 
