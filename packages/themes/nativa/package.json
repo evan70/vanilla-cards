@@ -13,7 +13,8 @@
     "lint": "tsc --noEmit"
   },
   "dependencies": {
-    "@vc/core": "workspace:*"
+    "@vc/core": "workspace:*",
+    "@vc/theme": "workspace:*"
   },
   "devDependencies": {
     "@types/node": "^22.13.0",

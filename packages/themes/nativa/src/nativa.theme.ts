@@ -4,8 +4,8 @@
  * Formalizes the current default: brand gold, Playfair Display + Inter fonts.
  */
 
-import type { ThemeDefinition } from '@vc/core';
-import { ThemeRegistry } from '@vc/core';
+import type { ThemeDefinition } from '@vc/theme';
+import { ThemeRegistry } from '@vc/theme';
 
 export const NativaTheme: ThemeDefinition = {
   id: 'nativa',

@@ -21,7 +21,7 @@ import { HttpClient } from './http/http-client';
 import type { HttpClientConfig } from './http/http-client';
 import { AuthState } from './auth/auth-state';
 import { NotificationService } from './ui/notification';
-import { ThemeManager } from './ui/theme-manager';
+import { ThemeManager } from '@vc/theme';
 import { ObserverPool } from './dom/observer';
 import { CookieConsent } from './utils/cookie-consent';
 

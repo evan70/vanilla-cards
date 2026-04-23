@@ -1,4 +1,3 @@
-import './navigation.css';
 import { BaseSection } from '../BaseSection';
 import { AppKernel } from '../../app-kernel';
 

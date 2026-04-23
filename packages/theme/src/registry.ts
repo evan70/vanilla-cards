@@ -3,12 +3,6 @@
  *
  * Central registry for all available themes.
  * Themes register themselves via side-effect import.
- *
- * @example
- *   import '@vc/theme-nativa';
- *   const theme = ThemeRegistry.getTheme();        // current theme definition
- *   const all   = ThemeRegistry.listThemes();      // all registered themes
- *   const def   = ThemeRegistry.getDefaultTheme(); // admin default
  */
 
 import type { ThemeDefinition } from './types';

@@ -5,11 +5,14 @@
  * Visual components (icons, specific font handling) belong in theme-specific managers.
  */
 
-import { ThemeRegistry } from '../themes/registry';
-import type { ThemeDefinition } from '../themes/types';
-import type { EventBus } from '../state/event-bus';
+import { ThemeRegistry } from './registry';
+import type { ThemeDefinition } from './types';
 
 export type ThemeName = 'light' | 'dark' | string;
+
+export interface ThemeEventBus {
+  emit<T = unknown>(event: string, data?: T): void;
+}
 
 export interface ActiveTheme {
   id: string;
@@ -18,12 +21,12 @@ export interface ActiveTheme {
 }
 
 export class ThemeManager {
-  constructor(protected bus?: EventBus) {}
+  constructor(protected bus?: ThemeEventBus) {}
 
   /**
    * Set EventBus for theme synchronization.
    */
-  setBus(bus: EventBus): void {
+  setBus(bus: ThemeEventBus): void {
     this.bus = bus;
   }
 

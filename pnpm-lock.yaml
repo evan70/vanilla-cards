@@ -34,6 +34,9 @@ importers:
 
   packages/core:
     dependencies:
+      '@vc/theme':
+        specifier: workspace:*
+        version: link:../theme
       dompurify:
         specifier: ^3.4.1
         version: 3.4.1
@@ -51,11 +54,23 @@ importers:
         specifier: ^4.1.5
         version: 4.1.5(@types/node@22.19.17)(jsdom@29.0.2)(vite@8.0.9(@types/node@22.19.17)(esbuild@0.28.0)(tsx@4.21.0))
 
+  packages/theme:
+    devDependencies:
+      '@types/node':
+        specifier: ^22.13.0
+        version: 22.19.17
+      typescript:
+        specifier: ^6.0.3
+        version: 6.0.3
+
   packages/themes/nativa:
     dependencies:
       '@vc/core':
         specifier: workspace:*
         version: link:../../core
+      '@vc/theme':
+        specifier: workspace:*
+        version: link:../../theme
     devDependencies:
       '@types/node':
         specifier: ^22.13.0

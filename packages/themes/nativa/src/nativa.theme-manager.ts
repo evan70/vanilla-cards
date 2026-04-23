@@ -5,9 +5,8 @@
  * font-property syncing, and BEM selectors.
  */
 
-import { ThemeManager } from '@vc/core';
-import type { ActiveTheme, ThemeName } from '@vc/core';
-import type { ThemeDefinition } from '@vc/core';
+import { ThemeManager } from '@vc/theme';
+import type { ActiveTheme, ThemeName, ThemeDefinition } from '@vc/theme';
 
 const SUN_ICON = `<svg class="card--header__theme-icon card--header__theme-icon--sun" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"/><path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/></svg>`;
 const MOON_ICON = `<svg class="card--header__theme-icon card--header__theme-icon--moon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>`;
@@ -65,11 +64,19 @@ export class NativaThemeManager extends ThemeManager {
   updateIcons(theme?: ThemeName): void {
     const current = theme ?? this.getTheme().variant;
 
-    document.querySelectorAll('.card--header__theme-icon--sun').forEach(el => {
-      (el as SVGElement).style.display = current === 'dark' ? 'none' : 'block';
+    const sunSelectors = ['.card--header__theme-icon--sun', '.theme-toggle__icon--sun'];
+    const moonSelectors = ['.card--header__theme-icon--moon', '.theme-toggle__icon--moon'];
+
+    sunSelectors.forEach(selector => {
+      document.querySelectorAll(selector).forEach(el => {
+        (el as HTMLElement).style.display = current === 'dark' ? 'none' : 'block';
+      });
     });
-    document.querySelectorAll('.card--header__theme-icon--moon').forEach(el => {
-      (el as SVGElement).style.display = current === 'dark' ? 'block' : 'none';
+
+    moonSelectors.forEach(selector => {
+      document.querySelectorAll(selector).forEach(el => {
+        (el as HTMLElement).style.display = current === 'dark' ? 'block' : 'none';
+      });
     });
   }
 
