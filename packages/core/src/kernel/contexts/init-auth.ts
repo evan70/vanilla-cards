@@ -21,13 +21,5 @@ import '@vc/theme-nativa';
 
 // Register nativa theme
 
-// Shared mark cards (Web Components)
-import '@mark-components/cardboard';
-import '@mark-components/stats-card';
-import '@mark-components/list-card';
-import '@mark-components/table-card';
-import '@mark-components/chart-card';
-import '@mark-components/viewport-card';
-
 // Shared kernel utils (side-effects: auto-init on import)
 import '@vc/core/kernel/utils/delete-confirmation';

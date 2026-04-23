@@ -43,7 +43,7 @@ const ICONS: Record<NotificationType, string> = {
 };
 
 export class NotificationService {
-  private static readonly REDIRECT_STORAGE_KEY = 'mark_notification_redirect';
+  private static readonly REDIRECT_STORAGE_KEY = 'vc_notification_redirect';
 
   private static container: HTMLElement | null = null;
 
