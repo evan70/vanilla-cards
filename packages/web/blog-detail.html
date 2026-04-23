@@ -5,13 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Blog Detail — Vanilla Cards</title>
     <link rel="icon" type="image/x-icon" href="/favicon.ico">
-    <script>
-        (function() {
-            const theme = localStorage.getItem('theme') || (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
-            document.documentElement.setAttribute('data-theme', theme);
-            document.documentElement.setAttribute('data-theme-id', 'nativa');
-        })();
-    </script>
+    <script type="module" src="./src/theme-init.ts"></script>
     <script type="module" src="./src/blog-entry.ts"></script>
 </head>
 <body data-page="blog-detail">
@@ -97,7 +91,7 @@
 
                 <div class="blog-detail-enhancer" id="blog-detail-enhancer">
                     <span>Article Resources</span>
-                    <div style="flex: 1;"></div>
+                    <div></div>
                     <button id="blog-copy-btn" class="btn btn--secondary btn--sm">Copy Link</button>
                 </div>
 

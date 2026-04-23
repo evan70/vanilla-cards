@@ -93,7 +93,7 @@ AppKernel.getInstance().registerPage('portfolio', () => {
     const fill = card.querySelector<HTMLElement>('.card--skill__progress-fill');
     if (!fill) return;
 
-    const width = fill.style.width ?? '0%';
+    const width = card.dataset.progress ?? fill.style.width ?? '0%';
     fill.style.removeProperty('width');
     card.style.setProperty('--progress-width', width);
   });

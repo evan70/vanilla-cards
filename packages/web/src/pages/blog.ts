@@ -65,10 +65,10 @@ AppKernel.getInstance().registerPage('blog', () => {
       if (message) {
         if (filtered.length === 0) {
           message.textContent = 'No articles matched your search.';
-          message.style.display = 'block';
+          message.hidden = false;
         } else {
           message.textContent = '';
-          message.style.display = 'none';
+          message.hidden = true;
         }
       }
     };
