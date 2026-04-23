@@ -67,6 +67,20 @@
     gap: var(--space-6);
 }
 
+/* Features Grid */
+.demo__features-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: var(--space-6);
+}
+
+/* Grid Test */
+.grid-test {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: var(--space-6);
+}
+
 /* Card Grid */
 .card-grid {
     display: grid;
