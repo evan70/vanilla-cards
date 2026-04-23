@@ -1,20 +1,16 @@
 {
-  "name": "@vc/theme-nativa",
+  "name": "@vc/theme",
   "version": "0.0.1",
   "type": "module",
   "main": "./src/index.ts",
   "exports": {
     ".": "./src/index.ts",
-    "./nativa.css": "./src/nativa.css",
-    "./components/*": "./src/components/*",
-    "./assets/*": "./src/assets/*"
+    "./types": "./src/types.ts",
+    "./registry": "./src/registry.ts",
+    "./theme-manager": "./src/theme-manager.ts"
   },
   "scripts": {
     "lint": "tsc --noEmit"
-  },
-  "dependencies": {
-    "@vc/core": "workspace:*",
-    "@vc/theme": "workspace:*"
   },
   "devDependencies": {
     "@types/node": "^22.13.0",

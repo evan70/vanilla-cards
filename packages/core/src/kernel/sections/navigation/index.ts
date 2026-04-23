@@ -1,1 +1,1 @@
-export { default } from './NavigationSection';
+export { default } from '@kernel/sections/navigation/NavigationSection';

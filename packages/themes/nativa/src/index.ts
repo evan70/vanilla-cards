@@ -1,5 +1,5 @@
 import './nativa.css';
-import './nativa.theme';
+import '@vc/theme-nativa/nativa.theme';
 
-export { NativaTheme } from './nativa.theme';
-export { NativaThemeManager } from './nativa.theme-manager';
+export { NativaTheme } from '@vc/theme-nativa/nativa.theme';
+export { NativaThemeManager } from '@vc/theme-nativa/nativa.theme-manager';

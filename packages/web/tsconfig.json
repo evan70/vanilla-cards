@@ -14,6 +14,8 @@
       "@kernel/*": ["../core/src/kernel/*"],
       "@components/*": ["../core/src/components/*"],
       "@themes/*": ["../themes/*"],
+      "@vc/theme": ["../theme/src/index.ts"],
+      "@vc/theme/*": ["../theme/src/*"],
       "@vc/core": ["../core/src/index.ts"],
       "@vc/core/kernel/pages/*": ["./src/pages/*"],
       "@vc/core/*": ["../core/src/*"],

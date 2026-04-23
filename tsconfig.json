@@ -23,6 +23,7 @@
     "ignoreDeprecations": "6.0",
     "paths": {
       "@vc/core": ["./packages/core/src/index.ts"],
+      "@vc/theme": ["./packages/theme/src/index.ts"],
       "@vc/theme-nativa": ["./packages/themes/nativa/src/index.ts"]
     }
   },

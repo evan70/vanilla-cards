@@ -12,7 +12,7 @@
  *   }
  */
 
-import { AppKernel } from '../app-kernel';
+import { AppKernel } from '@kernel/app-kernel';
 
 export interface BaseFormElements {
   form:            HTMLFormElement  | null;

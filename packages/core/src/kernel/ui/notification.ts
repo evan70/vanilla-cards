@@ -1,4 +1,4 @@
-import { escapeHtml } from '../../lib/escape-html';
+import { escapeHtml } from '@lib/escape-html';
 
 /**
  * Notification Service — toast notification utility.

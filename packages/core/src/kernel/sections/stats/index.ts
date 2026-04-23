@@ -1,1 +1,1 @@
-export { StatsSection, StatsSection as default } from './StatsSection';
+export { StatsSection, StatsSection as default } from '@kernel/sections/stats/StatsSection';

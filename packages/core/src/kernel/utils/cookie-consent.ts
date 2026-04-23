@@ -4,7 +4,7 @@
  * Moved from entry-points/cookie-consent.ts.
  */
 
-import NotificationCard from '../../components/notification-card';
+import NotificationCard from '@components/notification-card';
 
 export interface CookieConsentMessages {
   accept: {

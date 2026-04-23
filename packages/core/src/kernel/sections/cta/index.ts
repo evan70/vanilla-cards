@@ -1,1 +1,1 @@
-export { CTASection, CTASection as default } from './CTASection';
+export { CTASection, CTASection as default } from '@kernel/sections/cta/CTASection';

@@ -5,7 +5,7 @@
  * Handles snake_case → camelCase, null values, and legacy fallbacks.
  */
 
-import type { PageCardModel, RawPageCardPayload, MenuItem, FooterLink, FooterSection } from './types';
+import type { PageCardModel, RawPageCardPayload, MenuItem, FooterLink, FooterSection } from '@lib/page-card/types';
 
 /**
  * Safe string conversion - returns empty string for null/undefined

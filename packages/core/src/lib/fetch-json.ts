@@ -11,9 +11,9 @@
 export {
   getCsrfToken,
   csrfHeaders,
-} from '../kernel/http/http-client';
+} from '@kernel/http/http-client';
 
-import { AppKernel } from '../kernel/app-kernel';
+import { AppKernel } from '@kernel/app-kernel';
 
 /**
  * @deprecated Use Kernel.http.get/post/put/delete instead.

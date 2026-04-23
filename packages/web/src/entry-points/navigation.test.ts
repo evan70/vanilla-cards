@@ -5,7 +5,7 @@
  */
 
 import { describe, it, expect, beforeEach, afterEach, vi } from 'vitest';
-import { Navigation } from '../entry-points/navigation';
+import { Navigation } from './navigation';
 
 // Mock the header-footer module import
 vi.mock('../lib/header-footer.js', () => ({

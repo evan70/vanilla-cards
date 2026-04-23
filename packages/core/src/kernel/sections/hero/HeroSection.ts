@@ -7,7 +7,7 @@
  */
 
 import './hero.css';
-import { BaseSection } from '../BaseSection';
+import { BaseSection } from '@kernel/sections/BaseSection';
 
 export class HeroSection extends BaseSection {
   init(): void {

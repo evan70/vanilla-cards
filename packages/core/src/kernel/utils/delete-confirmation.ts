@@ -9,8 +9,8 @@
  * Uses Kernel.http for CSRF-protected requests.
  */
 
-import { AppKernel } from '../app-kernel';
-import { NotificationService } from '../ui/notification';
+import { AppKernel } from '@kernel/app-kernel';
+import { NotificationService } from '@kernel/ui/notification';
 
 /**
  * Initialize all delete confirmation handlers on the page.

@@ -1,3 +1,17 @@
-@import "./kernel/tokens/base.css";
-@import "./kernel/base/core.css";
+/* ==========================================================================
+   Core Styles - Skeleton Architecture
+   Only structural and functional styles. No visual tokens here.
+   ========================================================================== */
 
+/* 1. Reset & Tokens */
+@import "./styles/tokens/reset.css";
+@import "./styles/tokens/structural.css";
+
+/* 2. Base Styles */
+@import "./styles/base/base.css";
+
+/* 3. Component Structure */
+@import "./styles/structure/components/index.css";
+
+/* 4. Section Structure */
+@import "./styles/structure/sections/index.css";

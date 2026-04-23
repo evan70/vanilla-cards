@@ -16,14 +16,14 @@
  *     .boot();
  */
 
-import { EventBus } from './state/event-bus';
-import { HttpClient } from './http/http-client';
-import type { HttpClientConfig } from './http/http-client';
-import { AuthState } from './auth/auth-state';
-import { NotificationService } from './ui/notification';
-import { ThemeManager } from './ui/theme-manager';
-import { ObserverPool } from './dom/observer';
-import { CookieConsent } from './utils/cookie-consent';
+import { EventBus } from '@kernel/state/event-bus';
+import { HttpClient } from '@kernel/http/http-client';
+import type { HttpClientConfig } from '@kernel/http/http-client';
+import { AuthState } from '@kernel/auth/auth-state';
+import { NotificationService } from '@kernel/ui/notification';
+import { ThemeManager } from '@vc/theme';
+import { ObserverPool } from '@kernel/dom/observer';
+import { CookieConsent } from '@kernel/utils/cookie-consent';
 
 type PageInitFn = () => void;
 

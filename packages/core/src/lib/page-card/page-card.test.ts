@@ -9,7 +9,7 @@ import {
   normalizePageCardPayload,
   type PageCardConfig,
   type RawPageCardPayload,
-} from './index';
+} from '@lib/page-card/index';
 
 /**
  * NormalizePageCardPayload tests

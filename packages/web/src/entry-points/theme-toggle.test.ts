@@ -5,7 +5,7 @@
  */
 
 import { describe, it, expect, beforeEach, afterEach, vi } from 'vitest';
-import { ThemeToggle } from '../entry-points/theme-toggle';
+import { ThemeToggle } from './theme-toggle';
 
 describe('ThemeToggle', () => {
   beforeEach(() => {
