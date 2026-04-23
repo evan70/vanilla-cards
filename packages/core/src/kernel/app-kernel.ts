@@ -45,10 +45,24 @@ export class AppKernel {
 
   private constructor() {
     this.bus = new EventBus();
-    this.theme = new ThemeManager();
+    this.theme = new ThemeManager(this.bus);
     this.dom = {
       observer: new ObserverPool(),
     };
+
+    this.setupListeners();
+  }
+
+  private setupListeners(): void {
+    this.bus.on<{ id: string; variant: string }>('theme:changed', async (data) => {
+      if (this.hasHttp()) {
+        try {
+          await this.http.post('/api/theme', data);
+        } catch (err) {
+          // Quiet fail
+        }
+      }
+    });
   }
 
   /**
@@ -76,6 +90,7 @@ export class AppKernel {
    */
   withTheme(manager: ThemeManager): this {
     this.theme = manager;
+    this.theme.setBus(this.bus);
     return this;
   }
 

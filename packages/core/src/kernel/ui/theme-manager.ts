@@ -7,6 +7,7 @@
 
 import { ThemeRegistry } from '../themes/registry';
 import type { ThemeDefinition } from '../themes/types';
+import type { EventBus } from '../state/event-bus';
 
 export type ThemeName = 'light' | 'dark' | string;
 
@@ -17,6 +18,15 @@ export interface ActiveTheme {
 }
 
 export class ThemeManager {
+  constructor(protected bus?: EventBus) {}
+
+  /**
+   * Set EventBus for theme synchronization.
+   */
+  setBus(bus: EventBus): void {
+    this.bus = bus;
+  }
+
   /**
    * Initialize theme from DOM/cookies and sync DOM.
    */
@@ -100,17 +110,11 @@ export class ThemeManager {
   }
 
   /**
-   * Sync theme to server via kernel HttpClient.
+   * Sync theme to server via EventBus.
    */
   private async syncToServer(id: string, variant: ThemeName): Promise<void> {
-    try {
-      const { AppKernel } = await import('../app-kernel');
-      const kernel = AppKernel.getInstance();
-      if (kernel.hasHttp()) {
-        await kernel.http.post('/api/theme', { id, variant });
-      }
-    } catch (error) {
-      // Quiet fail if kernel/http not available yet
+    if (this.bus) {
+      this.bus.emit('theme:changed', { id, variant });
     }
   }
 }
