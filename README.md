@@ -1,23 +1,20 @@
 # VC Skeleton - Vanilla Cards Monorepo
 
-> A monorepo template for building full-stack card applications with real-time WebSocket capabilities.
+> A monorepo template for building card applications.
 
-Built with TypeScript, Hono API, SQLite + Drizzle ORM, and Vite. This template provides a solid foundation for applications requiring real-time updates and a clean, modular architecture.
+Built with TypeScript and Vite. This template provides a solid foundation for applications with a clean, modular architecture.
 
 ## Quick Start
 
 ```bash
 pnpm install
-pnpm db:push
 pnpm dev
 ```
 
 ## Key Features
 
 - **Monorepo Architecture**: Turborepo + pnpm workspaces
-- **Real-time Updates**: Native WebSocket support
 - **Type-Safe**: Strict TypeScript across all packages
-- **Lightweight**: SQLite database with Drizzle ORM
 - **Modern Frontend**: Vite-powered vanilla TypeScript
 - **Docker Ready**: Containerized deployment
 

@@ -5,7 +5,6 @@
     "lib": ["ES2022", "DOM", "DOM.Iterable"],
     "paths": {
       "@vc/core/*": ["./src/*"],
-      "@vc/shared": ["../shared/src/index.ts"],
       "@vc/theme-nativa": ["../themes/nativa/src/index.ts"],
       "@components/*": ["./src/components/*"],
       "@kernel/*": ["./src/kernel/*"],

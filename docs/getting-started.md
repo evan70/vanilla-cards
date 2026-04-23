@@ -6,8 +6,8 @@ A guide to getting up and running with the VC Skeleton project.
 
 ## Prerequisites
 
-- **Node.js**: 18+
-- **pnpm**: 8+
+- **Node.js**: 22+
+- **pnpm**: 10+
 - **Docker**: (optional) For containerized deployment
 
 ## Installation
@@ -19,14 +19,11 @@ cd vc
 
 # Install dependencies
 pnpm install
-
-# Initialize database schema
-pnpm db:push
 ```
 
 ## Quick Start
 
-Run the development servers for both API and Web packages:
+Run the development server:
 
 ```bash
 pnpm dev
@@ -34,8 +31,6 @@ pnpm dev
 
 The application will be available at:
 - **Frontend**: http://localhost:3001
-- **API**: http://localhost:3000
-- **WebSocket**: ws://localhost:3000/ws
 
 ## See Also
 
