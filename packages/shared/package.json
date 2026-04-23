@@ -8,6 +8,7 @@
     "db:push": "drizzle-kit push",
     "db:migrate": "drizzle-kit migrate",
     "db:studio": "drizzle-kit studio",
+    "lint": "tsc --noEmit",
     "clean": "rm -rf node_modules dist"
   },
   "dependencies": {
