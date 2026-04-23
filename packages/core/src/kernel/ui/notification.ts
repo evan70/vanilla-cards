@@ -3,8 +3,7 @@ import { escapeHtml } from '../../lib/escape-html';
 /**
  * Notification Service — toast notification utility.
  *
- * Moved from mark/utils/notification.ts to kernel/ui/.
- * API unchanged — all existing callers continue to work.
+ * All existing callers continue to work.
  */
 
 export type NotificationType = 'success' | 'error' | 'info' | 'warning';

@@ -1,7 +1,7 @@
 /**
  * AuthState — centralized authentication state.
  *
- * Used by both public (guest check) and mark (user info) pages.
+ * Used by both public and authenticated pages.
  *
  * @example
  *   const auth = new AuthState();

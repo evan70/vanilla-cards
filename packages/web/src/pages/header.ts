@@ -1,11 +1,9 @@
 /**
- * Header page — shared admin header behavior.
+ * Header page — shared header behavior.
  *
  * Registers itself with the kernel.
  * Uses kernel.ui.theme (cookie-based, single source of truth).
- * Uses kernel auth state.
- *
- * Migrated from mark/entry-points/mark-header.ts.
+ * Uses kernel auth state if present.
  */
 
 import { AppKernel } from '@vc/core';
